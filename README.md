@@ -1,24 +1,11 @@
-# README
+# Blog Smart Gioiosa
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A blog to post smart ideas. 
 
-Things you may want to cover:
+## Rails version:
 
-* Ruby version
+* 5.0.0.rc1
 
-* System dependencies
+## Ruby version: 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 2.3.0
