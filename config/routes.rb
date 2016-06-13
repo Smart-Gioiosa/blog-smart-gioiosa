@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   
+  root to: "home#index"
+  resources :posts, only:[:index, :show] 
+
+
   namespace :admin do
     root to: "dashboard#index"
+    resources :posts
   end
 
   root to: "home#index"
