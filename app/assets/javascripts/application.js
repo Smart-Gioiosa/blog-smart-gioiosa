@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+// require turbolinks
+// require_tree .
+//= require js/jquery-1.11.3.min
+//= require js/bootstrap.min
+//= require js/owl.carousel
+//= require js/smoothScroll
+//= require js/wow.min
+//= require js/main

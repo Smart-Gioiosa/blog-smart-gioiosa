@@ -1,13 +1,23 @@
-<!DOCTYPE html>
+<!DOCTYPEhtml>
 <html>
   <head>
-    <title>BlogGioiosaMarea</title>
+    <title> Blog Smart Gioiosa </title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= yield %>
+  
+    <%= render partial: "shared/header"%>
+     
+    <%= yield%>
+      
+ 
+    <%= render partial: "shared/footer"%>
+  
+    <a id="scroll-to-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
