@@ -1,0 +1,6 @@
+<h1><%=@project.title%></h1>
+<p><%= @project.description%></p>
+
+  <div class="col-sx-12 col-sm-4 col-md-4 col-lg-4 thumb">
+    <%= link_to image_tag(@project.image_preview.url(:thumb), class: "img-responsive"), @project.image_preview.url, class: "thumbnail" %>
+  </div>

@@ -1,2 +1,6 @@
 <h1><%=@post.title%></h1>
 <p><%= @post.body%></p>
+
+  <div class="col-sx-12 col-sm-4 col-md-4 col-lg-4 thumb">
+    <%= link_to image_tag(@post.image_preview.url(:thumb), class: "img-responsive"), @post.image_preview.url, class: "thumbnail" %>
+  </div>

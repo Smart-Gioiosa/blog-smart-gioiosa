@@ -1,0 +1,6 @@
+<%- if @project.errors.any? %>
+  $('#modal').html('<%= escape_javascript(render :partial => "form") %>');
+<%- else %>
+  $('#modal').modal('hide').empty();
+  window.location.reload();
+<%- end %>

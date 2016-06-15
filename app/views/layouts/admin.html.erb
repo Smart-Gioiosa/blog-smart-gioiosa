@@ -9,13 +9,13 @@
 <body>
 <div class="container">
   <!-- menu -->
-    <div class="row">   
+    <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <%= render partial: 'admin/shared/top_menu'%>
       </div>
     </div>
   <!-- /menu -->
-   
+
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %>
@@ -25,7 +25,8 @@
   </div>
 
   <%= yield %>
-  
+  <div class="modal fade" id="modal"></div><!-- Modal window -->
+
 
   <!-- footer -->
   <%= render partial: 'admin/shared/footer'%>

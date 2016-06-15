@@ -16,11 +16,11 @@
    <!-- Collect the nav links, forms, and other content for toggling -->
    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      <ul class="nav navbar-nav">
-       <li class="<%= 'active' if params[:controller] == 'admin/dashboard' %>"><%= link_to "DASHBOARD", admin_root_path %></li> 
-       <li class="<%= 'active' if params[:controller] == 'admin/posts' %>"><%= link_to "POSTS", admin_posts_path %></li> 
+       <li class="<%= 'active' if params[:controller] == 'admin/dashboard' %>"><%= link_to "DASHBOARD", admin_root_path %></li>
+       <li class="<%= 'active' if params[:controller] == 'admin/posts' %>"><%= link_to "POSTS", admin_posts_path %></li>
+       <li class="<%= 'active' if params[:controller] == 'admin/projects' %>"><%= link_to "PROJECTS", admin_projects_path %></li>
       </ul>
    </div><!-- /.navbar-collapse -->
-  
+
  </div><!-- /.container-fluid -->
-  <div class="modal fade" id="modal"></div><!-- Modal window -->
 </nav>

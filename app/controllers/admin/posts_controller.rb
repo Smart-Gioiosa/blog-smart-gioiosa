@@ -8,38 +8,46 @@ class Admin::PostsController < Admin::BaseController
   def show
   end
 
+  def edit
+    render :show_form
+  end
+
   def new
     @post = Post.new
+    render :show_form
   end
 
   def create
-    @post = Posts.new(post_params)
-    if @post.save
-      redirect_to admin_posts_path(@post)
-      flash[:success] = "Post Create"
-    else
-      render 'new'
+    @post = Post.new(post_params)
+    respond_to do |format|
+      if @post.save
+        format.html {redirect_to admin_posts_path}
+        format.js {render :hide_form}
+        flash[:success] = "Post has been created"
+      else
+        format.js {render :show_form}
+      end
     end
-  end
-
-  def edit
   end
 
   def update
-    if @post.update_attributes(post_params)
-      flash[:success] = "Post Aggiornato"
-      redirect_to admin_post_path(@post)
-    else
-      render 'edit'
+    respond_to do |format|
+      if @post.update(post_params)
+        flash[:success] = "Post updated"
+        format.html {redirect_to admin_posts_path}
+        format.js {render :hide_form}
+      else
+        format.js {render :show_form}
+      end
     end
   end
 
-
   def destroy
     @post.destroy
-    flash[:success] = "Post Eliminato"
-    redirect_to profile_user_beauty_center_posts_path(@user, @beauty_center)
+    flash[:success] = "Post deleted"
+    redirect_to admin_posts_path
   end
+
 
 
   private
@@ -48,7 +56,7 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :image_preview, :remove_image_preview)
   end
 
 end
