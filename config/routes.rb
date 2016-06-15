@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :projects
     resources :contacts
+    resources :newsletters
   end
 
   resources :contacts
