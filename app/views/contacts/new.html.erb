@@ -1,0 +1,22 @@
+<%= form_for(@contact) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :name, "Nome *" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :surname, "Cognome *" %>
+  <%= f.text_field :surname %>
+
+  <%= f.label :email, "Email *" %>
+  <%= f.text_field :email %>
+
+  <%= f.label :subject, "Oggetto *" %>
+  <%= f.text_field :subject%>
+
+  <%= f.label :message, "Messaggio *" %>
+  <%= f.text_area :message %>
+
+  <%= f.submit "INVIA"%>
+
+<% end %>
