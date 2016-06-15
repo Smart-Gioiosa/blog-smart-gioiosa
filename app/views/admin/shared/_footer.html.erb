@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-lg-12 col-sm-4 col-md-8">
+    <%= debug(params) if Rails.env.development? %>
+    <hr>
+    <div class="well">
+      Ruby Version: <%= RUBY_VERSION%>
+      Rails Version: <%= Rails.version%>
+    </div>
+    <hr>
+    <footer>
+      <p>©SMART GIOIOSA <%=Time.now.year%></p>
+    </footer>
+  </div>
+</div>

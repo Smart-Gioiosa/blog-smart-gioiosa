@@ -1,2 +1,45 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div id="posts" class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <%@posts.each_with_index do |post, index|%>
+      <%if index.even?%>
+      <section class="col-md-12 wow fadeIn">
+        <div class="post">
+              <div class="row">
+                <div class="col-md-6 media">
+                  <img src="assets/seo.png" class="img-responsive" />
+                </div>
+                <div class="col-md-6 caption">
+                  <span class="post-tag">#music</span>
+                  <%= link_to post.title, post_path(post), class: "post-title"%> 
+                  <span class="post-date"><%=post.created_at %></span>
+                  <p class="post-description"><%= post.body%></p>
+                </div>
+              </div>
+            </div>
+          </section>
+        <%else%>
+          <section class="col-md-12 wow fadeIn">
+            <div class="post">
+              <div class="row">
+                <div class="col-md-6 caption">
+                  <span class="post-tag">#music</span>
+                  <%= link_to post.title, post_path(post), class: "post-title"%> 
+                  <span class="post-date"><%= post.created_at%></span>
+                  <p class="post-description"><%= post.body%></p>
+                </div>
+                <div class="col-md-6 media">
+                  <img src="assets/seo.png" class="img-responsive" />
+                </div>
+              </div>
+            </div>
+          </section>
+        <%end%>
+        <%end%>
+
+        </div>
+  
+       <%= render "home/sidebar"%>
+ 
+      </div><!--/row -->
+    </div> <!--/container -->
