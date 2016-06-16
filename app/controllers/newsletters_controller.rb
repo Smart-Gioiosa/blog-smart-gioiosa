@@ -3,10 +3,10 @@ class NewslettersController < ApplicationController
   @newsletter = Newsletter.new(newsletter_params)
   if @newsletter.save
     flash[:success] = 'Grazie per esserti registrato alla nostra newsletter'
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   else
     flash[:danger] = 'Si è verificato un errore'
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 end
 

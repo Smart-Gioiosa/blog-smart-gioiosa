@@ -1,17 +1,21 @@
 <div id="footer">
       <div id="subscribe">
         <div class="container">
-          
+
           <div class="form-inline">
             <div class="form-group">
               <p>Stay updated on latest updates &amp; promotions</p>
             </div>
             <div class="form-group">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Your email address">
-                <span class="input-group-btn">
-                  <button class="btn btn-ada-dark" type="button">Subscribe</button>
-                </span>
+                <%= form_for(@newsletter) do |f| %>
+                  <%= render 'shared/error_messages', object: f.object %>
+
+                  <%= f.text_field :email, class:"form-control",placeholder:"Inserisci la tua email" %>
+                    <span class="input-group-btn">
+                    <%= f.submit "Iscriviti", class: "btn btn-ada-dark" %>
+                    </span>
+                 <%end%>
               </div>
             </div>
           </div>
@@ -20,7 +24,7 @@
       </div>
       <div id="links">
         <div class="container">
-          
+
           <div class="col-sm-2">
             <p class="brand"><span>Smart Gioiosa</span></p>
           </div>
@@ -44,4 +48,3 @@
         </div>
       </div>
     </div>
-
