@@ -30,5 +30,8 @@
     </a>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%if controller.controller_name=="contacts"%>
+      <%= render 'contacts/scripts_map'%>
+    <%end%>
   </body>
 </html>

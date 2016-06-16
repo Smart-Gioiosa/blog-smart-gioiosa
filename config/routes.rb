@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :newsletters
   end
 
-  resources :contacts
+  match 'contatti' => 'contacts#new', via: :get
+  resources :contacts, path:'contatti', only: [:new, :create]
   resources :newsletters
   root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

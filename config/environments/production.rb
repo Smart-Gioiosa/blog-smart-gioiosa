@@ -85,4 +85,18 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.perform_deliveries = true
+  config.active_support.deprecation =  :notify
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+   address:  "smtp.smartgioiosa.it",
+   port: 25,
+   domain: "smartgioiosa.it",
+   authentication: "plain",
+   enable_starttls_auto: false,
+   user_name: ENV["EMAIL_USERNAME"],
+   password: ENV["EMAIL_PASSWORD"]
+  }
+
 end
