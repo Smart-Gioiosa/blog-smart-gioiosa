@@ -5,6 +5,14 @@
     <%= link_to image_tag(@post.image_preview.url(:thumb), class: "img-responsive"), @post.image_preview.url, class: "thumbnail" %>
   </div>
 </div>
+<div class="row">
+  <b>Tags:</b>
+<ul>
+<% @post.tags.each do |tag| %>
+<li><%= tag.name %></li>
+<% end %>
+</ul>
+</div>
 
 <div class ="row">
   <div class="page-header">

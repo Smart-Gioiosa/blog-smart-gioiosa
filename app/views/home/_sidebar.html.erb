@@ -6,27 +6,23 @@
 
                 <h3>About me</h3>
                 <img src="img/avatar.png" class="avatar-full-width img-responsive" />
-                
+
                 <p>Lorem ipsum dolor sit amet, consectetuer <strong>adipiscing elit</strong>. Aenean commodo ligula eget dolor. Aenean massa.</p>
                 <p><a class="btn btn-ada-dark" href="#">Get in touch</a></p>
 
               </div>
             </section>
-
+            <%if @tags.exists?%>
             <section class="col-md-12 wow fadeIn">
               <div class="tags">
 
                 <h3>Tags</h3>
-
-                <a href="#" class="btn btn-ada-dark btn-tag">#music</a>
-                <a href="#" class="btn btn-ada-dark btn-tag">#surfing</a>
-                <a href="#" class="btn btn-ada-dark btn-tag">#holiday</a>
-                <a href="#" class="btn btn-ada-dark btn-tag">#lifestyle</a>
-                <a href="#" class="btn btn-ada-dark btn-tag">#travel</a>
-
+                <% @tags.each do |tag| %>
+                <%= link_to '#'+tag.name, tag_path(tag), class:"btn btn-ada-dark btn-tag" %>
+                <%end%>
               </div>
             </section>
-
+            <%end%>
             <section class="col-md-12 wow fadeIn">
               <div class="popular-posts">
 

@@ -10,11 +10,13 @@ Rails.application.routes.draw do
     resources :projects
     resources :contacts
     resources :newsletters
+    resources :tags
   end
 
   match 'contatti' => 'contacts#new', via: :get
   resources :contacts, path:'contatti', only: [:new, :create]
   resources :newsletters
+  resources :tags
   root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

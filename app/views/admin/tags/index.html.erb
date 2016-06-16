@@ -1,0 +1,33 @@
+<%if @tags.first.blank?%>
+  <br/>
+  <p class="lead text-center">Al momomento non ci sono tags inseriti</p>
+  <%= link_to fa_icon("plus") + " New Tag", new_admin_tag_path(@tag), remote: true, class: "btn btn-success" %>
+  <%= link_to "Back", admin_tags_path(), class: "btn btn-primary"%>
+<%else%>
+<div class="page-header">
+  <h1>Tags</h1>
+  <ul class="actions">
+    <li><%= link_to fa_icon("plus") + " New Tag", new_admin_tag_path(@tag), remote: true, class: "btn btn-success" %></li>
+  </ul>
+</div>
+<div class="table-responsive">
+<table class="table table-striped">
+ <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+    <tbody>
+      <% @tags.each do |tag| %>
+        <tr>
+          <td><%=  tag.name %></td>
+
+          <td class="col-md-1"><%= link_to fa_icon("pencil") +" Edit", edit_admin_tag_path(tag), remote: true, class:"btn btn-primary" %> </td>
+          <td class="col-md-1"><%= link_to fa_icon("trash") + " Delete", [:admin, tag], method: :delete, data: {confirm: 'You Sure'}, class: "btn btn-danger"%>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%end%>

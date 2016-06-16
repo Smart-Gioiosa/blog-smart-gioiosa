@@ -33,6 +33,18 @@
                </div>
              </div>
 
+
+             <h2>Tags</h2>
+            <br>
+            <%= hidden_field_tag "post[tag_ids][]", nil %>
+              <% for tag in Tag.all %>
+                <div class="checkbox">
+                  <%= check_box_tag "post[tag_ids][]", tag.id, @post.tags.include?(tag) %>
+                  <%= tag.name %>
+                </div>
+             <% end %>
+             <br>
+
                </div>
               <div class="modal-footer">
                 <%= f.submit "Submit", class: "btn btn-primary"%>
