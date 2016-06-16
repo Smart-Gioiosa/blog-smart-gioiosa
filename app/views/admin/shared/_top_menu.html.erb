@@ -20,7 +20,16 @@
        <li class="<%= 'active' if params[:controller] == 'admin/posts' %>"><%= link_to "POSTS", admin_posts_path %></li>
        <li class="<%= 'active' if params[:controller] == 'admin/projects' %>"><%= link_to "PROJECTS", admin_projects_path %></li>
        <li class="<%= 'active' if params[:controller] == 'admin/contacts' %>"><%= link_to "CONTACTS", admin_contacts_path %></li>
-       <li class="<%= 'active' if params[:controller] == 'admin/newsletters' %>"><%= link_to "NEWSLETTERS", admin_newsletters_path %></li>
+       <li class="<%= 'active' if params[:controller] == 'admin/newsletters' %>"><%= link_to "NEWSLETTERS", admin_newsletters_path %></li> 
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %>        
+      </li>
+      <% else %>
+      <li>
+        <%= link_to('LOGIN', new_user_session_path)  %>  
+      </li>
+      <% end %>
       </ul>
    </div><!-- /.navbar-collapse -->
 
