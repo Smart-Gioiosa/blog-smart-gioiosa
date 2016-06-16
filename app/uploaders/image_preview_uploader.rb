@@ -5,9 +5,16 @@ class ImagePreviewUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
    include CarrierWave::MiniMagick
+   include ::CarrierWave::Backgrounder::Delay
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  if Rails.env.development?
+    storage :file
+  end
+
+  if Rails.env.production?
+    storage :fog
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.

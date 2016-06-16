@@ -51,4 +51,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
+gem 'delayed_job_active_record'
+gem 'carrierwave_backgrounder'
+gem 'daemons'
 gem 'devise'
