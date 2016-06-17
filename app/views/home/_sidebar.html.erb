@@ -26,22 +26,14 @@
             <section class="col-md-12 wow fadeIn">
               <div class="popular-posts">
 
-                <h3>Popular posts</h3>
+                <h3>Ultmi Progetti</h3>
 
-                <a href="post-image.html">
-                  <img src="img/photos/DeathtosStockSerenity9.jpg" class="img-responsive" />
-                  <h4>Don't look at me</h4>
-                </a>
-
-                <a href="post-image.html">
-                  <img src="img/photos/DeathtoStock_EnergyandSerenity6.jpg" class="img-responsive" />
-                  <h4>I'm only breathing</h4>
-                </a>
-
-                <a href="post-image.html">
-                  <img src="img/photos/DeathtoStock_EnergyandSerenity5.jpg" class="img-responsive" />
-                  <h4>You're sharp alright</h4>
-                </a>
+                <%@sidebar_project.each do |project|%>
+                  <%unless project.image_preview.blank?%>
+                    <%= link_to image_tag(project.image_preview.url(:thumb2), class:"img-responsive" ), project_path(project)%>
+                  <%end%>
+                  <h4> <%= link_to project.title,project_path(project) %></h4>
+                <%end%>
 
 
               </div>

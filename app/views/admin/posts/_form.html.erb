@@ -16,7 +16,7 @@
 
 
               <% if @post.image_preview.present? %>
-               <%= image_tag(@post.image_preview.url(:thumb))%>
+               <%= image_tag(@post.image_preview.url(:small_thumb))%>
                <label>
                  <%= f.check_box :remove_image_preview %>
                  Remove ImagePreview

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :contacts, path:'contatti', only: [:new, :create]
   resources :newsletters
   resources :tags
+  resources :projects
   root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

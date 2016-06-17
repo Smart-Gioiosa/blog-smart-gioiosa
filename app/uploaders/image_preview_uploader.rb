@@ -23,7 +23,17 @@ class ImagePreviewUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  process :resize_to_limit => [1920, 1920]
+
    version :thumb do
+     process :resize_to_fill => [600, 600]
+   end
+
+   version :thumb2 do
+     process :resize_to_fit => [600, 600]
+   end
+
+   version :small_thumb do
      process :resize_to_fit => [150, 150]
    end
   # Provide a default URL as a default if there hasn't been a file uploaded:

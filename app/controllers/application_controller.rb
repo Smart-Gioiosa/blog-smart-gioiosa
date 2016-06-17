@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   def setting
     @newsletter=Newsletter.new
     @tags = Tag.all
+    @sidebar_project= Project.last(3).reverse
   end
 
 end

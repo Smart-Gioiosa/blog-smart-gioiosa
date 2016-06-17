@@ -2,19 +2,16 @@
 
   <div class="container">
 
-    <div class="post">
-      <%unless @post.image_preview.blank?%>
-        <%= image_tag @post.image_preview, class:"img-responsive"  %>
+    <div class="project">
+        <%unless @project.image_preview.blank?%>
+          <%= image_tag @project.image_preview, class:"img-responsive"  %>
       <%end%>
       <div class="caption">
         <div class="header">
-          <span class="post-tag">
-            <%@post.tags.each do |tag| %> <%= '#'+tag.name %><%end%>
-          </span>
-          <h1><%=@post.title%></h1>
+          <h1><%=@project.title%></h1>
         </div>
 
-        <%=raw @post.body%>
+        <%=raw @project.description%>
         <!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque <a href="#">penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, <strong>pretium quis, sem.</strong></p>
 
         <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
@@ -62,21 +59,21 @@
           <a href="#">
             <img src="img/photos/DeathtoStock_EnergyandSerenity7.jpg" class="img-responsive" />
             <h4>Don't look at me</h4>
-            <span class="post-tag">#lifestype</span>
+            <span class="project-tag">#lifestype</span>
           </a>
         </div>
         <div class="col-md-4">
           <a href="#">
             <img src="img/photos/DeathtoStock_EnergyandSerenity6.jpg" class="img-responsive" />
             <h4>You're sharp alright</h4>
-            <span class="post-tag">#music</span>
+            <span class="project-tag">#music</span>
           </a>
         </div>
         <div class="col-md-4">
           <a href="#">
             <img src="img/photos/DeathtoStock_EnergyandSerenity5.jpg" class="img-responsive" />
             <h4>Loose lips</h4>
-            <span class="post-tag">#travel</span>
+            <span class="project-tag">#travel</span>
           </a>
         </div>
       </div>
@@ -91,12 +88,12 @@
           var disqus_config = function () {
 
           // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = '<%= @post.id%>';
+          this.page.identifier = '<%= @project.id%>';
           // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          //this.page.title = '<%= @post.title%>'
-          //this.page.url = '<%= url_for([@post, {only_path: false}])%>';
+          //this.page.title = '<%= @project.title%>'
+          //this.page.url = '<%= url_for([@project, {only_path: false}])%>';
           this.page.url = '<%=request.original_url%>'
-          //this.page.url = 'http://localhost:3000/posts/1';
+          //this.page.url = 'http://localhost:3000/projects/1';
          };
 
           /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -113,29 +110,3 @@
   </div>
 
 </div>
-
-<!--
-<div id="disqus_thread"></div>
-<script>
-/** * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS. * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
- var disqus_config = function () {
-
- // Replace PAGE_URL with your page's canonical URL variable
- this.page.identifier = '<%= @post.id%>';
- // Replace PAGE_IDENTIFIER with your page's unique identifier variable
- //this.page.title = '<%= @post.title%>'
- //this.page.url = '<%= url_for([@post, {only_path: false}])%>';
- this.page.url = '<%=request.original_url%>'
- //this.page.url = 'http://localhost:3000/posts/1';
-};
-
- //var disqus_identifier = '<%= @post.id%>';
- //var disqus_title = '<%= @post.title%>';
- //var disqus_url =  '<%= url_for([@post, {only_path: false}])%>';
-
- (function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script'); s.src = '//smartgioiosa.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();
-</script>
- <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
--->

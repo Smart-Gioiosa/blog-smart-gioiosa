@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.last(3).reverse
   end
 end
