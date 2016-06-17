@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :tags
   end
 
+  match 'chi-siamo' => 'about_us#index', via: :get
   match 'contatti' => 'contacts#new', via: :get
   resources :contacts, path:'contatti', only: [:new, :create]
   resources :newsletters
