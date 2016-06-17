@@ -6,7 +6,7 @@
        <div class="post">
          <div class="media">
            <%unless project.image_preview.blank?%>
-            <%= image_tag project.image_preview.url(:thumb2), class:"img-responsive"  %>
+            <%= link_to image_tag(project.image_preview.url(:thumb2), class:"img-responsive"), project_path(project)  %>
            <%end%>
          </div>
          <div class="caption text-center">
@@ -18,10 +18,5 @@
      <%end%>
 
 
-     <!--<div class="col-md-12">
-       <div class="text-center">
-         <a href="#" class="btn btn-ada-light load-more">Older posts</a>
-       </div>
-     </div>-->
 
    </div>
