@@ -12,32 +12,36 @@
 
               </div>
             </section>
-            <%if @tags.exists?%>
-            <section class="col-md-12 wow fadeIn">
-              <div class="tags">
+            <%if controller.controller_name=="posts"%>
+              <%if @tags.exists?%>
+              <section class="col-md-12 wow fadeIn">
+                <div class="tags">
 
-                <h3>Tags</h3>
-                <% @tags.each do |tag| %>
-                <%= link_to '#'+tag.name, tag_path(tag), class:"btn btn-ada-dark btn-tag" %>
-                <%end%>
-              </div>
-            </section>
-            <%end%>
-            <section class="col-md-12 wow fadeIn">
-              <div class="popular-posts">
-
-                <h3>Ultmi Progetti</h3>
-
-                <%@sidebar_project.each do |project|%>
-                  <%unless project.image_preview.blank?%>
-                    <%= link_to image_tag(project.image_preview.url(:thumb2), class:"img-responsive" ), project_path(project)%>
+                  <h3>Tags</h3>
+                  <% @tags.each do |tag| %>
+                  <%= link_to '#'+tag.name, tag_path(tag), class:"btn btn-ada-dark btn-tag" %>
                   <%end%>
-                  <h4> <%= link_to project.title,project_path(project) %></h4>
-                <%end%>
+                </div>
+              </section>
+              <%end%>
+            <%end%>
+            <%if controller.controller_name=="home"%>
+              <section class="col-md-12 wow fadeIn">
+                <div class="popular-posts">
+
+                  <h3>Ultmi Progetti</h3>
+
+                  <%@sidebar_project.each do |project|%>
+                    <%unless project.image_preview.blank?%>
+                      <%= link_to image_tag(project.image_preview.url(:thumb2), class:"img-responsive" ), project_path(project)%>
+                    <%end%>
+                    <h4> <%= link_to project.title,project_path(project) %></h4>
+                  <%end%>
 
 
-              </div>
-            </section>
+                </div>
+              </section>
+            <%end%>
 
           </div>
         </div>
