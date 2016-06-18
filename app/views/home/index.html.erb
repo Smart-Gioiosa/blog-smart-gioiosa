@@ -36,7 +36,7 @@
 
                   <%= link_to post.title, post_path(post), class: "post-title"%>
                   <span class="post-date"><%= post.created_at.strftime("%d %b %Y")%></span>
-                  <p class="post-description"><%=raw (post.body).truncate(350)%></p>
+                  <%=raw (post.body).truncate(350)%>
                 </div>
                 <div class="col-md-6 media">
                   <%unless post.image_preview.blank?%>
