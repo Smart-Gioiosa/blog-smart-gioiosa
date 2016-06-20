@@ -28,7 +28,7 @@
         
           var disqus_config = function () {
           this.page.shortname = 'smartgioiosa'
-          this.page.identifier = '<%= @post.id%>';
+          this.page.identifier = '<%= @post.slug%>';
           this.page.title = '<%= @post.title%>';
           this.page.url = '<%= request.url%>'
          };
