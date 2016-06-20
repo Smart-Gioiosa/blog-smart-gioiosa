@@ -21,25 +21,21 @@
       <!-- START DISQUS -->
       <div id="disqus_thread"></div>
       <script type="text/javascript">
-          /* * * CONFIGURATION VARIABLES * * */
+
           var disqus_config = function () {
-          // Replace PAGE_URL with your page's canonical URL variable
-          this.page.url = 'http://smartgioiosa.it'
-          this.page.identifier = '<%= @project.slug%>'
-          // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          this.page.title = '<%= @project.title%>'
-          /*this.page.url = '<%= url_for only_path: false%>'*/
-          /*this.page.url = '<%=request.url%>'*/
+          this.page.shortname = 'blogsmartgioiosa'
+          this.page.identifier = '<%= request.fullpath%>';
+          this.page.title = '<%= @project.title%>';
+          this.page.url = '<%= request.url%>'
          };
 
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function() { // DON'T EDIT BELOW THIS LINE
-          var d = document, s = d.createElement('script'); s.src = '//smartgioiosa.disqus.com/embed.js';
+
+          (function() {
+          var d = document, s = d.createElement('script'); s.src = '//blogsmartgioiosa.disqus.com/embed.js';
           s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();
           </script>
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
       <!-- END DISQUS -->
-
     </div>
 
 
