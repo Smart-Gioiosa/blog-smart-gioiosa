@@ -8,7 +8,13 @@ class ImagePreviewUploader < CarrierWave::Uploader::Base
    include ::CarrierWave::Backgrounder::Delay
 
   # Choose what kind of storage to use for this uploader:
+  if Rails.env.development?
     storage :file
+  end
+
+   if Rails.env.production?
+    storage :fog
+   end
 
   # storage :fog
 

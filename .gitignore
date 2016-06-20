@@ -25,6 +25,7 @@ doc/
 /public/uploads/*
 /config/secrets.yml
 /config/local_env.yml
+/config/initializers/carrierwave.rb
 
 
 *.swp
