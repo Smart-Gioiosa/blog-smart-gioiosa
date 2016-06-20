@@ -33,7 +33,7 @@
           this.page.identifier = '<%= @post.id%>';
           // Replace PAGE_IDENTIFIER with your page's unique identifier variable
           this.page.title = '<%= @post.title%>';
-          this.page.url = '<%= url_for([@post, :only_path => false]) %>';
+          this.page.url = '<%= request.url%>';
          };
 
           /* * * DON'T EDIT BELOW THIS LINE * * */
