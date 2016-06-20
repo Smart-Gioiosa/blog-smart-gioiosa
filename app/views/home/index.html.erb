@@ -3,55 +3,48 @@
     <div class="col-md-8">
       <%@posts.each_with_index do |post, index|%>
       <%if index.even?%>
-      <section class="col-md-12 wow fadeIn">
-        <div class="post">
-              <div class="row">
-                <div class="col-md-6 media">
+        <section class="col-md-12 wow fadeIn">
+          <div class="post">
+            <div class="row">
+              <div class="col-md-6 media">
+                <%unless post.image_preview.blank?%>
+                  <%= image_tag post.image_preview.url(:thumb), class:"img-responsive"  %>
+                <%end%>
+              </div>
+              <div class="col-md-6 caption">
+                <span class="post-tag">
+                  <%post.tags.each do |tag| %> <%= '#'+tag.name %><%end%>
+                </span>
+                <%=link_to post.title, post_path(post), class: "post-title"%>
+                <span class="post-date"><%=post.created_at.strftime("%d %b %Y") %></span>
+                <p class="post-description"><%= (raw post.body.truncate(250, separator: ' '))%> <%= link_to "Continua", post_path(post)%></p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <%else%>
+          <section class="col-md-12 wow fadeIn">
+          <div class="post">
+            <div class="row">
+              <div class="col-md-6 caption">
+                <span class="post-tag">
+                  <%post.tags.each do |tag| %> <%= '#'+tag.name %><%end%>
+                </span>
+                <%=link_to post.title, post_path(post), class: "post-title"%>
+                <span class="post-date"><%=post.created_at.strftime("%d %b %Y") %></span>
+                <p class="post-description"><%= (raw post.body.truncate(250, separator: ' '))%> <%= link_to "Continua", post_path(post)%></p>
+                 </div>
+                 <div class="col-md-6 media">
                   <%unless post.image_preview.blank?%>
                     <%= image_tag post.image_preview.url(:thumb), class:"img-responsive"  %>
-                    <%end%>
-                </div>
-                <div class="col-md-6 caption">
-
-                  <span class="post-tag">
-                    <%post.tags.each do |tag| %> <%= '#'+tag.name %><%end%>
-                  </span>
-
-                  <%= link_to post.title, post_path(post), class: "post-title"%>
-                  <span class="post-date"><%=post.created_at.strftime("%d %b %Y") %></span>
-                  <p class="post-description"><%=raw (post.body).truncate(350)%></p>
-                </div>
-              </div>
-            </div>
-          </section>
-        <%else%>
-          <section class="col-md-12 wow fadeIn">
-            <div class="post">
-              <div class="row">
-                <div class="col-md-6 caption">
-
-                  <span class="post-tag">
-                    <%post.tags.each do |tag| %> <%= '#'+tag.name %><%end%>
-                  </span>
-
-                  <%= link_to post.title, post_path(post), class: "post-title"%>
-                  <span class="post-date"><%= post.created_at.strftime("%d %b %Y")%></span>
-                  <%=raw (post.body).truncate(350)%>
-                </div>
-                <div class="col-md-6 media">
-                  <%unless post.image_preview.blank?%>
-                  <%= image_tag post.image_preview.url(:thumb), class:"img-responsive"  %>
                   <%end%>
+                  </div>
                 </div>
               </div>
-            </div>
           </section>
-        <%end%>
-        <%end%>
-
-        </div>
-
+          <%end%>
+      <%end%>
+      </div>
        <%= render "sidebar"%>
-
       </div><!--/row -->
     </div> <!--/container -->
