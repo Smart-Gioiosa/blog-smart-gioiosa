@@ -4,7 +4,7 @@ A blog to post smart ideas.
 
 ## Rails version:
 
-* 5.0.0.rc1
+* 5.0.0
 
 ## Ruby version: 
 
