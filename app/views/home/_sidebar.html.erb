@@ -31,12 +31,12 @@
 
                   <h3>Ultmi Progetti</h3>
 
-                  <%@sidebar_project.each do |project|%>
-                    <%unless project.image_preview.blank?%>
-                      <%= link_to image_tag(project.image_preview.url(:thumb2), class:"img-responsive" ), project_path(project)%>
+                  
+                    <%unless @sidebar_project.image_preview.blank?%>
+                      <%= link_to image_tag(@sidebar_project.image_preview.url(:thumb2), class:"img-responsive" ), project_path(@sidebar_project)%>
                     <%end%>
-                    <h4> <%= link_to project.title,project_path(project) %></h4>
-                  <%end%>
+                    <h4> <%= link_to @sidebar_project.title,project_path(@sidebar_project) %></h4>
+                  
 
 
                 </div>
