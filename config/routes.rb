@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'team/index'
+
   devise_for :users
   resources :posts, only:[:index, :show]
 
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
 
   match 'chi-siamo' => 'about_us#index', via: :get
   match 'contatti' => 'contacts#new', via: :get
+  match 'team' => 'team#index', via: :get
   resources :contacts, path:'contatti', only: [:new, :create]
   resources :newsletters
   resources :tags
