@@ -4,6 +4,17 @@
             <section class="col-md-12 wow fadeIn">
               <div class="about">
 
+                <h3>CFP "Smart Gioiosa" <br> STAY TUNED!!!</h3>
+                <a href="http://cfp.smartgioiosa.it"><img src="/assets/cfp-smartgioiosa.png" class="avatar-full-width img-responsive" /></a>
+
+
+                <p><%= link_to 'Call For Proposal', "http://cfp.smartgioiosa.it", class:"btn btn-ada-dark"%></p>
+
+              </div>
+            </section>
+            <section class="col-md-12 wow fadeIn">
+              <div class="about">
+
                 <h3>Smart Gioiosa</h3>
                 <img src="/assets/avatar_tatta.png" class="avatar-full-width img-responsive" />
 
@@ -31,12 +42,12 @@
 
                   <h3>Ultmi Progetti</h3>
 
-                  
+
                     <%unless @sidebar_project.image_preview.blank?%>
                       <%= link_to image_tag(@sidebar_project.image_preview.url(:thumb2), class:"img-responsive" ), project_path(@sidebar_project)%>
                     <%end%>
                     <h4> <%= link_to @sidebar_project.title,project_path(@sidebar_project) %></h4>
-                  
+
 
 
                 </div>
