@@ -223,7 +223,7 @@ ul {
   position: relative;
   text-align: center;
   background: #FFFFFF;
-  padding: 40px 0 34px;
+  /*padding: 40px 0 34px;*/
 }
 
 #header .top .search {
