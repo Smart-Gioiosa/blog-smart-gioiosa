@@ -8,13 +8,13 @@
               <div class="row">
                 <div class="col-md-6 media">
                   <%unless post.image_preview.blank?%>
-                    <%= image_tag post.image_preview, class:"img-responsive"  %>
+                    <%= image_tag post.image_preview.url(:thumb), class:"img-responsive"  %>
                   <%end%>
                 </div>
                 <div class="col-md-6 caption">
 
                   <span class="post-tag">
-                    <%post.tags.each do |tag| %> <%= link_to '<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>'.html_safe + "  " + tag.name, tag_path(tag) %><%end%>
+                  <%post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><%end%>
                   </span>
 
                   <%= link_to post.title, post_path(post), class: "post-title"%>
@@ -31,7 +31,7 @@
                 <div class="col-md-6 caption">
 
                   <span class="post-tag">
-                    <%post.tags.each do |tag| %> <%= link_to '<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>'.html_safe + "  " + tag.name, tag_path(tag) %><%end%>
+                  <%post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><%end%>
                   </span>
 
                   <%= link_to post.title, post_path(post), class: "post-title"%>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-6 media">
                   <%unless post.image_preview.blank?%>
-                    <%= image_tag post.image_preview, class:"img-responsive"  %>
+                    <%= image_tag post.image_preview.url(:thumb), class:"img-responsive"  %>
                   <%end%>
                 </div>
               </div>
