@@ -9,7 +9,7 @@
       <div class="caption">
         <div class="header">
           <span class="post-tag">
-                  <%post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><%end%>
+                  <%@post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><%end%>
           </span>
           <h1><%=@post.title%></h1>
         </div>
