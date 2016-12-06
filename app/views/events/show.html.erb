@@ -1,0 +1,24 @@
+
+<div id="posts" class="container">
+  <hr class="featurette-divider">
+  <div class="featurette" id="about">
+    <%= image_tag @event.event_image, class: "featurette-image imag-thumbnail img-responsive pull-right"%>
+    <!--<img class="featurette-image img-thumbnail img-responsive pull-right" src="/assets/Nino-smart.jpg">-->
+      <h2 class="featurette-heading"><%=@event.title%> </h2>
+      <h4><span class="text-muted"><%= @event.location%> | <%= @event.event_time.strftime("%m/%d/%Y") %> <%= @event.event_time.strftime("alle : %I:%M")%></span></h4>
+      <br>
+            <p class="lead"><%=raw(@event.body)%></p>
+        
+          <%if @event.facebook_event.present?%>
+            <%=link_to "Evento su Facebook", raw(@event.facebook_event), target: "_blanck"%>
+          <%end%>
+          <br>
+          <hr>
+          <%if @event.external_link.present?%>
+            <p><%= link_to 'ISCRIVITI AL CORSO', raw(@event.external_link), target:"_blanck", class:"btn btn-primary"%></p>
+          <%end%>
+        </div>
+    
+        <hr class="featurette-divider">
+</div>
+

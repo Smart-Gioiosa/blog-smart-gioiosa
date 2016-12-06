@@ -20,6 +20,8 @@
        <li class="<%= 'active' if params[:controller] == 'admin/posts' %>"><%= link_to "POSTS", admin_posts_path %></li>
        <li class="<%= 'active' if params[:controller] == 'admin/tags' %>"><%= link_to "TAGS", admin_tags_path %></li> 
        <li class="<%= 'active' if params[:controller] == 'admin/projects' %>"><%= link_to "PROJECTS", admin_projects_path %></li>
+       <li class="<%= 'active' if params[:controller] == 'admin/events' %>"><%= link_to "EVENTS", admin_events_path %></li>
+       <li class="<%= 'active' if params[:controller] == 'admin/news' %>"><%= link_to "NEWS", "#" %></li>
        <li class="<%= 'active' if params[:controller] == 'admin/contacts' %>"><%= link_to "CONTACTS", admin_contacts_path %></li>
        <li class="<%= 'active' if params[:controller] == 'admin/newsletters' %>"><%= link_to "NEWSLETTERS", admin_newsletters_path %></li>
       <% if user_signed_in? %>

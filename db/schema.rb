@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617143424) do
+ActiveRecord::Schema.define(version: 20161206131312) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +35,20 @@ ActiveRecord::Schema.define(version: 20160617143424) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.datetime "event_time"
+    t.string   "external_link"
+    t.string   "location"
+    t.string   "slug"
+    t.string   "event_image"
+    t.string   "facebook_event"
+    t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

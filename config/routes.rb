@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+  get 'events/index'
+
   get 'team/index'
 
   devise_for :users
@@ -13,6 +16,7 @@ Rails.application.routes.draw do
     resources :contacts
     resources :newsletters
     resources :tags
+    resources :events
   end
 
   match 'chi-siamo' => 'about_us#index', via: :get
@@ -22,6 +26,7 @@ Rails.application.routes.draw do
   resources :newsletters
   resources :tags
   resources :projects
+  resources :events
   root to: "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

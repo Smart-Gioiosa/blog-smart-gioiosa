@@ -1,0 +1,34 @@
+<div id="documentation">
+    <div class="container">
+      <%if @events.first.present?%>
+        <h2 class="text-center">I Prossimi eventi dell'Associazione Smart Gioiosa</h2>
+        <div class="block">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Evento</th>
+                <th>Luogo</th>
+                <th>Dettagli</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%@events.each do |event|%>
+              <tr>
+                <th scope="row">#</th>
+                <td><%= event.title%></td>
+                <td><%= event.location%></td>
+                <td><%= link_to fa_icon("external-link"), event_path(event) , title:"#{event.title}"%></td>
+                <td><%= event.event_time.strftime("%d/%m/%Y")%></td>
+              </tr>
+              <%end%>
+            </tbody>
+          </table>
+        </div>
+        <%else%>
+          <h2 class="text-center">NESSUN EVENTO IN PROGRAMMA</h2>
+          <br>
+        <%end%>
+      </div>
+  </div><!-- /.container -->

@@ -1,0 +1,56 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1><%= event.new_record? ? 'New  Event' : "Editing Event"  %> </h1>
+          <%= form_for([:admin, @event], remote: true) do |f| %>
+            <div class="modal-body">
+              <%= render 'shared/error_messages', object: f.object %>
+
+
+              <%= f.label :title %><br>
+              <%= f.text_field :title, class: 'form-control', placeholder:"Title Event" %>
+
+              <%= f.label :body %><br>
+              <%= f.text_area :body, class: 'form-control', placeholder:"Body Event" %>
+
+              <%= f.label :location %><br>
+              <%= f.text_field :location, class: 'form-control', placeholder:"Location Event" %>
+
+              <%= f.label :external_link %><br>
+              <%= f.text_field :external_link, class: 'form-control', placeholder:"External Link" %>
+              
+              <%= f.label :facebook_event %><br>
+              <%= f.text_field :facebook_event, class: 'form-control', placeholder:"Link facebook event" %>
+
+              <% if @event.event_image.present? %>
+               <%= image_tag(@event.event_image.url(:small_thumb))%>
+               <label>
+                 <%= f.check_box :remove_event_image %>
+                 Remove Image Event
+               </label>
+             </p>
+             <%end%>
+             <br>
+             <div class="row">
+               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                 <div class="form-group">
+                   <%= f.label :event_image, "Immagine Evento" %>
+                   <%= f.file_field :event_image %>
+                 </div>
+               </div>
+             </div>
+
+              <%= f.label :event_time %><br>
+              <%= f.datetime_select :event_time%>
+
+
+            </div>
+              <div class="modal-footer">
+                <%= f.submit "Submit", class: "btn btn-primary"%>
+              </div>
+
+       <% end %>
+    </div>
+  </div>
+</div>
