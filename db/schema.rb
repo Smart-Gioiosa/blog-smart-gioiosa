@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206140059) do
+ActiveRecord::Schema.define(version: 20161206141856) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -35,20 +35,6 @@ ActiveRecord::Schema.define(version: 20161206140059) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "external_link"
-    t.string   "location"
-    t.string   "slug"
-    t.string   "event_image"
-    t.string   "facebook_event"
-    t.string   "event_time"
-    t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
