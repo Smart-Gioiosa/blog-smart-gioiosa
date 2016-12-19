@@ -21,7 +21,14 @@
     </script>
     <%end%>
   </head>
-  <body>
+  <body class="collapsing_header">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %>
+         <a class="close" data-dismiss="alert">&#215;</a>
+      </div>
+    <% end %>
+  </div>
     <%= render partial: "shared/header_home"%>
   <!--
   <#%if controller.controller_name=="home"%>
@@ -31,13 +38,13 @@
   <#%end%>
 -->
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %>
-         <a class="close" data-dismiss="alert">&#215;</a>
-      </div>
-    <% end %>
-  </div>
+<%if controller.controller_name=="home"%>
+  <%= render partial: "shared/slider"%>
+<%end%>
+
+<div class="main">
+
+
 
     <%= yield%>
 
@@ -47,6 +54,7 @@
     <a id="scroll-to-top">
       <i class="fa fa-angle-up"></i>
     </a>
+</div>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%if controller.controller_name=="contacts"%>
