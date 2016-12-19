@@ -13,20 +13,22 @@
                       <li class="<%= "active" if current_page?("/team")%>">
                         <%= link_to "Team", team_path%>
                       </li>
-                      <li class="<%= "active" if current_page?("/posts")%>">
-                        <%= link_to "Blog", posts_path%> 
+                      <!--
+                      <li class="<#%= "active" if current_page?("/posts")%>">
+                        <#%= link_to "Blog", posts_path%> 
                       </li>
-                      <li class="<%= "active" if current_page?("/events")%>">
-                        <%= link_to "Eventi", events_path%>
+                      <li class="<#%= "active" if current_page?("/events")%>">
+                        <#%= link_to "Eventi", events_path%>
                       </li>
-                      <li class="<%= "active" if current_page?("/projects")%>">
-                        <%= link_to "Progetti", projects_path%>
+                      <li class="<#%= "active" if current_page?("/projects")%>">
+                        <#%= link_to "Progetti", projects_path%>
                       </li>
-                      <li><%= link_to "Call For Proposals", "http://cfp.smartgioiosa.it"%></li>
+                      <li><#%= link_to "Call For Proposals", "http://cfp.smartgioiosa.it"%></li>
                               
-                      <li class="<%= "active" if current_page?("/contatti")%>">
-                        <%= link_to "Contatti", contatti_path%>
+                      <li class="<#%= "active" if current_page?("/contatti")%>">
+                        <#%= link_to "Contatti", contatti_path%>
                       </li>
+                      -->
                       <!--  
                       <li class="dropdown"> <a data-toggle="dropdown" class="dropdown-toggle" href="#">Pages<span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -47,9 +49,10 @@
                </div>
           </div>
           <div id="social_media_wrapper"> 
-            <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a> 
-            <a href="https://twitter.com/leonartgr"><i class="fa fa-twitter"></i></a> 
-            <a href="#googleplus"><i class="fa fa-google-plus"></i></a> 
+            <a href="https://www.facebook.com/SmartGioiosa/"><i class="fa fa-facebook"></i></a> 
+            <a href="https://twitter.com/SmartGioiosa"><i class="fa fa-twitter"></i></a>  
+            <a href="https://www.instagram.com/smartgioiosa/"><i class="fa fa-instagram"></i></a>
+            
           </div>
           <% if user_signed_in? %>
           <div id="sign">
