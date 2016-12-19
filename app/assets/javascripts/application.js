@@ -14,9 +14,14 @@
 //= require jquery_ujs
 // require turbolinks
 // require_tree .
-//= require js/jquery-1.11.3.min
-//= require js/bootstrap.min
-//= require js/owl.carousel
-//= require js/smoothScroll
+//= require js/modernizr.custom.48287
+//= require twitter-bootstrap/js/bootstrap.min
+//= require js/woothemes-FlexSlider-06b12f8/jquery.flexslider-min
+//= require js/prettyPhoto_3.1.5/jquery.prettyPhoto
+//= require js/isotope/jquery.isotope.min
+//= require js/jquery.ui.totop
+//= require js/easing
 //= require js/wow.min
-//= require js/main
+//= require js/snap.svg-min
+//= require js/restart_theme
+
