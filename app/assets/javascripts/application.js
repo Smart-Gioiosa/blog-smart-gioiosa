@@ -24,4 +24,4 @@
 //= require js/wow.min
 //= require js/snap.svg-min
 //= require js/restart_theme
-
+//= require js/contact_form

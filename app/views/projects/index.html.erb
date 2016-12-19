@@ -1,22 +1,117 @@
-<div id="posts" class="container">
+<section class="hgroup">
+          <div class="container">
+               <h1>Porgetti Smart Gioiosa</h1>
+               <h2>In questa sezione del portale web troverete tutte i pogetti e iniziative che <strong>L'Associazione Smart Gioiosa</strong> sta portando avanti</h2>
+               <ul class="breadcrumb pull-right">
+                    <li><a href="/">Home</a> </li>
+                    <li class="active">Progetti</li>
+               </ul>
+          </div>
+     </section>
 
 
-  <%@projects.each do |project|%>
+<section>
+  <div class="container">
+      <ul class="portfolio_filters">
+        <li><a href="#" data-filter="*">Tutti</a></li>
+        <li><a href="#" data-filter=".web_programming">web-programming</a></li>
+        <li><a href="#" data-filter=".smart_city">smart-city</a></li>
+        <!--<li><a href="#" data-filter=".cat_travel">travel</a></li>
+        <li><a href="#" data-filter=".cat_poetic">poetic</a></li>-->
+      </ul>
+    </div>
+  </section>
+
+
+<section class="portfolio_strict">
+          <div class="container">
+               <div class="row isotope_portfolio_container">
+                    <div class="web_programming col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                         <div class="portfolio_item"> <a href="http://www.smartgioiosa.it/projects/corso-base-di-programmazione-web" data-path-hover="M 180,190 0,158 0,0 180,0 z">
+                              <figure style="background-image:url(/assets/web-programming.jpg)">
+                                   <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+                                        <path d="M 180,0 0,0 0,0 180,0 z"/>
+                                   </svg>
+                                   <figcaption>
+                                    <p>Con il progetto di programmazione web di base, verrà spiegato come si crea un'applicazione web, con lo sviluppo di un piccolo SOCIAL NETWORK, che sarà un clone di twitter. Questo progetto smart city viene realizzato grazie al supporto di due comunità: Sicily On Rails e Ruby on Rails Course.</p>
+                                        <div class="view_button">View</div>
+                                   </figcaption>
+                              </figure>
+                              </a>
+                              <div class="portfolio_description">
+                                   <h3><a href="http://www.smartgioiosa.it/projects/corso-base-di-programmazione-web">Corso di programazione web</a></h3>
+                                   <p>Web Programming</p>
+                              </div>
+                         </div>
+                    </div>
+                      
+
+                  
+                    <div class="smart_city col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                         <div class="portfolio_item"> <a href="http://cfp.smartgioiosa.it/" data-path-hover="M 180,190 0,158 0,0 180,0 z">
+                              <figure style="background-image:url(/assets/slider/idea.jpg)">
+                                   <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+                                        <path d="M 180,0 0,0 0,0 180,0 z"/>
+                                   </svg>
+                                   <figcaption>
+                                        <p>Vuoi essere #PROTAGONISTA del cambiamento valorizzando il tuo #TALENTO e le tue #COMPETENZE? Hai un'idea #INNOVATIVA ma non sai a chi proporla? Cosa aspetti, partecipa anche tu a Smart Gioiosa: concorso di idee per la realizzazione di smart cities nel territorio dei Nebrodi. </p>
+                                        <div class="view_button">View</div>
+                                   </figcaption>
+                              </figure>
+                              </a>
+                              <div class="portfolio_description">
+                                   <h3><a href="http://cfp.smartgioiosa.it/">Call For Proposals - Smart Gioiosa</a></h3>
+                                   <p>Smart City</p>
+                              </div>
+                         </div>
+                    </div>
+
+                     
+                    <div class="web_programming smart_city col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                         <div class="portfolio_item"> <a href="http://www.smartgioiosa.it/projects/ttatta" data-path-hover="M 180,190 0,158 0,0 180,0 z">
+                              <figure style="background-image:url(/assets/ttatta.png)">
+                                   <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+                                        <path d="M 180,0 0,0 0,0 180,0 z"/>
+                                   </svg>
+                                   <figcaption>
+                                        <p>TTatta è progetto che ha come obbiettivo la realizzazione di un nuovo modo di ricercare e fare le cose - un modo veloce e innovativo: SMART!!! ...</p>
+                                        <div class="view_button">View</div>
+                                   </figcaption>
+                              </figure>
+                              </a>
+                              <div class="portfolio_description">
+                                   <h3><a href="http://www.smartgioiosa.it/projects/ttatta">TTatta</a></h3>
+                                   <p>Web Programming - Smart City</p>
+                              </div>
+                         </div>
+                    </div>
+
+
+                </div>
+          </div>
+</section>
+
+<!--
+<div class="container">
+
+
+  <#%@projects.each do |project|%>
      <section class="col-md-4 wow fadeIn">
        <div class="post">
          <div class="media">
-           <%unless project.image_preview.blank?%>
-            <%= link_to image_tag(project.image_preview.url(:thumb2), class:"img-responsive"), project_path(project)  %>
-           <%end%>
+           <#%unless project.image_preview.blank?%>
+            <#%= link_to image_tag(project.image_preview.url(:thumb2), class:"img-responsive"), project_path(project)  %>
+           <#%end%>
          </div>
          <div class="caption text-center">
-           <%= link_to project.title, project_path(project), class:"post-title"%>
-           <span class="post-date"><%=project.created_at.strftime("%d %b %Y")%></span>
+           <#%= link_to project.title, project_path(project), class:"post-title"%>
+           <span class="post-date"><#%=project.created_at.strftime("%d %b %Y")%></span>
          </div>
        </div>
      </section>
-     <%end%>
+     <#%end%>
 
 
 
    </div>
+-->
