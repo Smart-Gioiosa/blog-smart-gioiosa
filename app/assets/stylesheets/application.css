@@ -12,6 +12,7 @@
  *
  * require_tree .
  *= require_self
+ *= require custom
  *= require animate
  *= require js/woothemes-FlexSlider-06b12f8/flexslider
  *= require js/prettyPhoto_3.1.5/prettyPhoto
