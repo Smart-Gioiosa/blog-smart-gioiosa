@@ -1,28 +1,33 @@
-<div id="single">
-
+<section class="hgroup">
   <div class="container">
+    <h1><%= @post.title%></h1>
+    <h2><i class="fa-time"></i><%=@post.created_at.strftime("%d %b %Y")%> | <%@post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %> | <%end%></h2>
 
-    <div class="post">
-      <%unless @post.image_preview.blank?%>
-        <%= image_tag @post.image_preview, class:"img-responsive"  %>
-      <%end%>
-      <div class="caption">
-        <div class="header">
-          <span class="post-tag">
-                  <%@post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><%end%>
-          </span>
-          <h1><%=@post.title%></h1>
-        </div>
-
-        <%=raw @post.body%>
-
-      </div>
-    </div>
+    <ul class="breadcrumb pull-right">
+      <li><a href="/">Home</a> </li>
+      <li><a href="/posts">Blog</a></li>
+    </ul>
+  </div>
+</section>
 
 
-    <div class="comments">
-
-      <!-- START DISQUS -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div id="leftcol" class="col-sm-12 col-md-12">
+        <article class="post">
+          <div class="post_content">
+            <figure> 
+                <%unless @post.image_preview.blank?%>
+                  <%= image_tag @post.image_preview, class:"img-responsive"  %>
+                <%end%>
+            </figure>
+               <%=raw @post.body%>
+            </div>
+        </article>
+        <div class="new_comment">
+        
+             <!-- START DISQUS -->
       <div id="disqus_thread"></div>
       <script type="text/javascript">
 
@@ -40,10 +45,10 @@
           </script>
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
       <!-- END DISQUS -->
-
+        
+        </div>
+     
+      </div>
     </div>
-
-
   </div>
-
-</div>
+</section>
