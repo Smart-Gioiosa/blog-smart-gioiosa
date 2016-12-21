@@ -21,7 +21,7 @@
             </div>
           </div>   
           <div class="post_content">
-            <figure><%= link_to image_tag(post.image_preview.url(:thumb), class:"img-responsive"), post_path(post)%></figure>
+            <figure><%= link_to image_tag(post.image_preview), post_path(post)%></figure>
             <p><%= (raw post.body.truncate(250, separator: ' '))%></p>
             <%= link_to "Continua", post_path(post), class: "btn btn-primary"%>
           </div>  

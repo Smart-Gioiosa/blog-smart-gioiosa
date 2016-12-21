@@ -19,7 +19,7 @@
           <div class="post_content">
             <figure> 
                 <%unless @post.image_preview.blank?%>
-                  <%= image_tag @post.image_preview, class:"img-responsive"  %>
+                  <%= image_tag @post.image_preview%>
                 <%end%>
             </figure>
                <%=raw @post.body%>
