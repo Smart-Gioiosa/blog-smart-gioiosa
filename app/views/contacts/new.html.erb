@@ -9,9 +9,6 @@
   </div>
 </section>
 
-
-
-
 <section>
   <div class="container">
     <div class="row">
@@ -33,165 +30,41 @@
           </address>
         </div>
       </div>
-
-          <div class="contact_form col-sm-8 col-md-8"> 
-                        <%= form_for(@contact) do |f| %>
-                        <!--<#%= render 'shared/error_messages', object: f.object %>-->
-                        <!--<form name="contact_form" id="contact_form" method="post">-->
-                              <div class="row">
-                                <div class="col-sm-6 col-md-6">
-                                  <%= f.label :name, "Name *" %> 
-                                    <%= f.text_field :name, class:"form-control", placeholder:"Nome" %>
-                                   </div>
-                                  
-                                   <div class="col-sm-6 col-md-6">
-                                    <%= f.label :surname, "Cognome *" %>
-                                    <%= f.text_field :surname, class:"form-control", placeholder:"Cognome" %>
-                                   </div>
-                              </div>
-                              <div class="row">
-                                   <div class="col-sm-12 col-md-12">
-                                    <%= f.label :email, "Email *" %>
-                                    <%= f.text_field :email, class:"form-control", placeholder:"Email" %>
-                                   </div>
-                                </div>
-                                <div class="row">
-                                   <div class="col-sm-12 col-md-12">
-                                    <%= f.label :subject, "Oggetto *" %>
-                                    <%= f.text_field :subject, class:"form-control", placeholder:"Oggetto"%>
-                                   </div>
-                              </div>
-                              <div class="row">
-                                   <div class="col-sm-12 col-md-12">
-                                    <%= f.label :message, "Messaggio *" %>
-                                    <%= f.text_area :message, class:"form-control", placeholder:"Messaggio", rows: 4 %>
-                                   </div>
-                                   <!--<div class="col-sm-12 col-md-12"><br/>
-                                        <a id="submit_btn" class="btn btn-primary" name="submit">Submit Message</a> <span id="notice" class="alert alert-warning alert-dismissable hidden" style="margin-left:20px;"></span> </div>
-                              </div>-->
-                                <div class="col-sm-12 col-md-12"> <br/>
-                                <%= f.submit "INVIA", class:"btn btn-primary"%>
-                                </div>
-                         <!--</form>-->
-                        <%end%>
-                    </div>
-
-
+      <div class="contact_form col-sm-8 col-md-8"> 
+        <%= form_for(@contact) do |f| %>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <%= f.label :name, "Name *" %> 
+              <%= f.text_field :name, class:"form-control", placeholder:"Nome" %>
+            </div> 
+            <div class="col-sm-6 col-md-6">
+              <%= f.label :surname, "Cognome *" %>
+              <%= f.text_field :surname, class:"form-control", placeholder:"Cognome" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <%= f.label :email, "Email *" %>
+              <%= f.text_field :email, class:"form-control", placeholder:"Email" %>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                <%= f.label :subject, "Oggetto *" %>
+                <%= f.text_field :subject, class:"form-control", placeholder:"Oggetto"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                <%= f.label :message, "Messaggio *" %>
+                <%= f.text_area :message, class:"form-control", placeholder:"Messaggio", rows: 4 %>
+              </div>
+            <div class="col-sm-12 col-md-12"> <br/>
+            <%= f.submit "INVIA", class:"btn btn-primary"%>
+            </div>
+      <%end%>
+    </div>
 
     </div>
   </div>
 </section>
-
-
-
-
-       <!-- <div id="map"></div>
-
-        <div class="post">
-          <div class="caption">
-
-            <div class="row contact-info">
-
-              <div class="col-md-4 text-center">
-                <i class="fa fa-home fa-4x"></i>
-                <h4>Indirizzo</h4>
-                <p>
-                  Piraino Zona Industriale 98060<br />
-                  ME Sicilia Italy
-                </p>
-              </div>
-              <div class="col-md-4 text-center">
-                <i class="fa fa-phone fa-4x"></i>
-                <h4>Telefono</h4>
-                <p>
-                  Cell: +39 320 8898256<br />
-                </p>
-              </div>
-              <div class="col-md-4 text-center">
-                <i class="fa fa-envelope-o fa-4x"></i>
-                <h4>Email</h4>
-                <p>
-                  <a class="email" href="mailto:info@smartgioiosa.it">info@smartgioiosa.it</a><br />
-                </p>
-              </div>
-            </div>
-          
-            <hr>
-
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <#%= form_for(@contact) do |f| %>
-
-                  <#%= render 'shared/error_messages', object: f.object %>
-                  <div class="form-group">
-                    <#%= f.label :name, "Nome *" %>
-                    <#%= f.text_field :name, class:"form-control", placeholder:"Nome" %>
-                  </div>
-                  <div class="form-group">
-                    <#%= f.label :surname, "Cognome *" %>
-                    <#%= f.text_field :surname, class:"form-control", placeholder:"Cognome" %>
-                  </div>
-                  <div class="form-group">
-                    <#%= f.label :email, "Email *" %>
-                    <#%= f.text_field :email, class:"form-control", placeholder:"Email" %>
-                  </div>
-                  <div class="form-group">
-                    <#%= f.label :subject, "Oggetto *" %>
-                    <#%= f.text_field :subject, class:"form-control", placeholder:"Oggetto"%>
-                  </div>
-                  <div class="form-group">
-                    <#%= f.label :message, "Messaggio *" %>
-                    <#%= f.text_area :message, class:"form-control", placeholder:"Messaggio"%>
-                  </div>
-                  <#%= f.submit "INVIA", class:"btn btn-ada-dark"%>
-
-                <#% end %>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
--->
-
-
-
-   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9dpgKXojmHke4mK4UHXLaqE6n898nHwo&sensor=false"></script>
-<script type="text/javascript">
-            // When the window has finished loading create our google map below
-            google.maps.event.addDomListener(window, 'load', init);
-        
-            function init() {
-	      // The latitude and longitude to center the map (always required)
-	      // You can find it easily at http://universimmedia.pagesperso-orange.fr/geo/loc.htm	  
-	      var myLatlng = new google.maps.LatLng(51.50852, -0.1254); // London
-	      
-                // Basic options for a simple Google Map
-                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-                var mapOptions = {
-                    // How zoomed in you want the map to start at (always required)
-                    zoom: 12,
-		// Disable scrollwheel zooming on the map
-		scrollwheel: false,                    
-                    center: myLatlng,
-
-                    // How you would like to style the map. 
-                    // This is where you would paste any style. For example paste a style found on Snazzy Maps. 
-                     styles: [{'featureType':'water','stylers':[{'visibility':'on'},{'color':'#428BCA'}]},{'featureType':'landscape','stylers':[{'color':'#f2e5d4'}]},{'featureType':'road.highway','elementType':'geometry','stylers':[{'color':'#c5c6c6'}]},{'featureType':'road.arterial','elementType':'geometry','stylers':[{'color':'#e4d7c6'}]},{'featureType':'road.local','elementType':'geometry','stylers':[{'color':'#fbfaf7'}]},{'featureType':'poi.park','elementType':'geometry','stylers':[{'color':'#c5dac6'}]},{'featureType':'administrative','stylers':[{'visibility':'on'},{'lightness':33}]},{'featureType':'road'},{'featureType':'poi.park','elementType':'labels','stylers':[{'visibility':'on'},{'lightness':20}]},{},{'featureType':'road','stylers':[{'lightness':20}]}]
-                };
-
-                // Get the HTML DOM element that will contain your map 
-                // We are using a div with id="map" seen up in the <body>
-                var mapElement = document.getElementById('map');
-	      
-                // Create the Google Map using out element and options defined above
-                var map = new google.maps.Map(mapElement, mapOptions);
-	      
-	      // Put a marker at the center of the map
-	      var marker = new google.maps.Marker({
-      		position: myLatlng,
-      		map: map,
-      		title: 'We are right here!'
-  		});
-            }
-        </script>   
