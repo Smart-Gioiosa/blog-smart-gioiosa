@@ -1,57 +1,59 @@
-<div id="posts" class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <%@posts.each_with_index do |post, index|%>
-      <%if index.even?%>
-      <section class="col-md-12 wow fadeIn">
-        <div class="post">
-              <div class="row">
-                <div class="col-md-6 media">
-                  <%unless post.image_preview.blank?%>
-                    <%= image_tag post.image_preview.url(:thumb), class:"img-responsive"  %>
-                  <%end%>
-                </div>
-                <div class="col-md-6 caption">
-
-                  <span class="post-tag">
-                  <%post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><%end%>
-                  </span>
-
-                  <%= link_to post.title, post_path(post), class: "post-title"%>
-                  <span class="post-date"><%=post.created_at.strftime("%d %b %Y") %></span>
-                    <p class="post-description"><%= (raw post.body.truncate(250, separator: ' '))%> <%= link_to "Continua", post_path(post)%></p>
-                </div>
-              </div>
+<section class="hgroup">
+  <div class="container">
+    <h1>Blog</h1>
+    <h2>Nel Blog dell'Associazione Smart Gioiosa troverte interessanti aritcoli sulle smart cities</h2>
+      <ul class="breadcrumb pull-right">
+        <li><a href="/">Home</a> </li>
+        <li class="active">Blog</li>
+      </ul>
+  </div>     
+ </section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div id="leftcol" class="col-sm-8 col-md-8">
+      
+      <%@posts.each do |post|%>
+        <article class="post">
+          <div class="post_header"> 
+            <h3 class="post_tile"><%= link_to post.title, post_path(post) %></h3>
+            <div class="post_sub"><i class="fa-time"></i><%=post.created_at.strftime("%d %b %Y")%>  <%post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><%end%>
             </div>
-          </section>
-        <%else%>
-          <section class="col-md-12 wow fadeIn">
-            <div class="post">
-              <div class="row">
-                <div class="col-md-6 caption">
+          </div>   
+          <div class="post_content">
+            <figure><%= link_to image_tag(post.image_preview.url(:thumb), class:"img-responsive"), post_path(post)%></figure>
+            <p><%= (raw post.body.truncate(250, separator: ' '))%></p>
+            <%= link_to "Continua", post_path(post), class: "btn btn-primary"%>
+          </div>  
+         
+        </article>
+      
+      <%end%>
+          
+<!--
 
-                  <span class="post-tag">
-                  <%post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><%end%>
-                  </span>
+     <div class="pagination_wrapper">
+          <ul class="pagination pagination-centered">
+               <li class="disabled"><a href="#">«</a></li>
+               <li class="active"><a href="#">1</a></li>
+               <li><a href="#">2</a></li>
+               <li><a href="#">3</a></li>
+               <li><a href="#">4</a></li>
+               <li><a href="#">5</a></li>
+               <li><a href="#">»</a></li>
+          </ul>
+     </div>
+-->
+      </div>
 
-                  <%= link_to post.title, post_path(post), class: "post-title"%>
-                  <span class="post-date"><%= post.created_at.strftime("%d %b %Y")%></span>
-                    <p class="post-description"><%= (raw post.body.truncate(250, separator: ' '))%> <%= link_to "Continua", post_path(post)%></p>
-                </div>
-                <div class="col-md-6 media">
-                  <%unless post.image_preview.blank?%>
-                    <%= image_tag post.image_preview.url(:thumb), class:"img-responsive"  %>
-                  <%end%>
-                </div>
-              </div>
-            </div>
-          </section>
-        <%end%>
-        <%end%>
 
-        </div>
+  
+      <div id="sidebar" class="col-sm-4 col-md-4">
 
-       <%= render "home/sidebar"%>
+       <!--<#%= render "sidebar"%>-->
 
-      </div><!--/row -->
-    </div> <!--/container -->
+      </div>
+        
+      </div>      
+    </div>
+  </section>
