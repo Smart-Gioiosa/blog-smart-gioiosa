@@ -39,7 +39,7 @@
                                   <li class="media">
                                   <a href="<%= post_path(post)%>" class="media-photo" style="background-image:url(<%= post.image_preview%>)"></a>                            <a href="<%= post_path(post)%>" class="media-date"><%= post.created_at.strftime("%d")%><span><%= post.created_at.strftime("%b").upcase%></span></a> 
                                   <h5 class="media-heading"><%= link_to post.title.upcase, post_path(post)=%></h5>
-                                   <p><%= raw(post.body.truncate(80, separator: ' ' ))%></p>
+                                   <p></p>
                                 </li>
                               <%end%> 
                             </ul>
