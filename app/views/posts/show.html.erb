@@ -1,7 +1,7 @@
 <section class="hgroup">
   <div class="container">
     <h1><%= @post.title%></h1>
-    <h2><i class="fa-time"></i><%=@post.created_at.strftime("%d %b %Y")%> | <%@post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %> | <%end%></h2>
+    <h2><i class="fa-time"></i><%=@post.created_at.strftime("%d %b %Y")%> | <%@post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name.upcase, tag_path(tag) %> | <%end%></h2>
 
     <ul class="breadcrumb pull-right">
       <li><a href="/">Home</a> </li>
@@ -14,7 +14,7 @@
 <section>
   <div class="container">
     <div class="row">
-      <div id="leftcol" class="col-sm-12 col-md-12">
+      <div id="leftcol" class="col-sm-8 col-md-8">
         <article class="post">
           <div class="post_content">
             <figure> 
@@ -25,6 +25,11 @@
                <%=raw @post.body%>
             </div>
         </article>
+
+         
+            
+
+
         <div class="new_comment">
         
              <!-- START DISQUS -->
@@ -49,6 +54,15 @@
         </div>
      
       </div>
+        
+  
+     
+      <div id="sidebar" class="col-sm-4 col-md-4">
+
+       <%= render "sidebar"%>
+
+      </div>
+
     </div>
   </div>
 </section>

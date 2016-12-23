@@ -33,21 +33,16 @@
                               </ul>-->
                          </div>
                          <div class="footer_teaser col-sm-4 col-md-4">
-                              <h3>Blog</h3>
-                              <!--<ul class="media-list">
-                                   <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t5.jpg)"></a> <a href="#" class="media-date">19<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Media heading, this is a title of a news...</a></h5>
-                                        <p>Fugiat dapibus, tellus ac cursus commodo, ut fermentum...</p>
-                                   </li>
-                                   <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t4.jpg)"></a> <a href="#" class="media-date">18<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Media heading, of a news item.</a></h5>
-                                        <p>Fugiat dapibus, tellus ac cursus commodo, condime ntum nibh, ut fermentum...</p>
-                                   </li>
-                                   <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t4.jpg)"></a> <a href="#" class="media-date">18<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Media heading, of a news item.</a></h5>
-                                        <p>Fugiat dapibus, tellus ac cursus commodo, condime ntum nibh, ut fermentum...</p>
-                                   </li>
-                              </ul>-->
+                              <h3> Le ultime dal Blog</h3>
+                              <ul class="media-list">
+                                <%last_posts.each do |post|%>
+                                  <li class="media">
+                                  <a href="<%= post_path(post)%>" class="media-photo" style="background-image:url(<%= post.image_preview%>)"></a>                            <a href="<%= post_path(post)%>" class="media-date"><%= post.created_at.strftime("%d")%><span><%= post.created_at.strftime("%b").upcase%></span></a> 
+                                  <h5 class="media-heading"><%= link_to post.title.upcase, post_path(post)=%></h5>
+                                   <p><%= post.body.truncate(25, separator: ' ' )%></p>
+                                </li>
+                              <%end%> 
+                            </ul>
                          </div>
                     </div>
                </div>

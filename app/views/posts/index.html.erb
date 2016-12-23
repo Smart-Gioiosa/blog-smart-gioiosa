@@ -11,13 +11,13 @@
 <section>
   <div class="container">
     <div class="row">
-      <div id="leftcol" class="col-sm-12 col-md-12">
+      <div id="leftcol" class="col-sm-8 col-md-8">
       
       <%@posts.each do |post|%>
         <article class="post">
           <div class="post_header"> 
             <h3 class="post_tile"><%= link_to post.title, post_path(post) %></h3>
-            <div class="post_sub"><i class="fa-time"></i><%=post.created_at.strftime("%d %b %Y")%>  <%post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><%end%>
+            <div class="post_sub"><i class="fa-time"></i><%=post.created_at.strftime("%d %b %Y")%>  <%post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name.upcase, tag_path(tag) %><%end%>
             </div>
           </div>   
           <div class="post_content">
@@ -47,13 +47,13 @@
       </div>
 
 
-      <!-- 
+       
       <div id="sidebar" class="col-sm-4 col-md-4">
 
-       <#%= render "sidebar"%>
+       <%= render "sidebar"%>
 
       </div>
-        -->
+        
       </div>      
     </div>
   </section>

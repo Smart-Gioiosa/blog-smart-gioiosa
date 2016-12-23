@@ -18,5 +18,9 @@ module ApplicationHelper
 
     end
   end
+  
+  def last_posts
+   @posts = Post.last(3).reverse
+  end
 
 end
