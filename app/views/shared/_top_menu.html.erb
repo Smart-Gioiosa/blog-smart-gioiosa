@@ -17,11 +17,11 @@
                       <li class="<%= "active" if current_page?("/posts")%>">
                         <%= link_to "Blog", posts_path%> 
                       </li>
-                      <!--
-                      <li class="<#%= "active" if current_page?("/events")%>">
-                        <#%= link_to "Eventi", events_path%>
+                      
+                      <li class="<%= "active" if controller.controller_name == "events"%>">
+                        <%= link_to "Eventi", events_path%>
                       </li>
-                      -->
+                    
                       <li class="<%= "active" if controller.controller_name == 'projects'%>">
                         <%= link_to "Progetti", projects_path%>
                       </li>
