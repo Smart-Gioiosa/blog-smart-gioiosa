@@ -42,7 +42,7 @@
              </div>
                
               <%= f.label :start_time%>
-              <%= f.datetime_select :start_time, {order: [:day, :month, :year, :hour], prompt: { day: 'Giorno', month: 'Mese', year: 'Anno' }, start_year: Date.today.year + 5, end_year: Date.today.year - 2}, {required: true} %>
+              <%= f.datetime_select :start_time, {order: [:day, :month, :year, :hour], prompt: { day: 'Giorno', month: 'Mese', year: 'Anno' }, start_year: Date.today.year + 5, end_year: Date.today.year - 2, minute_step: 15}, {required: true} %>
               <!--<#%= f.datetime_select :start_time%>-->
               
 
