@@ -25,7 +25,7 @@ module ApplicationHelper
 
   def last_events
     @events = Event.all.order('start_time DESC')
-    @events = Event.last(3)
+    @events.last(3)
   end
 
 end
