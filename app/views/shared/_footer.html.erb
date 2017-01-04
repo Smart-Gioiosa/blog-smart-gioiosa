@@ -17,21 +17,17 @@
                          </div>
                          <div class="footer_teaser col-sm-4 col-md-4">
                               <h3>I prossimi Eventi</h3>
-                              <!--<ul class="media-list">
-                                   <li class="media"> <a href="#" class="media-photo" style="background-image:url(assets/logo-smart.jpg)"></a> <a href="#" class="media-date">19<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Media heading, this is a title of a news...</a></h5>
-                                        <p>Fugiat dapibus, tellus ac cursus commodo, ut fermentum...</p>
-                                   </li>
-                                   <li class="media"> <a href="#" class="media-photo" style="background-image:url(assets/logo-smart.jpg)"></a> <a href="#" class="media-date">18<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Media heading, of a news item.</a></h5>
-                                        <p>Fugiat dapibus, tellus ac cursus commodo, condime ntum nibh, ut fermentum...</p>
-                                   </li>
-                                   <li class="media"> <a href="#" class="media-photo" style="background-image:url(assets/logo-smart.jpg)"></a> <a href="#" class="media-date">18<span>FEB</span></a>
-                                        <h5 class="media-heading"><a href="#">Media heading, of a news item.</a></h5>
-                                        <p>Fugiat dapibus, tellus ac cursus commodo, condime ntum nibh, ut fermentum...</p>
-                                   </li>
-                              </ul>-->
+                              <ul class="media-list">
+                                <%last_events.each do |event|%>
+                                  <li class="media">
+                                  <a href="<%= event_path(event)%>" class="media-photo" style="background-image:url(<%= event.event_image%>)"></a>                            <a href="<%= event_path(event)%>" class="media-date"><%= event.start_time.strftime("%d")%><span><%= event.start_time.strftime("%b").upcase%></span></a> 
+                                  <h5 class="media-heading"><%= link_to event.title.upcase, event_path(event)=%></h5>
+                                   <p></p>
+                                </li>
+                              <%end%> 
+                            </ul>
                          </div>
+  
                          <div class="footer_teaser col-sm-4 col-md-4">
                               <h3> Le ultime dal Blog</h3>
                               <ul class="media-list">

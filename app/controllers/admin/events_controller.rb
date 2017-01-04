@@ -56,7 +56,7 @@ class Admin::EventsController < Admin::BaseController
   end
   
   def event_params
-    params.require(:event).permit(:title, :body, :location, :event_time, :external_link, :event_image, :remove_event_image, :facebook_event)
+    params.require(:event).permit(:title, :body, :location, :external_link, :event_image, :remove_event_image, :facebook_event, :start_time, :end_time)
   end
 
 end

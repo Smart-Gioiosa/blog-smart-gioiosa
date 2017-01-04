@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206144158) do
+ActiveRecord::Schema.define(version: 20170104230241) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -38,14 +38,15 @@ ActiveRecord::Schema.define(version: 20161206144158) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "title"
-    t.text   "body"
-    t.string "external_link"
-    t.string "event_time"
-    t.string "facebook_event"
-    t.string "event_image"
-    t.string "slug"
-    t.string "location"
+    t.string   "title"
+    t.text     "body"
+    t.string   "external_link"
+    t.string   "facebook_event"
+    t.string   "event_image"
+    t.string   "slug"
+    t.string   "location"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 

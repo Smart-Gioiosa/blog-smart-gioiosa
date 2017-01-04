@@ -1,14 +1,14 @@
 module ApplicationHelper
 
   def full_title(page_title = '')
-    base_title = "Smart Gioiosa" 
+    base_title = "Smart Gioiosa"
     if page_title.empty?
       base_title
     else
-      "#{base_title} | #{page_title}" 
+      "#{base_title} | #{page_title}"
     end
-  end 
- 
+  end
+
   def meta_descriptions(page_description = ' ')
     base_description = "Blog Smart Gioiosa"
     if page_description.empty?
@@ -18,9 +18,14 @@ module ApplicationHelper
 
     end
   end
-  
+
   def last_posts
-   @posts = Post.last(3).reverse
+    @posts = Post.last(3).reverse
+  end
+
+  def last_events
+    @events = Event.all.order('start_time DESC')
+    @events = Event.last(3)
   end
 
 end

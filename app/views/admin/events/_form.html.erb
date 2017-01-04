@@ -40,9 +40,17 @@
                  </div>
                </div>
              </div>
+               
+              <%= f.label :start_time%>
+              <%= f.datetime_select :start_time, {order: [:day, :month, :year, :hour], prompt: { day: 'Giorno', month: 'Mese', year: 'Anno' }, start_year: Date.today.year + 5, end_year: Date.today.year - 2}, {required: true} %>
+              <!--<#%= f.datetime_select :start_time%>-->
+              
 
-              <%= f.label :event_time %><br>
-              <%= f.text_field :event_time, class: "form-control", placeholder: "Data - Ora Evento"%>
+              <hr>
+        
+              <%= f.label :end_time%>
+              <%= f.datetime_select :end_time, {order: [:day, :month, :year, :hour], prompt: { day: 'Giorno', month: 'Mese', year: 'Anno' }, start_year: Date.today.year + 5, end_year: Date.today.year - 2} %>
+
 
 
             </div>

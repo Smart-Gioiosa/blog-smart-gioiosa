@@ -19,7 +19,7 @@
           <figure style="background-image:url(<%= event.event_image%>)"></figure>
         </div>
         <div class="service_details col-sm-8 col-md-8 wow animated slideInRight">
-        <h2 class="section_header skincolored"><b><%= link_to event.title, event_path(event)%></b><small><%= event.event_time%> | <%= event.location%></small></h2>
+        <h2 class="section_header skincolored"><b><%= link_to event.title, event_path(event)%></b><small><%= event.start_time.strftime("%d/%m/%Y alle %H:%M")%> | <%= event.location%></small></h2>
         <p><%=  (raw event.body.truncate(250, separator: ' '))%></p>
         
         <!--<a class="btn btn-primary pull-right" href="<#%=event_path(event)%>"><i class="fa fa-external-link"></i>&nbsp;Dettagli Evento</a>--> 
@@ -30,7 +30,9 @@
         <div class="service_teaser right">
             <div class="row">
               <div class="service_details col-sm-8 col-md-8 wow animated slideInLeft">
-                <h2 class="section_header skincolored"><b><%= link_to event.title, event_path(event)%></b><small><%= event.event_time%> | <%= event.location%></small></h2>             <p><%=  (raw event.body.truncate(250, separator: ' '))%></p>                         
+               <h2 class="section_header skincolored"><b><%= link_to event.title, event_path(event)%></b><small><%= event.start_time.strftime("%d/%m/%Y alle %H:%M")%> | <%= event.location%></small></h2>
+             
+            <p><%=  (raw event.body.truncate(250, separator: ' '))%></p>                         
                                         
                                   
                   <!--<a class="btn btn-primary pull-left" href="<#%=event_path(event)%>"><i class="fa fa-external-link"></i>&nbsp;Dettagli Evento</a>--> 
