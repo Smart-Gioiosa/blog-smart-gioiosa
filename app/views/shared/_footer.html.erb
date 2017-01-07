@@ -22,7 +22,7 @@
                                   <li class="media">
                                   <a href="<%= event_path(event)%>" class="media-photo" style="background-image:url(<%= event.event_image%>)"></a>                            <a href="<%= event_path(event)%>" class="media-date"><%= event.start_time.strftime("%d")%><span><%= event.start_time.strftime("%b").upcase%></span></a> 
                                   <h5 class="media-heading"><%= link_to event.title.upcase, event_path(event)=%></h5>
-                                   <p></p>
+                                   <p><%= event.location%></p>
                                 </li>
                               <%end%> 
                             </ul>
