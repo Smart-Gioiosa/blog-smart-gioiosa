@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   mount Ckeditor::Engine => '/ckeditor'
   get 'events/index'
 
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   match 'chi-siamo' => 'about_us#index', via: :get
   match 'contatti' => 'contacts#new', via: :get
   match 'team' => 'team#index', via: :get
+  match 'co-working' => 'co_working#index', via: :get
   resources :contacts, path:'contatti', only: [:new, :create]
   resources :newsletters
   resources :tags
