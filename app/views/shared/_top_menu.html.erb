@@ -30,8 +30,22 @@
                         <#%= link_to "CoWorking", co_working_path%>
                       </li>
                       -->
-        
-                      <li><%= link_to "Call For Proposals", "http://cfp.smartgioiosa.it"%></li>
+
+                      <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#">CFP<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><%= link_to "Vincitori", vincitori_path%></li>
+                        <li><%= link_to "Idee", idee_path%></li>
+                        <li><%= link_to "Giuria", giuria_path%></li>
+                        
+                      </ul>
+                      </li>
+
+
+
+
+
+
+
 
                       <li class="<%= "active" if controller.controller_name == "contacts"%>">
                         <%= link_to "Contatti", contatti_path%>
