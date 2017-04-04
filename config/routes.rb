@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   resources :events
   root to: "home#index"
   match 'vincitori' => 'cfp_pages#vincitori', via: :get
-  #match 'idee' => 'cfp_pages#idee', via: :get
+  match 'idee' => 'cfp_pages#idee', via: :get
   match 'giuria' => 'cfp_pages#giuria', via: :get
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
