@@ -13,31 +13,31 @@
                               <a href="https://twitter.com/SmartGioiosa"><i class="fa fa-twitter"></i></a>
                               <a href="https://www.instagram.com/smartgioiosa/"><i class="fa fa-instagram"></i></a>
                               <a href="https://plus.google.com/u/0/b/116848179994267593028/116848179994267593028/about"><i class="fa fa-google-plus"></i></a>
-                            
+
                          </div>
                          <div class="footer_teaser col-sm-4 col-md-4">
                               <h3>I prossimi Eventi</h3>
                               <ul class="media-list">
                                 <%last_events.each do |event|%>
                                   <li class="media">
-                                  <a href="<%= event_path(event)%>" class="media-photo" style="background-image:url(<%= event.event_image%>)"></a>                            <a href="<%= event_path(event)%>" class="media-date"><%= event.start_time.strftime("%d")%><span><%= event.start_time.strftime("%b").upcase%></span></a> 
+                                  <a href="<%= event_path(event)%>" class="media-photo" style="background-image:url(<%= event.event_image%>)"></a>                            <a href="<%= event_path(event)%>" class="media-date"><%= event.start_time.strftime("%d")%><span><%= event.start_time.strftime("%b").upcase%></span></a>
                                   <h5 class="media-heading"><%= link_to event.title.upcase, event_path(event)=%></h5>
                                    <p><%= event.location%></p>
                                 </li>
-                              <%end%> 
+                              <%end%>
                             </ul>
                          </div>
-  
+
                          <div class="footer_teaser col-sm-4 col-md-4">
                               <h3> Le ultime dal Blog</h3>
                               <ul class="media-list">
                                 <%last_posts.each do |post|%>
                                   <li class="media">
-                                  <a href="<%= post_path(post)%>" class="media-photo" style="background-image:url(<%= post.image_preview%>)"></a>                            <a href="<%= post_path(post)%>" class="media-date"><%= post.created_at.strftime("%d")%><span><%= post.created_at.strftime("%b").upcase%></span></a> 
+                                  <a href="<%= post_path(post)%>" class="media-photo" style="background-image:url(<%= post.image_preview%>)"></a>                            <a href="<%= post_path(post)%>" class="media-date"><%= post.created_at.strftime("%d")%><span><%= post.created_at.strftime("%b").upcase%></span></a>
                                   <h5 class="media-heading"><%= link_to post.title.upcase, post_path(post)=%></h5>
                                    <p></p>
                                 </li>
-                              <%end%> 
+                              <%end%>
                             </ul>
                          </div>
                     </div>
