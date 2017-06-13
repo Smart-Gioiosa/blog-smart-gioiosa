@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+
   mount Ckeditor::Engine => '/ckeditor'
   get 'events/index'
 
@@ -21,6 +22,8 @@ Rails.application.routes.draw do
     resources :events
   end
 
+  get 'contest/index'
+  match 'contest-fotografico'=> 'contest#index', via: :get
   match 'chi-siamo' => 'about_us#index', via: :get
   match 'contatti' => 'contacts#new', via: :get
   match 'team' => 'team#index', via: :get
