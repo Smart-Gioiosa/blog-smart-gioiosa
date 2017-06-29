@@ -1,0 +1,70 @@
+<!-- Start Page Header Section -->
+  <section class="bg-page-header">
+    <div class="page-header-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="page-header">
+            <div class="page-title">
+              <h2>ELENCO ARTICOLI CHE RIGURADANO: <%= @category.name%></h2>
+            </div><!-- .page-title -->
+            <div class="page-header-content">
+              <ol class="breadcrumb">
+                <li><a href="/">Home</a> </li>
+                <li><a href="/posts">Blog</a> </li>
+              </ol>
+            </div><!-- .page-header-content -->
+          </div><!-- .page-header -->
+        </div><!-- .row -->
+      </div><!-- .container -->
+    </div><!-- .page-header-overlay -->
+  </section>
+  <!-- End Page Header Section -->
+
+
+
+  <section class="bg-blog-style-2">
+    <div class="container">
+      <div class="row">
+        <div class="blog-style-2">
+          <div class="row">
+            <div class="col-md-8">
+
+              <%@posts.each do |post|%>
+
+
+                <div class="blog-items">
+                  <div class="blog-img">
+                    <%if post.image_preview.present?%>
+                      <%= link_to (image_tag post.image_preview.url, alt:post.title, class:"img-responsive"), post_path(post)%>
+                    <%else%>
+                      <a href="<%=post_path(post)%>"><img src="/assets/blog/blog-img-10.jpg" alt="blog-img-10" class="img-responsive" /></a>
+                    <%end%>
+                  </div><!-- .blog-img -->
+                  <div class="blog-content-box">
+                    <div class="blog-content">
+                      <h4><%= link_to post.title, post_path(post)%></h4>
+                      <ul class="meta-post">
+                        <li><i class="fa fa-calendar" aria-hidden="true"></i> <%=post.created_at.strftime("%d %b %Y")%></li>
+                        <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 24 Like</a></li>
+                        <li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> 24 Comment</a></li>
+                      </ul>
+                      <p><%= (raw post.body.truncate(250, separator: ' '))%></p>
+                      <%= link_to post_path(post) do %> Read More<i class="fa fa-angle-double-right" aria-hidden="true"></i><%end%>
+                    </div><!-- .blog-content -->
+                  </div><!-- .blog-content-box -->
+                </div><!-- .blog-items -->
+              <%end%>
+
+          </div><!-- .col-md-8 -->
+
+          <div class="col-md-4">
+
+           <%= render "posts/sidebar"%>
+
+         </div><!-- .col-md-4 -->
+
+        </div><!-- .row -->
+      </div><!-- .blog-style-2 -->
+    </div><!-- .row -->
+  </div><!-- .container -->
+</section>

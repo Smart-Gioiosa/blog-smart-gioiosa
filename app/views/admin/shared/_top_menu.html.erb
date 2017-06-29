@@ -18,7 +18,8 @@
      <ul class="nav navbar-nav">
        <li class="<%= 'active' if params[:controller] == 'admin/dashboard' %>"><%= link_to "DASHBOARD", admin_root_path %></li>
        <li class="<%= 'active' if params[:controller] == 'admin/posts' %>"><%= link_to "POSTS", admin_posts_path %></li>
-       <li class="<%= 'active' if params[:controller] == 'admin/tags' %>"><%= link_to "TAGS", admin_tags_path %></li> 
+       <li class="<%= 'active' if params[:controller] == 'admin/tags' %>"><%= link_to "TAGS", admin_tags_path %></li>
+       <li class="<%= 'active' if params[:controller] == 'admin/categories' %>"><%= link_to "CATEGORIES", admin_categories_path %></li> 
        <li class="<%= 'active' if params[:controller] == 'admin/projects' %>"><%= link_to "PROJECTS", admin_projects_path %></li>
        <li class="<%= 'active' if params[:controller] == 'admin/events' %>"><%= link_to "EVENTS", admin_events_path %></li>
        <li class="<%= 'active' if params[:controller] == 'admin/news' %>"><%= link_to "NEWS", "#" %></li>

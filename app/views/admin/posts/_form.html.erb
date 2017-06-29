@@ -48,6 +48,16 @@
 
              <br>
 
+             <%= hidden_field_tag "post[category_ids][]", nil %>
+               <% for category in Category.all %>
+                 <div class="checkbox">
+                   <%= check_box_tag "post[category_ids][]", category.id, @post.categories.include?(category) %>
+                   <%= category.name %>
+                 </div>
+              <% end %>
+
+              <br>
+
               </div>
               <div class="modal-footer">
                 <%= f.submit "Submit", class: "btn btn-primary"%>

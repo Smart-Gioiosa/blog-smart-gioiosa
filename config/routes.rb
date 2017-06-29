@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :newsletters
     resources :tags
     resources :events
+    resources :categories
   end
 
   get 'contest/index'
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :projects
   resources :events
+  resources :categories
   root to: "home#index"
   match 'vincitori' => 'cfp_pages#vincitori', via: :get
   match 'idee' => 'cfp_pages#idee', via: :get

@@ -1,126 +1,70 @@
+  <!-- Start Page Header Section -->
+  	<section class="bg-page-header">
+  		<div class="page-header-overlay">
+  			<div class="container">
+  				<div class="row">
+  					<div class="page-header">
+  						<div class="page-title">
+  							<h2>ELENCO ARTICOLI CHE RIGURADANO: <p class="label"><%= fa_icon("tag") +  " " + @tag.name.upcase%></p></h2>
+  						</div><!-- .page-title -->
+  						<div class="page-header-content">
+  							<ol class="breadcrumb">
+                  <li><a href="/">Home</a> </li>
+                  <li><a href="/posts">Blog</a> </li>
+  							</ol>
+  						</div><!-- .page-header-content -->
+  					</div><!-- .page-header -->
+  				</div><!-- .row -->
+  			</div><!-- .container -->
+  		</div><!-- .page-header-overlay -->
+  	</section>
+  	<!-- End Page Header Section -->
 
-<section class="hgroup">
-  <div class="container">
-    <h1>ELENCO ARTICOLI CHE RIGURADANO: <p class="label label-primary"><%= fa_icon("tag") +  " " + @tag.name.upcase%></p></h1>
-    <h2></h2>
-      <ul class="breadcrumb pull-right">
-        <li><a href="/">Home</a> </li>
-        <li><a href="/posts">Blog</a> </li>
-      </ul>
-  </div>     
- </section>
-<section>
-  <div class="container">
-    <div class="row">
-      <div id="leftcol" class="col-sm-8 col-md-8">
-      
-      <%@posts.each do |post|%>
-        <article class="post">
-          <div class="post_header"> 
-            <h3 class="post_tile"><%= link_to post.title, post_path(post) %></h3>
-            <div class="post_sub"><i class="fa-time"></i><%=post.created_at.strftime("%d %b %Y")%>  <%post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name.upcase, tag_path(tag) %><%end%>
-            </div>
-          </div>   
-          <div class="post_content">
-            <figure>
-              <%unless post.image_preview.blank?%>
-                <%= link_to image_tag(post.image_preview.url(:thumb), class:"img-responsive"), post_path(post)%>
+
+
+  	<section class="bg-blog-style-2">
+  		<div class="container">
+  			<div class="row">
+  				<div class="blog-style-2">
+  					<div class="row">
+  						<div class="col-md-8">
+
+                <%@posts.each do |post|%>
+
+
+                  <div class="blog-items">
+    								<div class="blog-img">
+                      <%if post.image_preview.present?%>
+                        <%= link_to (image_tag post.image_preview.url, alt:post.title, class:"img-responsive"), post_path(post)%>
+                      <%else%>
+    									  <a href="<%=post_path(post)%>"><img src="/assets/blog/blog-img-10.jpg" alt="blog-img-10" class="img-responsive" /></a>
+                      <%end%>
+                    </div><!-- .blog-img -->
+    								<div class="blog-content-box">
+    									<div class="blog-content">
+    										<h4><%= link_to post.title, post_path(post)%></h4>
+    										<ul class="meta-post">
+    											<li><i class="fa fa-calendar" aria-hidden="true"></i> <%=post.created_at.strftime("%d %b %Y")%></li>
+    											<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 24 Like</a></li>
+    											<li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> 24 Comment</a></li>
+    										</ul>
+                        <p><%= (raw post.body.truncate(250, separator: ' '))%></p>
+                        <%= link_to post_path(post) do %> Read More<i class="fa fa-angle-double-right" aria-hidden="true"></i><%end%>
+    									</div><!-- .blog-content -->
+    								</div><!-- .blog-content-box -->
+    							</div><!-- .blog-items -->
                 <%end%>
-              </figure>
-            <p><%= (raw post.body.truncate(250, separator: ' '))%></p>
-            <%= link_to "Continua", post_path(post), class: "btn btn-primary"%>
-          </div>  
-         
-        </article>
-      
-      <%end%>
-          
-<!--
 
-     <div class="pagination_wrapper">
-          <ul class="pagination pagination-centered">
-               <li class="disabled"><a href="#">«</a></li>
-               <li class="active"><a href="#">1</a></li>
-               <li><a href="#">2</a></li>
-               <li><a href="#">3</a></li>
-               <li><a href="#">4</a></li>
-               <li><a href="#">5</a></li>
-               <li><a href="#">»</a></li>
-          </ul>
-     </div>
--->
-      </div>
+            </div><!-- .col-md-8 -->
 
+            <div class="col-md-4">
 
-       
-      <div id="sidebar" class="col-sm-4 col-md-4">
+             <%= render "posts/sidebar"%>
 
-       <%= render "posts/sidebar"%>
+           </div><!-- .col-md-4 -->
 
-      </div>
-        
-      </div>      
-    </div>
+  				</div><!-- .row -->
+  			</div><!-- .blog-style-2 -->
+  		</div><!-- .row -->
+  	</div><!-- .container -->
   </section>
-
-
-<!--
-<div id="posts" class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <#%@posts.each_with_index do |post, index|%>
-      <#%if index.even?%>
-      <section class="col-md-12 wow fadeIn">
-        <div class="post">
-              <div class="row">
-                <div class="col-md-6 media">
-                  <#%unless post.image_preview.blank?%>
-                    <#%= image_tag post.image_preview.url(:thumb), class:"img-responsive"  %>
-                  <#%end%>
-                </div>
-                <div class="col-md-6 caption">
-
-                  <span class="post-tag">
-                  <#%post.tags.each do |tag| %> <#%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><#%end%>
-                  </span>
-
-                  <#%= link_to post.title, post_path(post), class: "post-title"%>
-                  <span class="post-date"><#%=post.created_at.strftime("%d %b %Y") %></span>
-                  <p class="post-description"><#%= (raw post.body.truncate(250, separator: ' '))%> <#%= link_to "Continua", post_path(post)%></p>
-                </div>
-              </div>
-            </div>
-          </section>
-        <#%else%>
-          <section class="col-md-12 wow fadeIn">
-            <div class="post">
-              <div class="row">
-                <div class="col-md-6 caption">
-
-                  <span class="post-tag">
-                  <#%post.tags.each do |tag| %> <#%= link_to fa_icon("tag") + " " + tag.name, tag_path(tag) %><#%end%>
-                  </span>
-
-                  <#%= link_to post.title, post_path(post), class: "post-title"%>
-                  <span class="post-date"><#%=post.created_at.strftime("%d %b %Y") %></span>
-                    <p class="post-description"><#%= (raw post.body.truncate(250, separator: ' '))%> <#%= link_to "Continua", post_path(post)%></p>
-                </div>
-                <div class="col-md-6 media">
-                  <#%unless post.image_preview.blank?%>
-                    <#%= image_tag post.image_preview.url(:thumb), class:"img-responsive"  %>
-                  <#%end%>
-                </div>
-              </div>
-            </div>
-          </section>
-        <#%end%>
-        <#%end%>
-
-        </div>
-
-       <#%= render "home/sidebar"%>
-
-      </div>
-    </div> 
-
--->
