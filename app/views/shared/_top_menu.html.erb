@@ -10,6 +10,9 @@
                       <li class="<%= "active" if current_page?("/chi-siamo")%>">
                         <%= link_to "Chi Siamo", chi_siamo_path %>
                       </li>
+                      <li class="<%= "active" if current_page?("/contest-fotografico")%>">
+                        <%= link_to "SmartContest", contest_fotografico_path%>
+                      </li>
                       <li class="<%= "active" if current_page?("/team")%>">
                         <%= link_to "Team", team_path%>
                       </li>
@@ -22,9 +25,9 @@
                         <%= link_to "Eventi", events_path%>
                       </li>
 
-                      <li class="<%= "active" if controller.controller_name == 'projects'%>">
-                        <%= link_to "Progetti", projects_path%>
-                      </li>
+                      <!--<li class="<#%= "active" if controller.controller_name == 'projects'%>">
+                        <#%= link_to "Progetti", projects_path%>
+                      </li>-->
                       <!--
                       <li class="<#%= "active" if controller.controller_name == 'co_working'%>">
                         <#%= link_to "CoWorking", co_working_path%>
