@@ -1,68 +1,121 @@
-<section class="hgroup">
-  <div class="container">
-    <h1><%= @post.title%></h1>
-    <h2><i class="fa-time"></i><%=@post.created_at.strftime("%d %b %Y")%> | <%@post.tags.each do |tag| %> <%= link_to fa_icon("tag") + " " + tag.name.upcase, tag_path(tag) %> | <%end%></h2>
+<!-- Start Page Header Section -->
 
-    <ul class="breadcrumb pull-right">
-      <li><a href="/">Home</a> </li>
-      <li><a href="/posts">Blog</a></li>
-    </ul>
-  </div>
+<section class="bg-page-header">
+  <div class="page-header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <div class="page-title">
+            <h2><%= @post.title%></h2>
+          </div><!-- .page-title -->
+          <div class="page-header-content">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a> </li>
+              <li><a href="/posts">Blog</a></li>
+            </ol>
+          </div><!-- .page-header-content -->
+        </div><!-- .page-header -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .page-header-overlay -->
 </section>
 
 
-<section>
+
+<!-- Start Single Events Section -->
+
+
+<section class="bg-single-blog">
   <div class="container">
     <div class="row">
-      <div id="leftcol" class="col-sm-8 col-md-8">
-        <article class="post">
-          <div class="post_content">
-            <figure> 
-                <%unless @post.image_preview.blank?%>
-                  <%= image_tag @post.image_preview%>
+      <div class="single-blog">
+        <div class="row">
+          <div class="col-md-8">
+
+            <div class="blog-items">
+              <div class="blog-img">
+                <%if  @post.image_preview.present? %>
+                <%= image_tag @post.image_preview.url, class:"img-responsive" %>
+                <%else%>
+                <a href="#"><img src="/assets/blog/blog-img-10.jpg" alt="blog-img-10" class="img-responsive" /></a>
                 <%end%>
-            </figure>
-               <%=raw @post.body%>
+              </div><!-- .blog-img -->
+              <div class="blog-content-box">
+                <div class="meta-box">
+                  <div class="event-author-option">
+                    <div class="event-author-img">
+                      <img src="/assets/event/event-author-img-1.jpg" alt="event-author-img-1" />
+                    </div><!-- .author-img -->
+                    <div class="event-author-name">
+                      <p>Posted by : <a href="#"> SmartGioiosa</a></p>
+                    </div><!-- .author-name -->
+                  </div><!-- .author-option -->
+                  <ul class="meta-post">
+                    <li><i class="fa fa-calendar" aria-hidden="true"></i> <%=@post.created_at.strftime("%d %b %Y")%></li>
+                    <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 24 Like</a></li>
+                    <li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> 24 Comment</a></li>
+                  </ul>
+                </div><!-- .meta-box -->
+                <div class="blog-content">
+                  <h4><%=@post.title%></h4>
+
+                  <%=raw @post.body%>
+
+                </div><!-- .blog-content -->
+                <div class="single-blog-bottom">
+                  <ul class="tags">
+                    <li><i class="fa fa-tags" aria-hidden="true"></i> Tags :</li>
+                    <%@post.tags.each do |tag|%>
+                      <%if @post.tags.last == tag %>
+                        <%= link_to tag.name, tag_path(tag)%>
+                      <%else%>
+                        <%= link_to tag.name, tag_path(tag)%> -
+                      <%end%>
+                    <%end%>
+                  </ul><!-- .author-option -->
+                  <div class="event-share-option">
+                    <ul class="social-icon share-icon">
+                      <li><i class="fa fa-share-alt" aria-hidden="true"></i><span>share :</span></li>
+                      <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div><!-- .share-option -->
+                </div><!-- .single-blog-bottom -->
+              </div><!-- .blog-content-box -->
+            </div><!-- .blog-items -->
+            <div class="comments-option">
+              <!-- START DISQUS -->
+       <div id="disqus_thread"></div>
+       <script type="text/javascript">
+
+           var disqus_config = function () {
+           this.page.shortname = 'blogsmartgioiosa'
+           this.page.identifier = '<%= request.fullpath%>';
+           this.page.title = '<%= @post.title%>';
+           this.page.url = '<%= request.url%>'
+          };
+
+
+           (function() {
+           var d = document, s = d.createElement('script'); s.src = '//blogsmartgioiosa.disqus.com/embed.js';
+           s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();
+           </script>
+           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+       <!-- END DISQUS -->
+
             </div>
-        </article>
 
-         
-            
+          </div><!-- .col-md-8 -->
 
+          <div class="col-md-4">
+           <%= render "sidebar"%>
+         </div><!-- .col-md-4 -->
 
-        <div class="new_comment">
-        
-             <!-- START DISQUS -->
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-
-          var disqus_config = function () {
-          this.page.shortname = 'blogsmartgioiosa'
-          this.page.identifier = '<%= request.fullpath%>';
-          this.page.title = '<%= @post.title%>';
-          this.page.url = '<%= request.url%>'
-         };
-
-
-          (function() {
-          var d = document, s = d.createElement('script'); s.src = '//blogsmartgioiosa.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      <!-- END DISQUS -->
-        
-        </div>
-     
-      </div>
-        
-  
-     
-      <div id="sidebar" class="col-sm-4 col-md-4">
-
-       <%= render "sidebar"%>
-
-      </div>
-
-    </div>
-  </div>
+        </div><!-- .row -->
+      </div><!-- .single-blog -->
+    </div><!-- .row -->
+  </div><!-- .container -->
 </section>

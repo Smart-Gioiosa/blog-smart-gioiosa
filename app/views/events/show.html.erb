@@ -1,32 +1,109 @@
-<section class="hgroup centered">
-  <div class="container">
-    <h1>Eventi</h1>
-      <h2><b><%=@event.title%></b></h2>
-        <ul class="breadcrumb pull-right">
-          <li><a href="/">Home</a> </li>
-          <li><a href="/events">Eventi</a> </li>
-        </ul>
-  </div>     
-</section>
-<div id="posts" class="container">
-  <hr class="featurette-divider">
-  <div class="featurette" id="about">
-    <%= image_tag @event.event_image, class: "featurette-image imag-thumbnail img-responsive pull-right"%>
-    <!--<img class="featurette-image img-thumbnail img-responsive pull-right" src="/assets/Nino-smart.jpg">-->
-      <h2 class="featurette-heading"><%=@event.title%> </h2>
-      <h4><span class="text-muted"><%= @event.location%> | <%= @event.start_time.strftime("%d/%m/%Y alle %H:%M") %></span></h4>
-      <br>
-            <p class="lead"><%=raw(@event.body)%></p>
+<!-- Start Page Header Section -->
+	<section class="bg-page-header">
+		<div class="page-header-overlay">
+			<div class="container">
+				<div class="row">
+					<div class="page-header">
+						<div class="page-title">
+							<h2><%= @event.title%></h2>
+						</div><!-- .page-title -->
+						<div class="page-header-content">
+							<ol class="breadcrumb">
+                <li><a href="/">Home</a> </li>
+                <li><a href="/events">Eventi</a> </li>
+							</ol>
+						</div><!-- .page-header-content -->
+					</div><!-- .page-header -->
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</div><!-- .page-header-overlay -->
+	</section>
+	<!-- End Page Header Section -->
 
-          <%if @event.facebook_event.present?%>
-            <%=link_to "Evento su Facebook", raw(@event.facebook_event), target: "_blanck"%>
-          <%end%>
-          <br>
-          <hr>
-          <%if @event.external_link.present?%>
-            <p><%= link_to 'ISCRIVITI AL CORSO', raw(@event.external_link), target:"_blanck", class:"btn btn-primary"%></p>
-          <%end%>
-        </div>
+	<!-- Start Single Events Section -->
+	<section class="bg-single-events">
+		<div class="container">
+			<div class="row">
+				<div class="single-events">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="single-event-item">
+								<div class="single-event-img">
+                  <%= image_tag @event.event_image.url, class:"img-responsive"%>
+									<div class="date-box">
+										<h3>24</h3>
+										<h5>july</h5>
+									</div><!-- .date-box -->
+								</div><!-- .single-event-img -->
+								<div class="single-event-content">
+									<h3><%= @event.title%></h3>
+                  <p><%=raw(@event.body)%></p>
+                  <%if @event.facebook_event.present?%>
+                    <%=link_to "Evento su Facebook", raw(@event.facebook_event), target: "_blank"%>
+                  <%end%>
+                  <br>
+                  <hr>
+                  <%if @event.external_link.present?%>
+                    <p><%= link_to 'ISCRIVITI AL CORSO', raw(@event.external_link), target:"_blank", class:"btn btn-default"%></p>
+                  <%end%>
+									<div class="single-date-map">
+										<div class="single-date-option">
+											<ul class="single-date">
+												<li>
+													<i class="fa fa-calendar" aria-hidden="true"></i>
+													<div class="h-adress-content">
+														<h6>date</h6>
+														<p><%= @event.start_time.strftime("%d/%m/%Y") %></p>
+													</div><!-- .h-adress-content -->
+												</li>
+												<li>
+													<i class="fa fa-map-marker" aria-hidden="true"></i>
+													<div class="h-adress-content">
+														<h6>location</h6>
+														<p><%= @event.location%></p>
+													</div><!-- .h-adress-content -->
+												</li>
+												<li>
+													<i class="fa fa-clock-o" aria-hidden="true"></i>
+													<div class="h-adress-content">
+														<h6>time</h6>
+														<p><%= @event.start_time.strftime("%H:%M") %></p>
+													</div><!-- .h-adress-content -->
+												</li>
+											</ul>
+										</div>
+										<div class="single-map">
+											<div id="map"></div>
+										</div><!-- single-map -->
+									</div><!-- .single-date-map -->
 
-        <hr class="featurette-divider">
-</div>
+								</div><!-- .single-event-content -->
+								<div class="event-single-bottom-option">
+										<div class="event-author-option">
+											<div class="event-author-img">
+												<img src="/assets/event/event-author-img-1.jpg" alt="event-author-img-1" />
+											</div><!-- .author-img -->
+											<div class="event-author-name">
+												<p>Event Author : <a href="#">Smart Gioiosa</a></p>
+											</div><!-- .author-name -->
+										</div><!-- .author-option -->
+										<div class="event-share-option">
+											<ul class="social-icon share-icon">
+												<li><i class="fa fa-share-alt" aria-hidden="true"></i><span>share :</span></li>
+												<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+											</ul>
+										</div><!-- .share-option -->
+									</div><!-- .single-bottom-option -->
+							</div><!-- .single-event-item -->
+						</div><!-- .col-md-8 -->
+
+					</div><!-- .row -->
+				</div><!-- .single-events -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</section>
+	<!-- End Single Events Section -->

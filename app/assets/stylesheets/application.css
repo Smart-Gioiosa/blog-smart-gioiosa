@@ -12,13 +12,14 @@
  *
  * require_tree .
  *= require_self
- *= require custom
- *= require animate
- *= require js/woothemes-FlexSlider-06b12f8/flexslider
- *= require js/prettyPhoto_3.1.5/prettyPhoto
- *= require style
- *= require font-awesome
- *= require team
- */
-
-
+ *= require css/font-awesome.min
+ *= require fonts/flaticon
+ *= require css/bootstrap.min
+ *= require css/animate
+ *= require css/swiper.min
+ *= require css/lightcase
+ *= require css/jquery.nstSlider
+ *= require css/flexslider
+ *= require css/style
+ *= require css/responsive
+*/

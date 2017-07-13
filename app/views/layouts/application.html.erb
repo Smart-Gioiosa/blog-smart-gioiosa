@@ -32,7 +32,7 @@
     <%end%>
   </head>
   <body class="collapsing_header">
-    <%= render partial: "shared/header_home"%>
+    <%= render partial: "shared/header"%>
   <!--
   <#%if controller.controller_name=="home"%>
     <#%= render partial: "shared/header_home"%>
@@ -67,14 +67,18 @@
 
     <%= render partial: "shared/footer"%>
 
-    <a id="scroll-to-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
+
 </div>
+  <!-- Start Scrolling -->
+	 <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+	<!-- End Scrolling -->
+
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%if controller.controller_name=="contacts"%>
       <%= render 'contacts/scripts_map'%>
     <%end%>
+
+
   </body>
 </html>

@@ -1,0 +1,45 @@
+<!-- Start Blog Section -->
+
+
+	<section class="bg-blog-section">
+		<div class="container">
+			<div class="row">
+				<div class="blog-section">
+					<div class="section-header">
+						<h2>Smart Blog</h2>
+						<p>Professionally mesh enterprise wide imperatives without world class paradigms.Dynamically deliver ubiquitous leadership awesome skills.</p>
+					</div><!-- .section-header -->
+					<div class="row">
+
+            <% @posts.each do |post|%>
+						<div class="col-md-4 col-sm-6 col-xs-6">
+							<div class="blog-items">
+								<div class="blog-img">
+                  <%= link_to (image_tag post.image_preview.url(:thumb), alt:post.title, class:"img-responsive"), post_path(post)%>
+								</div><!-- .blog-img -->
+								<div class="blog-content-box">
+									<div class="blog-content">
+										<h4><%= link_to post.title, post_path(post)%></h4>
+										<p><%= (raw post.body.truncate(250, separator: ' '))%></p>
+									</div><!-- .blog-content -->
+									<div class="meta-box">
+										<ul class="meta-post">
+											<li><i class="fa fa-calendar" aria-hidden="true"></i> <%=post.created_at.strftime("%d %b %Y")%></li>
+											<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 24 Like</a></li>
+											<li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> 24 Comment</a></li>
+										</ul>
+									</div><!-- .meta-box -->
+								</div><!-- .blog-content-box -->
+							</div><!-- .blog-items -->
+						</div><!-- .col-md-4 -->
+            <%end%>
+
+
+					</div><!-- .row -->
+				</div><!-- .blog-section -->
+			</div><!-- .container -->
+		</div><!-- .bg-blog-section -->
+	</section>
+
+
+	<!-- End Blog Section -->

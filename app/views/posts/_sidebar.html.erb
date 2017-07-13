@@ -1,77 +1,46 @@
-<!-- 
-<aside class="widget">
-    <h4>Blog Tags</h4>
-      
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#">All</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Press</a></li>
-      </ul>
-</aside>
--->
-<!--
+<div class="sidebar">
+								<div class="widget">
+									<h4 class="sidebar-widget-title">All Categores</h4>
+									<div class="widget-content">
+										<ul class="catagories">
+											<%@categories.each do |category|%>
+												<li><%= link_to category_path(category) do %><i class="fa fa-angle-double-right" aria-hidden="true"></i> <%= category.name%> <span><%= category.posts.count%></span><%end%></li>
+											<%end%>
+										</ul>
+									</div><!-- .widget-content -->
+								</div><!-- .widget -->
+								<div class="widget">
+									<h4 class="sidebar-widget-title">Recent Posts</h4>
+									<div class="widget-content">
+										<ul class="popular-news-option">
+                      <%@recent_posts.each do |post|%>
+  											<li>
+  												<div class="popular-news-img">
+                            <%if post.image_preview.present?%>
+                              <%= link_to (image_tag post.image_preview.url(:recent_posts), alt:post.title), post_path(post)%>
+                            <%else%>
+                            <a href="<%=post_path(post)%>"><img src="/assets/event/popular-news-img-1.jpg" alt="popular-news-img-1" /></a>
+                            <%end%>
+  												</div><!-- .popular-news-img -->
+  												<div class="popular-news-contant">
+  													<h5><%=link_to post.title, post_path(post)%></h5>
+  													<p><%=post.created_at.strftime("%d %b %Y")%></p>
+  												</div><!-- .popular-news-img -->
+  											</li>
+                      <%end%>
+										</ul>
 
-<aside class="widget">
-  <h4>Text Widget</h4>
-  <p>Fugiat dapibus, tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters amet risus. Cras mattis cosi sectetut amet fermens etrsaters tum aecenas faucib sadips amets.</p>
-</aside>
--->
-<!--
-<aside class="widget ads clearfix">
+									</div><!-- .widget-content -->
+								</div><!-- .widget -->
 
-  <h4>Ads</h4>
-  <a href="#"><img src="http://placehold.it/110" alt=""></a> <a href="#"><img src="http://placehold.it/110" alt=""></a> <a href="#"><img src="http://placehold.it/110" alt=""></a> <a href="#"><img src="http://placehold.it/110" alt=""></a> </aside>
--->
-<aside class="widget">
-<!--<h4>Tabs</h4>-->
-  <ul class="nav nav-tabs" id="myTab">
-    <li class="active"><a data-toggle="tab" href="#tags">Tags</a></li>
-    <!--<li class=""><a data-toggle="tab" href="#recent">Recent</a></li>-->
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div id="tags" class="tab-pane fade active in">
-      <%@tags.each do |tag|%>
-      <%= link_to fa_icon("tag") + ' ' +tag.name.upcase, tag_path(tag), class:"label label-primary" %>
-      <!--   
-      <a class="label label-default">Default</a> 
-      <a class="label label-primary">Primary</a> 
-      <a class="label label-success">Success</a> 
-      <a class="label label-warning">Warning</a> 
-      <a class="label label-danger">Danger</a> 
-      <a class="label label-info">Info</a> 
-      <a class="label label-default">Default</a> 
-      <a class="label label-success">Success</a> 
-      <a class="label label-danger">Danger</a> 
-      <a class="label label-info">Info</a> 
-      <a class="label label-default">Default</a> 
-      <a class="label label-success">Success</a> 
-      <a class="label label-success">Success</a> 
-      <a class="label label-warning">Warning</a> 
-      <a class="label label-danger">Danger</a> 
-      <a class="label label-warning">Warning</a> 
-      <a class="label label-warning">Warning</a> 
-      <a class="label label-danger">Danger</a> 
-      <a class="label label-info">Info</a> 
-      <a class="label label-inverse">Inverse</a>
-      --> 
-     <%end%>
-    </div>
-
-
-<!--
-
-    <div id="recent" class="tab-pane fade">
-      <ul class="media-list">
-        <li class="media"> <a href="#" class="media-photo" style="background-image:url(images/portfolio/t5.jpg)"></a> <a href="#" class="media-date">19<span>FEB</span></a>
-        <h5 class="media-heading"><a href="#">Media heading, this is a title of a news...</a></h5>
-        <p>Fugiat dapibus, tellus ac cursus commodo, ut fermentum...</p>
-        </li>
-      </ul>
-  </div>
- -->                                  
-      
-  </div>
-                         
-</aside>
-
-
+								<div class="widget">
+									<h4 class="sidebar-widget-title">Popular Tags</h4>
+									<div class="widget-content">
+										<div class="tag-cloud">
+                      <%@tags.each do |tag|%>
+                        <%= link_to fa_icon("tag") + ' ' +tag.name.upcase, tag_path(tag), class:"btn" %>
+                      <%end%>
+										</div><!-- .tag-cloud -->
+									</div><!-- .widget-content -->
+								</div><!-- .widget -->
+							</div><!-- .sidebar -->
