@@ -1,7 +1,6 @@
 <!DOCTYPEhtml>
 <html>
   <head>
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,300italic" rel="stylesheet" type="text/css">
 
     <title><%= full_title yield(:title)%></title>
     <%= meta_descriptions yield(:description)%>
@@ -31,7 +30,7 @@
     </script>
     <%end%>
   </head>
-  <body class="collapsing_header">
+  <body>
     <%= render partial: "shared/header"%>
   <!--
   <#%if controller.controller_name=="home"%>
@@ -47,10 +46,8 @@
 <%if controller.controller_name == "contacts"%>
   <div class="full_page_photo"><div id="map"></div></div>
 <%end%>
-<div class="main">
 
-  <div class="container">
-  <br/>
+
   <% flash.each do |name, msg|%>
     <%if msg.is_a?(String)%>
       <div class="alert alert-<%= name.to_s == 'notice' ? "success" : "danger"%>">
@@ -59,7 +56,7 @@
       </div>
     <%end%>
   <%end%>
-  </div>
+
 
 
     <%= yield%>
@@ -68,7 +65,7 @@
     <%= render partial: "shared/footer"%>
 
 
-</div>
+
   <!-- Start Scrolling -->
 	 <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
 	<!-- End Scrolling -->

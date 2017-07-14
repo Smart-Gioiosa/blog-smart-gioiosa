@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 14/07/2017 09:37
+  	Creation date: 14/07/2017 12:02
   	*/
 
 @font-face {
@@ -29,11 +29,13 @@ font-style: normal;
 margin-left: 20px;
 }
 
-.flaticon-pin:before { content: "\f100"; }
-.flaticon-time-left:before { content: "\f101"; }
-.flaticon-business:before { content: "\f102"; }
-.flaticon-car:before { content: "\f103"; }
-.flaticon-illumination:before { content: "\f104"; }
-.flaticon-people:before { content: "\f105"; }
-.flaticon-book:before { content: "\f106"; }
-.flaticon-computer:before { content: "\f107"; }
+.flaticon-mail:before { content: "\f100"; }
+.flaticon-phone-call:before { content: "\f101"; }
+.flaticon-pin:before { content: "\f102"; }
+.flaticon-time-left:before { content: "\f103"; }
+.flaticon-business:before { content: "\f104"; }
+.flaticon-car:before { content: "\f105"; }
+.flaticon-illumination:before { content: "\f106"; }
+.flaticon-people:before { content: "\f107"; }
+.flaticon-book:before { content: "\f108"; }
+.flaticon-computer:before { content: "\f109"; }

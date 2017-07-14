@@ -22,7 +22,7 @@ class ImagePreviewUploader < CarrierWave::Uploader::Base
   process :resize_to_limit => [1920, 1280]
 
    version :thumb do
-     process :resize_to_fill => [600, 600]
+     process :resize_to_fill => [370, 270]
    end
 
    version :thumb2 do
