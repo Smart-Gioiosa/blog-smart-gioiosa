@@ -16,6 +16,7 @@
     <tr>
       <th>Title</th>
       <th>Body</th>
+      <th>Pubblished</th>
       <th></th>
       <th></th>
     </tr>
@@ -25,6 +26,7 @@
         <tr>
           <td><%= link_to post.title, admin_post_path(post) %></td>
           <td><%= truncate(post.body)%></td>
+          <td><%= check_box "post", "pubblished", {checked: post.pubblished, disabled: true} %><td>
           <td class="col-md-1"><%= link_to fa_icon("pencil") +" Edit", edit_admin_post_path(post), remote: true, class:"btn btn-primary" %> </td>
           <td class="col-md-1"><%= link_to fa_icon("trash") + " Delete", [:admin, post], method: :delete, data: {confirm: 'You Sure'}, class: "btn btn-danger"%>
       <% end %>

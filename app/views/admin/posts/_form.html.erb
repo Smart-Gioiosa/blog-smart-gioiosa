@@ -7,6 +7,8 @@
             <div class="modal-body">
               <%= render 'shared/error_messages', object: f.object %>
 
+              <label><%= f.check_box :pubblished %>Pubblica</label><br>
+
 
               <%= f.label :title %><br>
               <%= f.text_field :title, class: 'form-control', placeholder:"Title Post" %>

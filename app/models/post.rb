@@ -9,4 +9,5 @@ class Post < ApplicationRecord
    has_and_belongs_to_many :tags
    has_and_belongs_to_many :categories
    validates :image_preview, presence: true
+   scope :pubblished, -> {where(pubblished: true)}
 end
