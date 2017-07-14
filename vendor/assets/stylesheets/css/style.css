@@ -1112,7 +1112,6 @@ section{
 	background-position: 50% 50%;
 }
 .page-header-overlay{
-	background: rgba(124, 182, 69, 0.61);
 }
 .bg-page-header .page-header{
 	text-align: center;
@@ -4598,7 +4597,7 @@ div#filters {
 	font-family: FontAwesome;
 	content: "\f10e";
 	bottom: 0;
-	right: 23%;
+	right: 2%;
 	-webkit-transform: rotate(360deg);
 	transform: rotate(360deg);
 }
