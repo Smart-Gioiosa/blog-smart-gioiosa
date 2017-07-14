@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 26/06/2017 11:57
+    Creation date: 14/07/2017 09:37
     */
 
     @font-face {
@@ -36,16 +36,20 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-business:before { content: "\f100"; }
-.flaticon-car:before { content: "\f101"; }
-.flaticon-illumination:before { content: "\f102"; }
-.flaticon-people:before { content: "\f103"; }
-.flaticon-book:before { content: "\f104"; }
-.flaticon-computer:before { content: "\f105"; }
+    .flaticon-pin:before { content: "\f100"; }
+.flaticon-time-left:before { content: "\f101"; }
+.flaticon-business:before { content: "\f102"; }
+.flaticon-car:before { content: "\f103"; }
+.flaticon-illumination:before { content: "\f104"; }
+.flaticon-people:before { content: "\f105"; }
+.flaticon-book:before { content: "\f106"; }
+.flaticon-computer:before { content: "\f107"; }
     
-    $font-Flaticon-business: "\f100";
-    $font-Flaticon-car: "\f101";
-    $font-Flaticon-illumination: "\f102";
-    $font-Flaticon-people: "\f103";
-    $font-Flaticon-book: "\f104";
-    $font-Flaticon-computer: "\f105";
+    $font-Flaticon-pin: "\f100";
+    $font-Flaticon-time-left: "\f101";
+    $font-Flaticon-business: "\f102";
+    $font-Flaticon-car: "\f103";
+    $font-Flaticon-illumination: "\f104";
+    $font-Flaticon-people: "\f105";
+    $font-Flaticon-book: "\f106";
+    $font-Flaticon-computer: "\f107";
