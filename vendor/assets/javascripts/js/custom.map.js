@@ -19,28 +19,27 @@
 
 		        // Create a map object, and include the MapTypeId to add
 		        // to the map type control.
-				
+
 		        var map = new google.maps.Map(document.getElementById('map'), {
 		          center: {lat: 38.165083, lng: 14.850501},
-		          zoom: 9,
+		          zoom: 15,
 				  scrollwheel: false,
 				   icon: 'assets/images/map-icon.png',
 		          mapTypeControlOptions: {
 		            mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
 		                    'styled_map']
 		          }
-				  
+
 		        });
-			var myLatlng = new google.maps.LatLng(38.165083, 14.850501);		
+			var myLatlng = new google.maps.LatLng(38.165083, 14.850501);
 			var marker = new google.maps.Marker({
 				position: myLatlng,
-				icon: "assets/images/home01/map-icon.png",
+				icon: "/assets/home01/map-icon.png",
 				title:"Hello World!"
-			});	
-			marker.setMap(map);		
+			});
+			marker.setMap(map);
 
 		        //Associate the styled map with the MapTypeId and set it to display.
 		        map.mapTypes.set('styled_map', styledMapType);
-		        map.setMapTypeId('styled_map');
+		        //map.setMapTypeId('styled_map');
 		}
-
