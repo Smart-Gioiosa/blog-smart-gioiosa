@@ -31,6 +31,16 @@
 	<section class="bg-single-recent-project">
 		<div class="container">
 			<div class="row">
+				<p class="text-center">
+				<%=link_to 'Regolamento', contest_fotografico_regolamento_path, class:"btn btn-default"%>
+					<% if user_signed_in? %>
+				<%=link_to 'Carica la tua foto', new_area_privata_user_smartphoto_path(current_user), class:"btn btn-default"%>
+				<%else%>
+				<%=link_to 'Carica la tua foto', new_user_session_path, class:"btn btn-default"%>
+
+				<%end%>
+				<p>
+				<br>
 				<div class="recent-project">
 					<div id="filters" class="button-group ">
 						<button class="button is-checked" data-filter="*">show all</button>
@@ -39,6 +49,7 @@
 						<button class="button" data-filter=".spazi-da-non-perdere-luoghi-abbandonati">spazi da non perdere</button>
 						<button class="button" data-filter=".la-terra-dei-colori-arte-tradizioni-e-sapori">la terra dei colori</button>
 					</div>
+
 					<div class="portfolio-items">
 
 
