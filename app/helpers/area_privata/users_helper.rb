@@ -1,0 +1,2 @@
+module AreaPrivata::UsersHelper
+end

@@ -1,45 +1,75 @@
-<section class="hgroup centered">
-<div class="container">
-<h1>PHOTOSMARTCONTEST</h1>
-    <ul class="breadcrumb pull-right">
-      <li><a href="/">Home</a> </li>
-    </ul>
-</div>
-</section>
-<section>
-  <div class="container bs-docs-container">
-      <div class="row">
-        <div class="col-md-12" role="main">
-          <%=image_tag('/assets/copertina_evento', class:"img-responsive")%>
-          <br>
-          <p>PHOTOSMARTCONTEST2017<br />
-          I CONCORSO FOTOGRAFICO<br />
-          #terramare: scorci eoliani e nebroidei</p>
 
-          <p>DATE<br />
-          01/07/2017 - 17/08/2017</p>
+<!-- Start Page Header Section -->
 
-          <p>TEMI PRINCIPALI<br />
-          1_borghi/paesi (architettura);<br />
-          2_tra cielo e terra (paesaggi e natura);<br />
-          3_spazi da non perdere (luoghi abbandonati);<br />
-          4_la terra dei colori (arte, tradizioni e sapori).</p>
+	<section class="bg-page-header">
+		<div class="page-header-overlay">
+			<div class="container">
+				<div class="row">
+					<div class="page-header">
+						<div class="page-title">
+							<h2>Photo Smart Contest</h2>
+						</div><!-- .page-title -->
+						<div class="page-header-content">
+							<ol class="breadcrumb">
+								<li><a href="/">Home</a></li>
+								<li>Photo Smart Contest</li>
+							</ol>
+						</div><!-- .page-header-content -->
+					</div><!-- .page-header -->
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</div><!-- .page-header-overlay -->
+	</section>
 
-          <p>PARTECIPAZIONE<br />
-          1) Scatta una foto e pubblicala sui tuoi social (Facebook e/o Instagram) inserendo il numero del tema scelto (es. 1_borghi/paesi ecc&hellip;) e una breve descrizione dello scatto, taggando @smartgioiosa e inserendo hashtag #terramare&nbsp;<br />
-          2) A partire dal 15 luglio, carica sul sito la foto che hai precedentemente pubblicato sui social</p>
 
-          <p>PREMIAZIONE<br />
-          Vinceranno gli autori dei 4 scatti (1 per categoria) giudicati dalla giuria popolare pi&ugrave; meritevoli e verranno assegnati i seguenti premi e riconoscimenti:<br />
-          -&nbsp;&nbsp; &nbsp;targa di merito e stampa in carta fotografica dello scatto vincente;<br />
-          -&nbsp;&nbsp; &nbsp;2 biglietti omaggio per l&rsquo;ingresso al Nebrodi Adventure Park di Longi</p>
+	<!-- End Page Header Section -->
 
-          <p>Le votazioni inizieranno alle ore 00:00 del 01/08/17 e termineranno alle ore 23:59 del 17/08/2017.</p>
 
-          <p>Per maggiori dettagli vai al <%= link_to 'Regolamento completo', '/assets/BANDO_PHOTOSMARTCONTEST.pdf', target:'_blank'%></p>
+	<!-- Start Recent Project Section -->
 
-  </div>
-</div>
-</div>
 
-</section>
+	<section class="bg-single-recent-project">
+		<div class="container">
+			<div class="row">
+				<div class="recent-project">
+					<div id="filters" class="button-group ">
+						<button class="button is-checked" data-filter="*">show all</button>
+						<button class="button" data-filter=".borghipaesi-architettura">borghi/paesi</button>
+						<button class="button" data-filter=".tra-cielo-e-terra-paesaggi-e-natura">tra cielo e terra</button>
+						<button class="button" data-filter=".spazi-da-non-perdere-luoghi-abbandonati">spazi da non perdere</button>
+						<button class="button" data-filter=".la-terra-dei-colori-arte-tradizioni-e-sapori">la terra dei colori</button>
+					</div>
+					<div class="portfolio-items">
+
+
+            <%@photos.each do |p|%>
+						<div class="item <%=p.category.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')%>" data-category="transition">
+							<div class="item-inner">
+								<div class="portfolio-img">
+									<div class="overlay-project"></div><!-- .overlay-project -->
+                  <%if p.image.present?%>
+                  <%= image_tag p.image.url(:contest), alt:p.title%>
+                  <%end%>
+									<ul class="project-link-option">
+										<li class="project-link"><a href="<%= contest_path(p)%>"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+										<li class="project-search"><a href="<%= p.image.url%>" data-rel="lightcase:myCollection"><i class="fa fa-search-plus" aria-hidden="true"></i></a></li>
+									</ul>
+								</div><!-- /.portfolio-img -->
+								<div class="recent-project-content">
+									<h4><%= link_to p.title, contest_path(p)%></h4>
+									<p>By : <span><a href="#"><%=p.name%> <%=p.surname%></a></span></p>
+								</div><!-- .latest-port-content -->
+							</div><!-- .item-inner -->
+						</div><!-- .items -->
+
+            <%end%>
+
+					</div><!-- .isotope-items -->
+
+				</div><!-- .recent-project -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</section>
+
+
+	<!-- End Recent Project Section -->

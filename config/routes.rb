@@ -23,8 +23,15 @@ Rails.application.routes.draw do
     resources :categories
   end
 
+  namespace :area_privata do
+    resources :users do
+      resources :smartphotos
+    end
+  end
+
   get 'contest/index'
-  match 'contest-fotografico'=> 'contest#index', via: :get
+  match 'contest-fotografico/regolamento'=> 'contest#regolamento', via: :get
+  resources :contest, path: 'contest-fotografico'
   match 'chi-siamo' => 'about_us#index', via: :get
   match 'contatti' => 'contacts#new', via: :get
   match 'team' => 'team#index', via: :get

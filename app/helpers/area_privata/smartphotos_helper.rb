@@ -1,0 +1,2 @@
+module AreaPrivata::SmartphotosHelper
+end

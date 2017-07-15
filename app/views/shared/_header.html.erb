@@ -49,8 +49,8 @@
 										<%= link_to "Eventi", events_path%>
 									</li>
 
-									<li class="<%= "active" if controller.controller_name == 'projects'%>">
-										<%= link_to "Progetti", projects_path%>
+									<li class="<%= "active" if controller.controller_name == 'contest'%>">
+										<%= link_to "PhotoContest", '/contest-fotografico'%>
 									</li>
 
 									<li class="dropdown">
@@ -66,6 +66,18 @@
 									<li class="<%= "active" if controller.controller_name == "contacts"%>">
 										<%= link_to "Contatti", contatti_path%>
 									</li>
+									<% if user_signed_in? %>
+									<li>
+										<%= link_to('Area Privata', area_privata_user_path(current_user)) %>
+									</li>
+									<li>
+										<%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %>
+									</li>
+									<% else %>
+									<li>
+										<%= link_to('LOGIN', new_user_session_path)  %>
+									</li>
+									<% end %>
 								</ul>
 
 							</div><!-- .navbar-collapse -->

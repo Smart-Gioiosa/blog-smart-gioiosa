@@ -1,0 +1,131 @@
+
+<section class="bg-page-header">
+  <div class="page-header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <div class="page-title">
+            <h2>Inserisci la tua foto</h2>
+          </div><!-- .page-title -->
+          <div class="page-header-content">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li>Inserisci la tua foto</li>
+            </ol>
+          </div><!-- .page-header-content -->
+        </div><!-- .page-header -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .page-header-overlay -->
+</section>
+
+
+	<!-- Start our Donate  Section -->
+
+		<section class="bg-donate-section">
+			<div class="container">
+				<div class="row">
+					<div class="donate-form">
+              <%= form_for([:area_privata, @user, @smartphoto], html:{class:"contact-form"}) do |f| %>
+                  <%= render 'shared/error_messages', object: f.object %>
+							<div class="information-form">
+								<h3>Carica la tua foto</h3>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+                      <%= f.label :title,"Titolo*" %>
+                      <%= f.text_field :title, class: 'form-control', placeholder:"Titolo Foto" %>
+										 </div><!-- .form-group -->
+									</div><!-- .col-md-6 -->
+									<div class="col-md-6">
+										<div class="form-group">
+                      <%= f.label :name,"Nome*" %>
+                      <%= f.text_field :name, class: 'form-control', placeholder:"Nome " %>
+
+										 </div><!-- .form-group -->
+									</div><!-- .col-md-6 -->
+									<div class="col-md-6">
+										<div class="form-group">
+                      <%= f.label :surname,"Cognome*" %>
+                      <%= f.text_field :surname, class: 'form-control', placeholder:"Cognome " %>
+										 </div><!-- .form-group -->
+									</div><!-- .col-md-6 -->
+									<div class="col-md-6">
+										<div class="form-group">
+                      <%= f.label :birthday,"Data di nascita*" %>
+                      <%= f.date_field :birthday, class: 'form-control', placeholder:"Data di Nascita " %>
+										 </div><!-- .form-group -->
+									</div><!-- .col-md-6 -->
+									<div class="col-md-6">
+										<div class="form-group">
+                      <%= f.label :birthplace,"Luogo di nascita*" %>
+                      <%= f.text_field :birthplace, class: 'form-control', placeholder:"Luogo di Nascita " %>
+										 </div><!-- .form-group -->
+									</div><!-- .col-md-6 -->
+									<div class="col-md-6">
+										<div class="form-group">
+                          <%= f.label :address,"Indirizzo Residenza*" %>
+                          <%= f.text_field :address, class: 'form-control', placeholder:"Indirizzo Residenza " %>
+										 </div><!-- .form-group -->
+									</div><!-- .col-md-6 -->
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                          <%= f.label :telephone,"Telefono*" %>
+                          <%= f.text_field :telephone, class: 'form-control', placeholder:"Recapito telefonico" %>
+                     </div><!-- .form-group -->
+                  </div><!-- .col-md-6 -->
+
+                  <div class="col-md-12">
+                    <div class="form-group">
+                          <%= f.label :email,"Email*" %>
+                          <%= f.text_field :email, class: 'form-control', placeholder:"Email" %>
+                     </div><!-- .form-group -->
+                  </div><!-- .col-md-6 -->
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                          <%= f.label :place,"Luogo dello scatto*" %>
+                          <%= f.text_field :place, class: 'form-control', placeholder:"Luogo della foto " %>
+                     </div><!-- .form-group -->
+                  </div><!-- .col-md-6 -->
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                          <%= f.label :year,"Anno dello scatto*" %>
+                          <%= f.text_field :year, class: 'form-control', placeholder:"Anno dello scatto " %>
+                     </div><!-- .form-group -->
+                  </div><!-- .col-md-6 -->
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+             <%= f.label :category, "Categoria*"%>
+             <%= f.select(:category, [["borghi/paesi (architettura)", 'borghi/paesi (architettura)'], ["tra cielo e terra (paesaggi e natura)",'tra cielo e terra (paesaggi e natura)'], ["spazi da non perdere (luoghi abbandonati)",'spazi da non perdere (luoghi abbandonati)'], ["la terra dei colori (arte, tradizioni e sapori)",'la terra dei colori (arte, tradizioni e sapori)']],{ include_blank: true}, { class:"form-control"}) %>
+                     </div><!-- .form-group -->
+                  </div><!-- .col-md-6 -->
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+
+                      <%= f.label :image, "Immagine* " %>
+                      <%= f.file_field :image %>
+
+                     </div><!-- .form-group -->
+                  </div><!-- .col-md-6 -->
+
+
+								</div><!-- .row -->
+							</div><!-- .information-form -->
+              <div class="row">
+                <label><%= f.check_box :privacy %>Accetto trattamento dati personali  </label>
+              </div>
+
+						<%= f.submit "Invia", class: "btn btn-default"%>
+						<%end%>
+					</div><!-- .donate-form -->
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</section>
+
+
+	<!-- End our Donate section -->

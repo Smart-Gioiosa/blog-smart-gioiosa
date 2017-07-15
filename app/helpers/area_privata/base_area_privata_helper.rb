@@ -1,0 +1,2 @@
+module AreaPrivata::BaseAreaPrivataHelper
+end

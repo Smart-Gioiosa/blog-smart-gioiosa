@@ -1,0 +1,83 @@
+
+<section class="bg-page-header">
+  <div class="page-header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <div class="page-title">
+            <h2>Inserisci la tua foto</h2>
+          </div><!-- .page-title -->
+          <div class="page-header-content">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li>Inserisci la tua foto</li>
+            </ol>
+          </div><!-- .page-header-content -->
+        </div><!-- .page-header -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .page-header-overlay -->
+</section>
+<!-- Start Recent Project Section -->
+
+
+	<section class="bg-single-project">
+		<div class="container">
+			<div class="row">
+				<div class="single-project">
+					<div class="row">
+						<div class="col-md-12">
+
+              <h2><%= current_user.email%></h2>
+
+							<div class="single-pro-main-content">
+
+                <%if current_user.smartphoto.nil?%>
+                <p>Partecipa al Photo Smart Contest</p>
+                <%= link_to 'Inserisci la tua foto', new_area_privata_user_smartphoto_path(current_user), class:"btn btn-default"%>
+                <%else%>
+								<div class="row">
+
+
+									<div class="col-md-5">
+										<ul class="single-left-content">
+                      <li><h4>Titolo:</h4><p><%=@smartphoto.title%></p></li>
+                    <li><h4>Nome:</h4><p><%=@smartphoto.name%></p></li>
+                    <li><h4>Cognome:</h4> <p><%=@smartphoto.surname%></p></li>
+                    <li><h4>Data Nascita:</h4> <p><%=@smartphoto.birthday%></p></li>
+                    <li><h4>Luogo di nascita:</h4> <p><%=@smartphoto.birthplace%></p></li>
+                    <li><h4>Telefono:</h4><p> <%=@smartphoto.telephone%></p></li>
+                    <li><h4>Email:</h4> <p><%=@smartphoto.email%></p></li>
+                    <li><h4>Residenza:</h4> <p><%=@smartphoto.address%></p></li>
+                    <li><h4>Anno Scatto:</h4><p> <%=@smartphoto.year%></p></li>
+                    <li><h4>Luogo Scatto:</h4> <p><%=@smartphoto.place%></p></li>
+                    <li><h4>Categoria:</h4> <p><%=@smartphoto.category%></p></li>
+
+
+
+
+										</ul>
+									</div><!-- .col-md-4 -->
+									<div class="col-md-7">
+										<div class="single-project-content">
+											<h3>Project Description</h3>
+                      <%if @smartphoto.image.present?%>
+                      <%= link_to image_tag(@smartphoto.image.url, class: "img-responsive"), @smartphoto.image.url, class: "thumbnail" %>
+                      <%end%>
+											<p></p>
+										</div><!-- .single-left-content -->
+									</div><!-- .col-md-8 -->
+								</div>
+                <%end%>
+
+							</div><!-- .single-proj-main-content -->
+						</div><!-- .col-md-9 -->
+
+					</div><!-- .row -->
+				</div><!-- .single-project -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</section>
+
+
+	<!-- End Recent Project Section -->
