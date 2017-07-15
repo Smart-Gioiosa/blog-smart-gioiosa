@@ -93,7 +93,8 @@
                   <div class="col-md-6">
                     <div class="form-group">
                           <%= f.label :year,"Anno dello scatto*" %>
-                          <%= f.text_field :year, class: 'form-control', placeholder:"Anno dello scatto " %>
+                          <%= f.date_select :year, {order: [:year], prompt: { }, start_year: Date.today.year, end_year: Date.today.year - 9},
+ class: 'form-control', placeholder:"Anno dello scatto " %>
                      </div><!-- .form-group -->
                   </div><!-- .col-md-6 -->
 

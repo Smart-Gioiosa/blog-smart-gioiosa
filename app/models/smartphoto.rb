@@ -12,18 +12,7 @@ class Smartphoto < ApplicationRecord
   end
   mount_uploader :image, SmartphotoUploader
   process_in_background :image
-  validates :title, presence: true
-  validates :image, presence: true
-  validates :privacy, presence: true
-  validates :name, presence: true
-  validates :surname, presence: true
-  validates :email, presence: true
-  validates :telephone, presence: true
-  validates :birthday, presence: true
-  validates :birthplace, presence: true
-  validates :place, presence: true
-  validates :address, presence: true
-  validates :category, presence: true
+
   validates :year, presence: true
 
 end

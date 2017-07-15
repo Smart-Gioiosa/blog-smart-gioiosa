@@ -49,7 +49,7 @@
                     <li><h4>Telefono:</h4><p> <%=@smartphoto.telephone%></p></li>
                     <li><h4>Email:</h4> <p><%=@smartphoto.email%></p></li>
                     <li><h4>Residenza:</h4> <p><%=@smartphoto.address%></p></li>
-                    <li><h4>Anno Scatto:</h4><p> <%=@smartphoto.year%></p></li>
+                    <li><h4>Anno Scatto:</h4><p> <%=@smartphoto.year.strftime("%Y")%></p></li>
                     <li><h4>Luogo Scatto:</h4> <p><%=@smartphoto.place%></p></li>
                     <li><h4>Categoria:</h4> <p><%=@smartphoto.category%></p></li>
 
