@@ -43,9 +43,11 @@
 <%if controller.controller_name=="home"%>
   <%= render partial: "shared/slider"%>
 <%end%>
-<%if controller.controller_name == "contacts"%>
+<!--
+<#%if controller.controller_name == "contacts"%>
   <div class="full_page_photo"><div id="map"></div></div>
-<%end%>
+<#%end%>
+-->
 
 
   <% flash.each do |name, msg|%>
@@ -72,9 +74,11 @@
 
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%if controller.controller_name=="contacts"%>
-      <%= render 'contacts/scripts_map'%>
-    <%end%>
+    <!--
+    <#%if controller.controller_name=="contacts"%>
+      <#%= render 'contacts/scripts_map'%>
+    <#%end%>
+    -->
 
 
   </body>

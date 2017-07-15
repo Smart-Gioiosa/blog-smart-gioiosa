@@ -1,6 +1,4 @@
 
-
-
 		 function initMap() {
 
 		        // Create a new StyledMapType object, passing it an array of styles,
@@ -23,7 +21,7 @@
 		        // to the map type control.
 				
 		        var map = new google.maps.Map(document.getElementById('map'), {
-		          center: {lat: 55.864237, lng: -4.251806},
+		          center: {lat: 38.165083, lng: 14.850501},
 		          zoom: 9,
 				  scrollwheel: false,
 				   icon: 'assets/images/map-icon.png',
@@ -33,7 +31,7 @@
 		          }
 				  
 		        });
-			var myLatlng = new google.maps.LatLng(55.864237, -4.251806);		
+			var myLatlng = new google.maps.LatLng(38.165083, 14.850501);		
 			var marker = new google.maps.Marker({
 				position: myLatlng,
 				icon: "assets/images/home01/map-icon.png",
