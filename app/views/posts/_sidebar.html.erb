@@ -1,6 +1,6 @@
 <div class="sidebar">
 								<div class="widget">
-									<h4 class="sidebar-widget-title">All Categores</h4>
+									<h4 class="sidebar-widget-title">Categorie</h4>
 									<div class="widget-content">
 										<ul class="catagories">
 											<%@categories.each do |category|%>
@@ -10,7 +10,7 @@
 									</div><!-- .widget-content -->
 								</div><!-- .widget -->
 								<div class="widget">
-									<h4 class="sidebar-widget-title">Recent Posts</h4>
+									<h4 class="sidebar-widget-title">Articoli Recenti</h4>
 									<div class="widget-content">
 										<ul class="popular-news-option">
                       <%@recent_posts.each do |post|%>
@@ -34,10 +34,10 @@
 								</div><!-- .widget -->
 
 								<div class="widget">
-									<h4 class="sidebar-widget-title">Popular Tags</h4>
+									<h4 class="sidebar-widget-title">Tags Popolari</h4>
 									<div class="widget-content">
 										<div class="tag-cloud">
-                      <%@tags.each do |tag|%>
+                      <%@tags.limit(20).order("RANDOM()").each do |tag|%>
                         <%= link_to fa_icon("tag") + ' ' +tag.name.upcase, tag_path(tag), class:"btn" %>
                       <%end%>
 										</div><!-- .tag-cloud -->

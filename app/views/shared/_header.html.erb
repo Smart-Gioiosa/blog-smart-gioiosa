@@ -40,11 +40,12 @@
 									<li class="<%= "active" if current_page?("/chi-siamo")%>">
 										<%= link_to "Chi Siamo", chi_siamo_path %>
 									</li>
-									<!--
-									<li class="<#%= "active" if current_page?("/posts")%>">
-										<%#= link_to "Blog", posts_path%>
-									</li>
+									
 
+                  <li class="<%= "active" if current_page?("/smart-blog")%>">
+										<%= link_to "Blog", posts_path%>
+									</li>
+                  <!--
 									<li class="<#%= "active" if controller.controller_name == "events"%>">
 										<#%= link_to "Eventi", events_path%>
 									</li>-->

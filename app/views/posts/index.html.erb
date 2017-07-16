@@ -10,7 +10,7 @@
 						<div class="page-header-content">
 							<ol class="breadcrumb">
 								<li><a href="/">Home</a></li>
-								<li>blog</li>
+								<li>smart blog</li>
 							</ol>
 						</div><!-- .page-header-content -->
 					</div><!-- .page-header -->
@@ -45,8 +45,8 @@
   										<h4><%= link_to post.title, post_path(post)%></h4>
   										<ul class="meta-post">
   											<li><i class="fa fa-calendar" aria-hidden="true"></i> <%=post.created_at.strftime("%d %b %Y")%></li>
-  											<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 24 Like</a></li>
-  											<li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> 24 Comment</a></li>
+  											<!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 24 Like</a></li>
+                        <li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> 24 Comment</a></li>-->
   										</ul>
                       <p><%= (raw post.body.truncate(250, separator: ' '))%></p>
                       <%= link_to post_path(post) do %> Read More<i class="fa fa-angle-double-right" aria-hidden="true"></i><%end%>

@@ -14,7 +14,7 @@
               <%= f.text_field :title, class: 'form-control', placeholder:"Title Post" %>
 
               <%= f.label :body %><br>
-              <%= f.cktext_area :body, class: 'form-control', placeholder:"Body Post"%>
+              <%= f.text_area :body, class: 'form-control', placeholder:"Body Post"%>
 
               <hr>
 
@@ -49,7 +49,7 @@
              <% end %>
 
              <br>
-
+            <h2>Categories</h2>
              <%= hidden_field_tag "post[category_ids][]", nil %>
                <% for category in Category.all %>
                  <div class="checkbox">

@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
 
-
-
-
   mount Ckeditor::Engine => '/ckeditor'
   get 'events/index'
 
   get 'team/index'
 
   devise_for :users
-  resources :posts, only:[:index, :show]
+  #resources :posts, only:[:index, :show]
 
 
   namespace :admin do
@@ -37,6 +34,7 @@ Rails.application.routes.draw do
   match 'team' => 'team#index', via: :get
   match 'co-working' => 'co_working#index', via: :get
   resources :contacts, path:'contatti', only: [:new, :create]
+  resources :posts, path: 'smart-blog', only: [:index, :show]
   resources :newsletters
   resources :tags
   resources :projects
