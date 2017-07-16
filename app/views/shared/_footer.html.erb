@@ -38,7 +38,7 @@
                   <h3>Ultime dal blog</h3>
                 </div><!-- .widgets-title -->
                 <ul class="latest-news">
-                  <%Post.pubblished.last(3).each do |post|%>
+                  <%Post.pubblished.last(3).reverse.each do |post|%>
                   <li>
                     <span class="thumbnail-img">
                       <%=image_tag post.image_preview.url(:small_thumb), class:"img-responsive"%>
