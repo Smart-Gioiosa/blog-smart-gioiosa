@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   match 'co-working' => 'co_working#index', via: :get
   resources :contacts, path:'contatti', only: [:new, :create]
   resources :posts, path: 'smart-blog', only: [:index, :show]
+  resources :posts, only:[:index, :show]
   resources :newsletters
   resources :tags
   resources :projects

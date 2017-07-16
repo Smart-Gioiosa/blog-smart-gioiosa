@@ -42,7 +42,7 @@
 									</li>
 									
 
-                  <li class="<%= "active" if current_page?("/smart-blog")%>">
+                  <li class="<%= "active" if controller.controller_name == "posts"%>">
 										<%= link_to "Smart Blog", posts_path%>
 									</li>
                   <!--
