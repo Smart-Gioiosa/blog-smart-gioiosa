@@ -11,6 +11,8 @@ class SmartphotoUploader < CarrierWave::Uploader::Base
  # Choose what kind of storage to use for this uploader:
 
   storage :file
+  process :resize_to_limit => [1280, 900]
+
 
   version :thumb do
     process :resize_to_limit => [500, 500]
