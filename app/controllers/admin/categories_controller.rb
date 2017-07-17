@@ -52,7 +52,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   private
   def set_category
-    @category =  Category.friendly.find(params[:id])
+    @category =  Category.find(params[:id])
   end
 
   def category_params
