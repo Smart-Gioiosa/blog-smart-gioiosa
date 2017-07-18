@@ -297,7 +297,7 @@ h4{
 	font-size: 20px;
     color: #000000;
 	font-weight: 700;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 h4 a{
 	font-size: 20px;
