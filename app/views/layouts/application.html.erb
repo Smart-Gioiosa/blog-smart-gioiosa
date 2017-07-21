@@ -31,6 +31,50 @@
     <%end%>
   </head>
   <body>
+
+    <%if controller.controller_name=="posts"%>  
+      <!-- Open Graph Facebook -->
+      <meta property="og:url"                content="<%= request.original_url%>" />
+      <meta property="og:type"               content="article" />
+      <meta property="og:title"              content="<%= yield(:title)%>" />
+      <meta property="og:description"        content="<%= yield(:description)%>" />
+      <meta property="og:image"              content="<%= asset_url yield(:image)%>" />
+
+     
+    <%else%> 
+      <!-- Open Graph Facebook -->
+      <meta property="og:url"                content="<%= request.original_url%>"/>
+      <meta property="og:type"               content="article" />
+      <meta property="og:title"              content="Smart Gioiosa" />
+      <meta property="og:description"        content="Smart Gioiosa - Smart City - Nebrodi" />
+      <meta property="og:image"              content="http://www.smartgioiosa.it/assets/smart.png" />
+    
+    <%end%>
+
+  
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '172181319990844',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+  
+
+
     <%= render partial: "shared/header"%>
   <!--
   <#%if controller.controller_name=="home"%>
