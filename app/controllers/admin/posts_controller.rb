@@ -56,7 +56,7 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def post_params
-    params.require(:post).permit(:pubblished, :title, :body, :image_preview, :remove_image_preview, { tag_ids:[]}, { category_ids:[]})
+    params.require(:post).permit(:pubblished, :title, :body, :meta_title, :meta_description, :image_preview, :remove_image_preview, { tag_ids:[]}, { category_ids:[]})
   end
 
 end

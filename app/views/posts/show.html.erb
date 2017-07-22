@@ -1,5 +1,5 @@
-<%= content_for :title, @post.title%>
-<!--<#%= content_for :description, @post.body%>-->
+<%= content_for :title, @post.meta_title%>
+<%= content_for :description, @post.meta_description%>
 <%= content_for :image, @post.image_preview.url%>
 
 <!-- Start Page Header Section -->

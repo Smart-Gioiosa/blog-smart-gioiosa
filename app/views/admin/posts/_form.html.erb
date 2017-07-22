@@ -58,7 +58,15 @@
                  </div>
               <% end %>
 
-              <br>
+              <fieldset>
+              <legend>SEO:</legend>
+                <%= f.label :meta_title%>
+                <%= f.text_field :meta_title%>
+
+                <%= f.label :meta_description%>
+                <%= f.text_field :meta_description%>
+              </fieldset>
+              <hr>
 
               </div>
               <div class="modal-footer">
