@@ -10,7 +10,13 @@ class SmartphotoUploader < CarrierWave::Uploader::Base
 
  # Choose what kind of storage to use for this uploader:
 
+ if Rails.env.development?
   storage :file
+ end
+
+ if Rails.env.production?
+  storage :fog
+ end
   process :resize_to_limit => [1280, 900]
 
 
