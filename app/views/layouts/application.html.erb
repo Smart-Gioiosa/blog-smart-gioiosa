@@ -31,7 +31,8 @@
     <%end%>
   
   
-
+    <meta property="fb:app_id" content="172181319990844" />
+    
     <%if controller.controller_name=="posts"%>  
       <!-- Open Graph Facebook -->
       <meta property="og:url"                content="<%= request.original_url%>" />
@@ -39,15 +40,13 @@
       <meta property="og:title"              content="<%= yield(:title)%>" />
       <meta property="og:description"        content="<%= yield(:description)%>" />
       <meta property="og:image"              content="<%= asset_url yield(:image)%>" />
-
-     
     <%else%> 
       <!-- Open Graph Facebook -->
       <meta property="og:url"                content="<%= request.original_url%>"/>
       <meta property="og:type"               content="article" />
       <meta property="og:title"              content="Smart Gioiosa" />
       <meta property="og:description"        content="Smart Gioiosa - Smart City - Nebrodi" />
-      <meta property="og:image"              content="http://www.smartgioiosa.it/assets/smart.png" />
+      <meta property="og:image"              content="http://www.smartgioiosa.it/assets/smart.jpg" />
     
     <%end%>
 
