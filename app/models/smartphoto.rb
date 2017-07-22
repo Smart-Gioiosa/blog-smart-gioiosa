@@ -14,5 +14,20 @@ class Smartphoto < ApplicationRecord
   process_in_background :image
 
   validates :year, presence: true
+  validates :name, presence: true
+  validates :surname, presence: true
+  validates :birthday, presence: true
+  validates :birthplace, presence: true
+  validates :address, presence: true
+  validates :place, presence: true
+  validates :privacy, presence: true
+  validates :category, presence: true
+  validates :telephone, presence: true
+  validates :title, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length:  {maximum: 255},
+                   format: { with: VALID_EMAIL_REGEX}
+
+
 
 end
