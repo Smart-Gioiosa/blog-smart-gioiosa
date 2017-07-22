@@ -1,21 +1,29 @@
 <!DOCTYPEhtml>
 <html>
   <head>
-
     <title><%= full_title yield(:title)%></title>
     <%= meta_descriptions yield(:description)%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    
+
+
     <%if Rails.env.production?%>
     <script type="text/javascript">
-	var _iub = _iub || [];
-	_iub.csConfiguration = {
-		cookiePolicyId: 8161274,
-		siteId: 851719,
-		lang: "it"
-	};
-</script>
+	    var _iub = _iub || [];
+	    _iub.csConfiguration = {
+		  cookiePolicyId: 8161274,
+		  siteId: 851719,
+		  lang: "it"
+	    };
+    </script>
 <script type="text/javascript" src= "//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script>
 
     <script>
@@ -46,13 +54,13 @@
       <meta property="og:type"               content="article" />
       <meta property="og:title"              content="Smart Gioiosa" />
       <meta property="og:description"        content="Smart Gioiosa - Smart City - Nebrodi" />
-      <meta property="og:image"              content="http://www.smartgioiosa.it/assets/smart.jpg" />
-    
+      <meta property="og:image"              content="http://www.smartgioiosa.it/assets/smart.jpg" /> 
     <%end%>
 
 
   </head>
   <body>
+
   <script>
   window.fbAsyncInit = function() {
     FB.init({
