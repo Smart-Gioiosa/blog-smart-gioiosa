@@ -1,25 +1,97 @@
-<h2>Change your password</h2>
+<section class="bg-page-header">
+  <div class="page-header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <div class="page-title">
+            <h2>Accedi alla tua area privata</h2>
+          </div><!-- .page-title -->
+          <div class="page-header-content">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li>Modifica password</li>
+            </ol>
+          </div><!-- .page-header-content -->
+        </div><!-- .page-header -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .page-header-overlay -->
+</section>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<section class="bg-donate-section">
+  <div class="container">
+    <div class="row">
+      <div class="donate-form">
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put,  class: "contact-form" }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+    <div class="information-form">
+      <h3>Cambia la tua password</h3>
+        <div class="row"> 
+            <div class="col-md-12">
+              <div class="form-group">
+                <%= f.label :password, "New password" %><br />
+                  <% if @minimum_password_length %>
+                  <em>(<%= minimo @minimum_password_length %> caratteri)</em><br />
+                  <% end %>
+                  <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+              </div>
+              </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+            <div class="col-md-12">
+              <div class="form-group">
+                <%= f.label :password_confirmation, "Conferma la nuova password" %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                 <%= button_tag "Cambia password", class: "btn btn-default"%>
+                </div>
+            </div>
+            <% end %>
+
+          </div>
+          </div>
+        </div>
+
+
+          <hr>
+ 
+        <div class="donate-form">
+          <div class="information-form">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group"> 
+                  <%- if controller_name != 'sessions' %>
+                    <%= link_to "Log in", new_session_path(resource_name), class:"btn btn-default" %><br />
+                  <% end -%>
+                 </div>
+              </div>
+
+
+              <div class="col-md-12">
+                <div class="form-group"> 
+                  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                   <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-default" %><br />
+<% end -%>
+                </div>
+              </div>
+            </div><!-- .row -->
+          </div><!-- .information-form -->
+        </div> <!-- .donate-form -->
+
+
+                  
+
+    </div><!-- .row -->  
+  </div><!-- .container -->
+</section>
+
+
+
