@@ -1,16 +1,82 @@
-<h2>Forgot your password?</h2>
+<section class="bg-page-header">
+  <div class="page-header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <div class="page-title">
+            <h2>Accedi alla tua area privata</h2>
+          </div><!-- .page-title -->
+          <div class="page-header-content">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li>Password dimenticata?</li>
+            </ol>
+          </div><!-- .page-header-content -->
+        </div><!-- .page-header -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .page-header-overlay -->
+</section>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<section class="bg-donate-section">
+  <div class="container">
+    <div class="row">
+      <div class="donate-form">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "contact-form" }) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="information-form">
+          <h3>Recupera la tua password</h3>
+          <div class="row"> 
+            <div class="col-md-12">
+              <div class="form-group">
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true, class: "form-control" %>
+              </div>
+            </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+        
+          <!--<#%= f.submit "Send me reset password instructions" %>-->
+          <div class="col-md-12">
+              <div class="form-group">
+                <%= button_tag " Invia le istruzioni", class: "btn btn-default"%>
+              </div>
+          </div>
+      
+          <% end %>
+        </div>
+        </div>
+        </div>
 
-<%= render "devise/shared/links" %>
+        <hr>
+ 
+        <div class="donate-form">
+          <div class="information-form">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group"> 
+                  <%- if controller_name != 'sessions' %>
+                    <%= link_to "Log in", new_session_path(resource_name), class:"btn btn-default" %><br />
+                  <% end -%>
+                 </div>
+              </div>
+
+
+              <div class="col-md-12">
+                <div class="form-group"> 
+                  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                   <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-default" %><br />
+<% end -%>
+                </div>
+              </div>
+            </div><!-- .row -->
+          </div><!-- .information-form -->
+        </div> <!-- .donate-form -->
+
+
+                  
+
+    </div><!-- .row -->  
+  </div><!-- .container -->
+</section>
+

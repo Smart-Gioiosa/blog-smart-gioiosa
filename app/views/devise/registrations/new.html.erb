@@ -1,34 +1,89 @@
-<div class="container">
-<h2>Sign up</h2>
+<section class="bg-page-header">
+  <div class="page-header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <div class="page-title">
+            <h2>Iscriviti al portale Smart Gioiosa</h2>
+          </div><!-- .page-title -->
+          <div class="page-header-content">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li>Registrati</li>
+            </ol>
+          </div><!-- .page-header-content -->
+        </div><!-- .page-header -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .page-header-overlay -->
+</section>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<section class="bg-donate-section">
+  <div class="container">
+    <div class="row">
+      <div class="donate-form">
+
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "contact-form" }) do |f| %>
   <%= devise_error_messages! %>
+  
+        <div class="information-form">
+        <h3>Per registrarti compila il form seguente </h3>
+        <div class="row"> 
+ 
+        <div class="col-md-12"> 
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          </div>
+        </div>
 
-  <div class="form-group">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(minimo <%= @minimum_password_length %> caratteri)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          </div>
+        </div>
+  
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+          </div>
+        </div>
 
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: "form-control" %>
-  </div>
+          <div class="col-md-12"> 
+            <div class="form-group">
+              <%= button_tag "Sign up", class:"btn btn-default" %>
+            </div>
+          </div>
+        
+        <% end %>
 
-  <div class="form-group">
 
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-  </div>
+        </div><!-- .row -->
+        </div><!-- .information-form -->
+      </div> <!-- .donate-form -->
 
-  <div class="form-group">
+      <hr>
+      
+      <div class="donate-form">
+          <div class="information-form">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group"> 
+                  <%= render "devise/shared/links" %>
+                </div>
+              </div>
+            </div><!-- .row -->
+          </div><!-- .information-form -->
+        </div> <!-- .donate-form -->
 
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-  </div>
 
-  <div class="form-group">
-      <%= button_tag "Sign up", class:"btn btn-default" %>
-  </div>
-<% end %>
+    </div><!-- .row -->  
+  </div><!-- .container -->
+</section>
 
-<%= render "devise/shared/links" %>
-</div>

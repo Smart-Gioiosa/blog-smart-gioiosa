@@ -1,44 +1,97 @@
-<div id="documentation">
-<div class="container">
+<section class="bg-page-header">
+  <div class="page-header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <div class="page-title">
+            <h2>Accedi alla tua area privata</h2>
+          </div><!-- .page-title -->
+          <div class="page-header-content">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li>Login</li>
+            </ol>
+          </div><!-- .page-header-content -->
+        </div><!-- .page-header -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .page-header-overlay -->
+</section>
 
-<h2>Log in</h2>
-<div class="block">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "form-horizontal style-form"}) do |f| %>
-    <div class="form-group">
-      <%= f.label :email, class: "col-sm-2 col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
-    </div>
-  </div>
+<section class="bg-donate-section">
+  <div class="container">
+    <div class="row">
+      <div class="donate-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "contact-form"}) do |f| %>
+           <%= render 'shared/error_messages', object: f.object %>
 
-  <div class="form-group">
-    <%= f.label :password, class: "col-sm-2 col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-    </div>
-  </div>
 
-  <% if devise_mapping.rememberable? -%>
-  <div class="form-group">
-      <%= f.label :remember_me, class: "col-lg-2 col-sm-2 control-label" %>
-      <div class="col-lg-10">
-      <p class="form-control-static"><%= f.check_box :remember_me %></p>
-      </div>
-  </div>
-  <% end -%>
+          <div class="information-form">
+            <h3>Login</h3>
+            <div class="row"> 
+            <div class="col-md-12">
+              <div class="form-group">
+                <%= f.label :email, "Email*"%>
+                <%= f.email_field :email, autofocus: true, class: "form-control" %>
+              </div><!-- .form-group -->
+            </div><!-- .col-md-12 -->
+            
+            <div class="col-md-12">
+              <div class="form-group">
+              <%= f.label :password, "Password*"  %>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+              </div><!-- .form-group -->
+            </div><!-- .col-md-12 -->
+        
 
-  <div class="actions">
-    <p class="text-center"><%= button_tag "Log in", class: "btn btn-default" %></p>
-  </div>
-<% end %>
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Registrati", new_registration_path(resource_name), class: "btn btn-default" %><br />
-<% end -%>
-<br>
+            <% if devise_mapping.rememberable? -%>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <%= f.label :remember_me, "Ricordami  " %>
+                  <%= f.check_box :remember_me %>
+                </div>
+              </div>
+            <% end -%>
 
-<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Password dimenticata?", new_password_path(resource_name) %><br />
-<% end -%>
-</div>
-</div>
-</div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <%= button_tag "Log in", class: "btn btn-default" %>
+              </div>
+            </div>
+          <% end %>
+        
+          </div><!-- .row -->
+        </div><!-- .information-form -->
+        </div> <!-- .donate-form -->
+
+        <hr> 
+        
+        <div class="donate-form">
+          <div class="information-form">
+            <div class="row">
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <div class ="col-md-12">
+              <div class="form-group">
+                <%= link_to "Registrati", new_registration_path(resource_name), class: "btn btn-default" %>
+              </div>
+            </div>
+            <% end -%>
+             
+
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <div class ="col-md-12">
+                <div class="form-group">
+                  <%= link_to "Password dimenticata?", new_password_path(resource_name), class: "bt btn-default" %>
+                </div>
+              </div>
+            <% end -%>
+            </div><!-- .row -->
+          </div><!-- -information-form-->
+        </div><!-- .donate-form -->
+        
+        
+
+    </div><!-- .row -->  
+  </div><!-- .container -->
+</section>
+
