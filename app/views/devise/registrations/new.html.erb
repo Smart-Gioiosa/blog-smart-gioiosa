@@ -28,9 +28,8 @@
   <%= devise_error_messages! %>
   
         <div class="information-form">
-        <h3>Per registrarti compila il form seguente </h3>
+        <h3>Per registrarti compila il form seguente: </h3>
         <div class="row"> 
- 
         <div class="col-md-12"> 
           <div class="form-group">
             <%= f.label :email %>
@@ -62,26 +61,18 @@
           </div>
         
         <% end %>
-
-
+        <div class="col-md-12">
+        <em>Dopo aver compilato il form riceverà una email per confermare l' account. Nel caso in cui non ricevesse nessuna email la invitiamo a controllare la cartella "spam" della vostra casella di posta elettronica. </em>
+        </div>
         </div><!-- .row -->
         </div><!-- .information-form -->
       </div> <!-- .donate-form -->
+      
 
       <hr>
       
-      <div class="donate-form">
-          <div class="information-form">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group"> 
-                  <%= render "devise/shared/links" %>
-                </div>
-              </div>
-            </div><!-- .row -->
-          </div><!-- .information-form -->
-        </div> <!-- .donate-form -->
-
+      <%= render "devise/shared/links" %>
+          
 
     </div><!-- .row -->  
   </div><!-- .container -->

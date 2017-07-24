@@ -1,16 +1,58 @@
-<h2>Resend confirmation instructions</h2>
+<section class="bg-page-header">
+  <div class="page-header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <div class="page-title">
+            <h2>Conferma account</h2>
+          </div><!-- .page-title -->
+          <div class="page-header-content">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li>Comferma il tuo account</li>
+            </ol>
+          </div><!-- .page-header-content -->
+        </div><!-- .page-header -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .page-header-overlay -->
+</section>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+<section class="bg-donate-section">
+  <div class="container">
+    <div class="row">
+      <div class="donate-form">
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
+        <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "contact-form" }) do |f| %>
+        <%= devise_error_messages! %>
+          <div class="information-form">
+            <h3>Invia nuovamente le istruzioni per confermare l'account</h3>
+              <div class="row"> 
 
-<%= render "devise/shared/links" %>
+                <div class="col-md-12">
+                  <div class="form-group">  
+                    <%= f.label :email %>
+                    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control"%>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">  
+                    <%= button_tag "Invia istruzioni", class: "btn btn-default" %>
+                  </div>
+                </div>
+          <% end %>
+        
+            </div><!-- .row -->
+          </div><!-- .information-form -->
+        </div> <!-- .donate-form -->
+
+        <hr>
+  
+        <%= render "devise/shared/links" %>
+
+    </div><!-- .row -->  
+  </div><!-- .container -->
+</section>
+
