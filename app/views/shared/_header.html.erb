@@ -69,12 +69,22 @@
 										<%= link_to "Contatti", contatti_path%>
 									</li>
 									<% if user_signed_in? %>
-									<li>
-										<%= link_to('Area Privata', area_privata_user_path(current_user)) %>
-									</li>
-									<li>
-										<%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %>
-									</li>
+                        
+									  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Smart Area<span class="caret"></span></a>
+                      <ul class="dropdown-menu sub-menu">
+                        <li>
+										      <%= link_to('Smart Contest', area_privata_user_path(current_user)) %>
+									      </li>
+                        <li>
+                          <%= link_to('Modifca | Elimina profilo', edit_user_registration_path)%>
+                        </li>
+									      <li>
+										      <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %>
+									      </li>
+                      </ul>  
+                    </li><!-- .dropdown -->
+
 									<% else %>
 									<li>
 										<%= link_to('LOGIN', new_user_session_path)  %>

@@ -1,39 +1,105 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<section class="bg-page-header">
+  <div class="page-header-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="page-header">
+          <div class="page-title">
+            <h2>Modifca i tuoi dati di accesso</h2>
+          </div><!-- .page-title -->
+          <div class="page-header-content">
+            <ol class="breadcrumb">
+              <li><a href="/">Home</a></li>
+              <li>Modifica profilo</li>
+            </ol>
+          </div><!-- .page-header-content -->
+        </div><!-- .page-header -->
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .page-header-overlay -->
+</section>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+
+<section class="bg-donate-section">
+  <div class="container">
+    <div class="row">
+      <div class="donate-form">
+
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "contact-form" }) do |f| %>
   <%= devise_error_messages! %>
+  <div class="information-form">
+  <h3>Edit <%= resource_name.to_s.humanize %></h3>
+    <div class="row">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
+      </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.label :password %> <i>(lasciare vuoto questo campo se non si desidera cambiare la password)</i><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.label :password_confirmation, "Conferma Password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+      <div class="col-md-12">
+        <div class="form-group">
+    <%= f.label :current_password, "Password corrente" %> <i>(abbiamo bisogno della tua password corrente per confermare le modifiche)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+        </div>
+    </div>
+  
+  
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= button_tag "Aggiorna", class: "btn btn-default"%>
+          </div>
+        </div>
+        <% end %>
+  
+          </div><!-- .row -->
+        </div><!-- .information-form -->
+      </div> <!-- .donate-form -->
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
 
-<h3>Cancel my account</h3>
+      <hr>
+    <div class="donate-form">
+      <div class="information-form">
+        <h3>Elimina il mio profilo</h3>
+          <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                   <%= button_to "Elimina profilo", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+                </div>
+              </div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+            </div><!-- .row -->
+          </div><!-- .information-form -->
+        </div> <!-- .donate-form -->
 
-<%= link_to "Back", :back %>
+
+            
+    
+  
+<%= link_to "Back", :back, class: "btn btn-default" %>
+
+    </div><!-- .row -->  
+  </div><!-- .container -->
+</section>
+
