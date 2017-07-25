@@ -61,6 +61,15 @@
 											<h4>Categoria</h4>
 											<p><%=@photo.category%></p>
 										</li>
+                    <li>
+                      <h4>Luogo dello scatto</h4>
+                      <p><%=@photo.place.capitalize%></p>
+                    </li>
+                     <li>
+                      <h4>Anno dello scatto</h4>
+                      <p><%=@photo.year.strftime("%Y")%></p>
+                    </li>
+
 									</ul>
 								</div><!-- .col-md-9 -->
 								<div class="col-md-3">
