@@ -21,15 +21,15 @@
 <section class="bg-donate-section">
   <div class="container">
     <div class="row">
-      
+     <!-- 
       <div class="donate-form">
         <p class="text-center">
-        <%= link_to "Accedi tramite Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-default"%>
+        <#%= link_to "Accedi tramite Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-default"%>
         </p>
       </div>         
       <br> 
       <hr>
-
+      -->
       <div class="donate-form">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "contact-form"}) do |f| %>
            <%= render 'shared/error_messages', object: f.object %>
