@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   get 'team/index'
 
-  devise_for :users
-  #resources :posts, only:[:index, :show]
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+   #resources :posts, only:[:index, :show]
 
 
   namespace :admin do

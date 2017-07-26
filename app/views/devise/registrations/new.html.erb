@@ -21,6 +21,14 @@
 <section class="bg-donate-section">
   <div class="container">
     <div class="row">
+      
+      <div class="donate-form">
+        <p class="text-center">
+        <%= link_to "Accedi tramite Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-default"%>
+        </p>
+      </div>         
+      <br>
+      <hr>
       <div class="donate-form">
 
 
@@ -28,7 +36,7 @@
   <%= devise_error_messages! %>
   
         <div class="information-form">
-        <h3>Per registrarti compila il form seguente: </h3>
+        <h3>Oppure compila il form seguente per registrarti: </h3>
         <div class="row"> 
         <div class="col-md-12"> 
           <div class="form-group">
