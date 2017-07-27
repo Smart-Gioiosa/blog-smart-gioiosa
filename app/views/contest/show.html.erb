@@ -39,7 +39,7 @@
 					<div class="row">
 						<div class="col-md-12">
               <%if @photo.image.present?%>
-              <%=image_tag @photo.image.url, class:"img-responsive", alt:@photo.title%>
+              <%=image_tag @photo.image.url, class:"img-responsive img-thumbnail" , alt:@photo.title%>
               <%end%>
 							<div class="single-pro-main-content">
 								<div class="row">
