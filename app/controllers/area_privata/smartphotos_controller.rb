@@ -46,6 +46,6 @@ class AreaPrivata::SmartphotosController < AreaPrivata::BaseAreaPrivataControlle
      end
 
     def smartphoto_params
-      params.require(:smartphoto).permit(:name, :surname, :category, :telephone, :email, :year, :place, :address, :birthday, :birthplace, :image, :privacy, :title)
+      params.require(:smartphoto).permit(:name, :surname, :category, :telephone, :email, :year, :place, :address, :birthday, :birthplace, :image, :privacy, :title, :image_cache)
     end
 end
