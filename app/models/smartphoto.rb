@@ -24,6 +24,7 @@ class Smartphoto < ApplicationRecord
   validates :category, presence: true
   validates :telephone, presence: true
   validates :title, presence: true
+  validates :image, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length:  {maximum: 255},
                    format: { with: VALID_EMAIL_REGEX}
