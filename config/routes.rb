@@ -25,10 +25,21 @@ Rails.application.routes.draw do
       resources :smartphotos
     end
   end
-
+=begin
+  resources :smartphotos do
+    resource :like_photo, module: :smartphotos
+  end
+=end
   get 'contest/index'
   match 'contest-fotografico/regolamento'=> 'contest#regolamento', via: :get
-  resources :contest, path: 'contest-fotografico'
+  #resources :contest, path: 'contest-fotografico' do
+  #    resource :like_photo, module: :contest
+  #  end
+
+  resources :smartphotos, path: 'contest-fotografico' do
+    resource :like_photo, module: :smartphotos
+  end
+
   match 'chi-siamo' => 'about_us#index', via: :get
   match 'contatti' => 'contacts#new', via: :get
   match 'team' => 'team#index', via: :get

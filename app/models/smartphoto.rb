@@ -1,5 +1,6 @@
 class Smartphoto < ApplicationRecord
-  belongs_to :user 
+  belongs_to :user
+  has_many :like_photos 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   def slug_candidates

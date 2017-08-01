@@ -5,6 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :omniauth_providers => [:facebook]
   has_one :smartphoto, dependent: :destroy
 
+  has_many :like_photos
+
+  def likes?(smartphoto)
+    smartphoto.like_photos.where(user_id: id).any?
+  end
+  
+
+
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first 
      

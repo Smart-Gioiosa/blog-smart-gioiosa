@@ -1,0 +1,8 @@
+<% if user_signed_in? && current_user.likes?(photo) %>
+
+  <%= link_to "UnLike", smartphoto_like_photo_path(photo.id), method: :delete, remote: true%>
+<%else%>
+  <%= link_to "Like", smartphoto_like_photo_path(photo.id), method: :post, remote: true%>
+<%end%>
+
+<%= photo.like_photos.count%>

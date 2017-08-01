@@ -77,24 +77,18 @@
 								<div class="col-md-3">
                   <div class="single-project-content">
                     
-										<h3>Condividi:</h3>
+										<h3>Condividi</h3>
 										<ul class="social-icon-rounded">
 											<li><div id="shareBtn"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></div></i></a></li>
                     </ul>
 
                   </div><!-- .single-left-content -->
-                  
+                  <hr> 
                   <div class="single-project-content">
                     
-                    <h3>Likes:</h3>
-                    <!--<div id="likes">
-                    <ul class="social-icon-rounded">
-                      <li>
-                        <#%= render partial: "likes", locals: {photo: @photo}%>
-                      </li>
-                    </ul>-->
-
-                    <div id="contest_<%= @photo.id %>_likes">
+                    <h3><%= "Voti  "%> <%= @photo.like_photos.count%> </h3>
+                   
+                    <div id="smartphoto_<%= @photo.id%>_likes">
                       <%= render partial: "likes", locals: {photo: @photo} %>
 
                     </div>
