@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :omniauth_providers => [:facebook]
   has_one :smartphoto, dependent: :destroy
 
-  has_many :like_photos
+  has_many :like_photos, dependent: :destroy
 
   def likes?(smartphoto)
     smartphoto.like_photos.where(user_id: id).any?
