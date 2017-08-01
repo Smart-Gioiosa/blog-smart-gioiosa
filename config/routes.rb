@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   get 'team/index'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
    #resources :posts, only:[:index, :show]
 
 
@@ -56,6 +55,9 @@ Rails.application.routes.draw do
   match 'vincitori' => 'cfp_pages#vincitori', via: :get
   match 'idee' => 'cfp_pages#idee', via: :get
   match 'giuria' => 'cfp_pages#giuria', via: :get
+
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

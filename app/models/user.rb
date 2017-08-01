@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :omniauth_providers => [:facebook]
+  
+  has_many :services
+
   has_one :smartphoto, dependent: :destroy
 
   has_many :like_photos, dependent: :destroy
@@ -10,7 +13,7 @@ class User < ApplicationRecord
   def likes?(smartphoto)
     smartphoto.like_photos.where(user_id: id).any?
   end
-  
+=begin  
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -39,7 +42,7 @@ class User < ApplicationRecord
       end
     end
   end
-
+=end
     
 
 end

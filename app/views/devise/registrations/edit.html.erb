@@ -25,9 +25,7 @@
     <div class="row">
       <div class="donate-form">
 
-
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "contact-form" }) do |f| %>
+       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "contact-form" }) do |f| %>
   <%= devise_error_messages! %>
   <div class="information-form">
   <h3>Edit <%= resource_name.to_s.humanize %></h3>
@@ -95,7 +93,6 @@
         </div> <!-- .donate-form -->
 
 
-            
     
   
 <%= link_to "Back", :back, class: "btn btn-default" %>
