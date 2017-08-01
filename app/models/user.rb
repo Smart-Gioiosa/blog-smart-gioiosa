@@ -11,6 +11,13 @@ class User < ApplicationRecord
     smartphoto.like_photos.where(user_id: id).any?
   end
   
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
 
 
   def self.from_omniauth(auth)
@@ -33,13 +40,6 @@ class User < ApplicationRecord
     end
   end
 
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
-    end
-  end
-  
+    
 
 end
