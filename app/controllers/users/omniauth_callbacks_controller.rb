@@ -12,12 +12,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       )
 
     else
-      user = User.create(
+      user = User.new(
         email: auth.info.email,
         #name: auth.info.name,
-        password: Devise.friendly_token[0,20],
-        
+        password: Devise.friendly_token[0,20]
       )
+      user.skip_confirmation!
+      user.save
+      user
 
       user.services.create(
         provider: auth.provider,
