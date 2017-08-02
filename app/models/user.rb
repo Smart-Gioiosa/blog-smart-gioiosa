@@ -13,6 +13,11 @@ class User < ApplicationRecord
   def likes?(smartphoto)
     smartphoto.like_photos.where(user_id: id).any?
   end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+
 =begin  
   def self.new_with_session(params, session)
     super.tap do |user|

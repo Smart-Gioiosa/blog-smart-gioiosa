@@ -11,7 +11,12 @@ module BlogGioiosaMarea
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    I18n.available_locales = [:it, :en]  
+    config.i18n.default_locale = :it
 
+    config.active_record.raise_in_transactional_callbacks = true
+    config.active_job.queue_adapter = :delayed_job  
+    
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')
       YAML.load(File.open(env_file)).each do |key, value|
