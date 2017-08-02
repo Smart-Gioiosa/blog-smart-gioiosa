@@ -15,7 +15,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       user = User.create(
         email: auth.info.email,
         #name: auth.info.name,
-        password: Devise.friendly_token[0,20]
+        password: Devise.friendly_token[0,20],
+        
       )
 
       user.services.create(
@@ -24,7 +25,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         expires_at: Time.at(auth.credentials.expires_at),
         access_token: auth.credentials.token,
       )
-
     end
 
     sign_in_and_redirect user, event: :authentication
