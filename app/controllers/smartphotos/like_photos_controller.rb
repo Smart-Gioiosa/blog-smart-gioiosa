@@ -7,7 +7,7 @@ class Smartphotos::LikePhotosController < ApplicationController
  
     respond_to do |format|
       format.html { redirect_to :back }
-      format.js {head :no_content}
+      format.js {}
     end
 
   end
@@ -16,7 +16,7 @@ class Smartphotos::LikePhotosController < ApplicationController
     @photo.like_photos.where(user_id: current_user.id).destroy_all
     respond_to do |format|
       format.html { redirect_to :back}
-      format.js {head :no_content}
+      format.js {}
     end
 
   end

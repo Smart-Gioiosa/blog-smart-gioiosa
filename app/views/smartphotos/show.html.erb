@@ -85,11 +85,10 @@
                   </div><!-- .single-left-content -->
                   <hr> 
                   <div class="single-project-content">
-                    
-                    <h3><%= "Voti  "%> <%= @photo.like_photos.count%> </h3>
-                   
-                    <div id="smartphoto_<%= @photo.id%>_likes">
-                      <%= render partial: "likes", locals: {photo: @photo} %>
+                     <div id="smartphoto_<%= @photo.id%>_likes">
+
+                                      
+                    <%= render partial: "likes", locals: {photo: @photo} %>
 
                     </div>
 

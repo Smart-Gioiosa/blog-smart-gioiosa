@@ -71,8 +71,7 @@
 									</ul>
 								</div><!-- /.portfolio-img -->
                 <div class="recent-project-content">
-                  <h4>VOTI  <%= p.like_photos.count%></h4>
-                  <div id="smartphoto_<%= p.id%>_likes">
+                  <div id="smartphoto_<%=p.id%>_likes">
                     <%= render partial: "likes", locals: {photo: p} %>
                   </div>
                   <p>By <span><a href="<%= smartphoto_path(p)%>"><%=p.name%> <%=p.surname%></a></span></p>

@@ -1,8 +1,12 @@
+ <h4><%= "VOTI  "%> <%= photo.like_photos.count%> </h4>
+ 
 <% if user_signed_in? && current_user.likes?(photo) %>
 
   <%= image_tag("/assets/like.png")%>
 <%else%>
-  <%= link_to image_tag("/assets/unlike.png"), smartphoto_like_photo_path(photo), method: :post%>
+  <%= link_to image_tag("/assets/unlike.png"), smartphoto_like_photo_path(photo), method: :post, remote: true%>
 <%end%>
+
+
 
 
