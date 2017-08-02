@@ -52,6 +52,7 @@
                     <li><h4>Anno Scatto:</h4><p> <%=@smartphoto.year.strftime("%Y")%></p></li>
                     <li><h4>Luogo Scatto:</h4> <p><%=@smartphoto.place%></p></li>
                     <li><h4>Categoria:</h4> <p><%=@smartphoto.category%></p></li>
+                    <li><h4>Voti (dato in aggiornamento):</h4> <p><%= @smartphoto.like_photos.count%></p></li>
 
 
 
