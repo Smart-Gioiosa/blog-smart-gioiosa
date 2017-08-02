@@ -77,22 +77,23 @@
       </div> <!-- .donate-form -->
     
       <hr>
+      <!--
     <div class="donate-form">
       <div class="information-form">
-        <h3>Elimina account <%= resource.email%> dal portale Smart Gioiosa</h3>
+        <h3>Elimina account <#%= resource.email%> dal portale Smart Gioiosa</h3>
           <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
                     
-                   <%= button_to "Elimina account", registration_path(resource_name), data: { confirm: "Sei sicuro? Ti ricordiamo che l'eliminazione del profilo causerà la cancellazione di tutti i dati ad esso associato: Foto, articoli, votazioni, ecc..." }, method: :delete %>
+                   <#%= button_to "Elimina account", registration_path(resource_name), data: { confirm: "Sei sicuro? Ti ricordiamo che l'eliminazione del profilo causerà la cancellazione di tutti i dati ad esso associato: Foto, articoli, votazioni, ecc..." }, method: :delete %>
                 </div>
               </div>
 
-            </div><!-- .row -->
-          </div><!-- .information-form -->
-        </div> <!-- .donate-form -->
+            </div>
+          </div>
+        </div> 
 
-
+      -->
     
   
 <%= link_to "Back", :back, class: "btn btn-default" %>
