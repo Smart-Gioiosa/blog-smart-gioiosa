@@ -6,6 +6,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     # Look up existing user with this facebook account
     if service.present?
       user = service.user
+      user.skip_confirmation!
       service.update(
         expires_at: Time.at(auth.credentials.expires_at),
         access_token: auth.credentials.token,
