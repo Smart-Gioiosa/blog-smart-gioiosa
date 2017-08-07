@@ -3,7 +3,7 @@ class SmartphotosController < ApplicationController
   end
 
   def index
-    @photos = Smartphoto.all
+    @photos = Smartphoto.all.order(:id)
   end
 
   def show
