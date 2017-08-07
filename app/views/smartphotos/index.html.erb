@@ -35,6 +35,19 @@
 	<section class="bg-single-recent-project">
 		<div class="container">
 			<div class="row">
+       
+       <h4 class="text-center"> - AVVISO - </h4><br>
+ <p class="text-center">
+  Si comunica ai partecipanti al Photo Contest che si sta procedendo ad un controllo relativo alle foto caricate e ai voti assegnati: in particolare, le foto assegnate dagli utenti a categorie non corrette verranno spostate in quella corrispondente al soggetto della foto e i voti non confermati (relativi a mail inesistenti o non confermate) verranno annullati!<p>
+<h4 class="text-center"><b>Basta confermare le email per far riapparire il voto: <br><%=link_to "Conferma il tuo indirizzo email", new_user_confirmation_path%></b></h4>
+  <p class="text-center">
+
+ Per qualsiasi chiarimento contattateci all'indirizzo email: <a href="mailto:info@smartgioioda.it">info@smartgioiosa.it</a><br> 
+Associazione Smart Gioiosa
+       </p> 
+        </p>
+        <hr>
+        <br>
 				<p class="text-center">
 				<%=link_to 'Regolamento', contest_fotografico_regolamento_path, class:"btn btn-default"%>
 					<% if user_signed_in? %>
@@ -43,7 +56,7 @@
 				<%=link_to 'Carica la tua foto', new_user_session_path, class:"btn btn-default"%>
 
 				<%end%>
-				<p>
+				</p>
 				<br>
 				<div class="recent-project">
 					<div id="filters" class="button-group ">
