@@ -1,4 +1,12 @@
- <h4><%= "VOTI  "%> <%= photo.like_photos.count%> </h4>
+<%counter =  []%>
+<%photo.like_photos.each do |photo|%>
+  <%if photo.user.confirmed_at.present? || photo.user.services.first.present?%>
+    <%counter << photo%>
+  <%end%>
+<%end%> 
+<h4><%= "VOTI  "%> <%= counter.count%> </h4>
+
+<!--<h4><#%= "VOTI  "%> <#%= photo.like_photos.count%> </h4>-->
  <% if user_signed_in? %>
 
 <% if user_signed_in? && current_user.likes?(photo) %>
