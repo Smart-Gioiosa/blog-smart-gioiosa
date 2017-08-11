@@ -19,11 +19,32 @@
 </section>
 
 
+<% if current_user.services.present? %>
+       <section class="bg-donate-section">
+  <div class="container">
+    <div class="row">
+    <div class="donate-form">
+     <div class="information-form">
 
+     <h3> <%= current_user.email %> hai effetuato l'accesso tramite social network</h3>
+     </div>
+
+    <%= link_to "Back", :back, class: "btn btn-default" %>
+    
+    </div>
+    </div><!-- .row -->  
+  </div><!-- .container -->
+  
+</section>
+
+
+<%else%>      
 <section class="bg-donate-section">
   <div class="container">
     <div class="row">
-      <div class="donate-form">
+    <div class="donate-form">
+
+  
 
        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "contact-form" }) do |f| %>
   <%= devise_error_messages! %>
@@ -100,5 +121,6 @@
 
     </div><!-- .row -->  
   </div><!-- .container -->
+  
 </section>
-
+<%end%>
