@@ -28,7 +28,22 @@
 					<div class="row">
 						<div class="col-md-12">
 
-              <h2><%= current_user.email%></h2>
+              <h2 class="text-center">Benvenuto <%= current_user.email%></h2>
+              <br>
+              <hr>
+              <br>
+              <h4 class="text-center"> - AVVISO - </h4><br>
+ <p class="text-center">
+  Si comunica ai partecipanti al Photo Contest che si sta procedendo ad un controllo relativo alle foto caricate e ai voti assegnati: in particolare, le foto assegnate dagli utenti a categorie non corrette verranno spostate in quella corrispondente al soggetto della foto e i voti non confermati (relativi a mail inesistenti o non confermate) verranno annullati!<p>
+<h4 class="text-center"><b>Basta confermare le email per far riapparire il voto </h4>
+  <p class="text-center">
+ Per qualsiasi chiarimento contattateci all'indirizzo email: <a href="mailto:info@smartgioioda.it">info@smartgioiosa.it</a><br> 
+Associazione Smart Gioiosa
+       </p> 
+        </p>
+        <br>
+        <hr>
+        <br>
 
 							<div class="single-pro-main-content">
 
@@ -52,7 +67,14 @@
                     <li><h4>Anno Scatto:</h4><p> <%=@smartphoto.year.strftime("%Y")%></p></li>
                     <li><h4>Luogo Scatto:</h4> <p><%=@smartphoto.place%></p></li>
                     <li><h4>Categoria:</h4> <p><%=@smartphoto.category%></p></li>
-                    <li><h4>Voti (dato in aggiornamento):</h4> <p><%= @smartphoto.like_photos.count%></p></li>
+                    
+                    <%counter =  []%>
+                    <%@smartphoto.like_photos.each do |photo|%>
+                      <%if photo.user.confirmed_at.present? || photo.user.services.first.present?%>
+                        <%counter << photo%>
+                      <%end%>
+                    <%end%> 
+                    <li><h4>Voti(dato in aggiornamento):</h4> <p><%= counter.count%></p></li>
 
 
 
