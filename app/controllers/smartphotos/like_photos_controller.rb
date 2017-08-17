@@ -1,7 +1,8 @@
 class Smartphotos::LikePhotosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_smartphoto
-  
+ 
+=begin 
   def create
     @photo.like_photos.where(user_id: current_user.id).first_or_create
  
@@ -20,7 +21,7 @@ class Smartphotos::LikePhotosController < ApplicationController
     end
 
   end
-
+=end
   private
 
     def set_smartphoto
