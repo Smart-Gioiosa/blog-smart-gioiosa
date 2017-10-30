@@ -1,4 +1,4 @@
-class CreateSmartphotos < ActiveRecord::Migration[5.0]
+class CreateSmartphotos < ActiveRecord::Migration[5.1]
   def change
     create_table :smartphotos do |t|
       t.string :name

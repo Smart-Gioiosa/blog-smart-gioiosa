@@ -8,13 +8,14 @@ Bundler.require(*Rails.groups)
 
 module BlogGioiosaMarea
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.1
+
     I18n.available_locales = [:it, :en]  
     config.i18n.default_locale = :it
 
-    config.active_record.raise_in_transactional_callbacks = true
+
+    #config.active_record.raise_in_transactional_callbacks = true
     config.active_job.queue_adapter = :delayed_job  
     
     config.before_configuration do
@@ -22,8 +23,11 @@ module BlogGioiosaMarea
       YAML.load(File.open(env_file)).each do |key, value|
         ENV[key.to_s] = value
       end if File.exists?(env_file)
-    end
+    end 
 
 
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration should go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded.
   end
 end

@@ -18,7 +18,7 @@ Rails.application.configure do
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => 'public, max-age=172800'
+      'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -42,8 +42,15 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # Suppress logger output for asset requests.
+  config.assets.quiet = true
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  #config.action_controller.include_all_helpers = false
+
+  
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
@@ -62,5 +69,4 @@ Rails.application.configure do
    user_name: ENV["EMAIL_USERNAME"],
    password: ENV["EMAIL_PASSWORD"]
   }
-
 end
