@@ -2,7 +2,7 @@ class Admin::PostsController < Admin::BaseController
   before_action :set_post, only:[:show, :edit, :destroy, :update]
 
   def index
-    @posts= Post.all.order("id ASC")
+    @posts= Post.all.order("created_at DESC")
   end
 
   def show
