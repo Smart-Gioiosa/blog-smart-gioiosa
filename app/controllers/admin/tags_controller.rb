@@ -2,7 +2,7 @@ class Admin::TagsController < Admin::BaseController
   before_action :set_tag, only:[:show, :edit, :destroy, :update]
 
   def index
-    @tags= Tag.all
+    @tags= Tag.all.order("created_at DESC")
   end
 
   def show
