@@ -68,7 +68,7 @@
                 <div class="single-blog-bottom">
                   <ul class="tags">
                     <li><i class="fa fa-tags" aria-hidden="true"></i> Tags :</li>
-                    <%@post.tags.limit(5).each do |tag|%>
+                    <%@post.tags.each do |tag|%>
                       <%if @post.tags.last == tag %>
                         <%= link_to tag.name, tag_path(tag)%>
                       <%else%>
