@@ -48,7 +48,7 @@
   											<!--<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 24 Like</a></li>
                         <li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> 24 Comment</a></li>-->
   										</ul>
-                      <p><%= (raw post.body.truncate(500, separator: ' '))%></p>
+                      <p><%= (raw post.body.truncate(80, separator: ' '))%></p>
                       <%= link_to post_path(post) do %> Read More<i class="fa fa-angle-double-right" aria-hidden="true"></i><%end%>
   									</div><!-- .blog-content -->
   								</div><!-- .blog-content-box -->
