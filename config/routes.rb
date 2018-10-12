@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'memorial/index'
+
+  get 'memorial/show'
+
   mount Ckeditor::Engine => '/ckeditor'
   get 'events/index'
 
@@ -31,6 +35,8 @@ Rails.application.routes.draw do
 =end
   get 'contest/index'
   match 'contest-fotografico/regolamento'=> 'contest#regolamento', via: :get
+  match 'memorial-federico-amato' => 'memorial#index', via: :get
+  match 'memorial-federico-amato/percorso' => 'memorial#path', via: :get
   #resources :contest, path: 'contest-fotografico' do
   #    resource :like_photo, module: :contest
   #  end
