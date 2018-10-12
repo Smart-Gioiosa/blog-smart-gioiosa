@@ -1,11 +1,11 @@
 # Blog Smart Gioiosa
 
-A blog to post smart ideas. 
+A blog to post smart ideas.
 
 ## Rails version:
 
-* 5.0.0
+* 5.1.4
 
-## Ruby version: 
+## Ruby version:
 
-* 2.3.0
+* 2.4.1
