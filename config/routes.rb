@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   match 'contest-fotografico/regolamento'=> 'contest#regolamento', via: :get
   match 'memorial-federico-amato' => 'memorial#index', via: :get
   match 'memorial-federico-amato/percorso' => 'memorial#path', via: :get
+  match 'memorial-federico-amato/promotori' => 'memorial#promoters', via: :get
+  match 'memorial-federico-amato/sponsors' => 'memorial#sponsors', via: :get
   #resources :contest, path: 'contest-fotografico' do
   #    resource :like_photo, module: :contest
   #  end

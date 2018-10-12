@@ -1,0 +1,153 @@
+<style>
+    .google-maps {
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+</style>
+<<%= content_for :title, "GARA PODISTICA MEMORIAL FEDERICO AMATO"%>
+<%= content_for :description, "AVIS GIOIOSA MAREA - GARA PODISTICA MEMORIAL FEDERICO AMATO " %>
+<%= content_for :image, "/assets/memorial/promotori.png"%>
+
+
+	<section class="bg-page-header">
+		<div class="page-header-overlay">
+			<div class="container">
+				<div class="row">
+
+
+					<div class="page-header">
+						<div class="page-title">
+							<h2>Percorso Gara Podistica "Memorial Federico Amato"</h2>
+						</div><!-- .page-title -->
+						<div class="page-header-content">
+							<ol class="breadcrumb">
+								<li><a href="/">Home</a></li>
+                <li><a href="/memorial-federico-amato"> Memorial Federico Amato</a></li>
+                <li>Promotori</li>
+							</ol>
+						</div><!-- .page-header-content -->
+					</div><!-- .page-header -->
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</div><!-- .page-header-overlay -->
+	</section>
+
+
+	<!-- End Page Header Section -->
+
+
+	<!-- Start Recent Project Section -->
+
+
+	<section class="bg-single-project">
+		<div class="container">
+			<div class="row">
+				<div class="single-project">
+
+					<div class="row">
+						<div class="col-md-12">
+
+              <h2 class="text-center">
+                "Promotori dell'evento "Gara Podistica - Memorial Federico Amato"".
+
+              </h2>
+              <h4 class="text-center"></h4>
+               <p class="text-center">
+
+              <br>
+
+
+              <p class="text-center">
+                <div class="google-maps">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Tg9oXLDkfvwnt6EwGrUM9_WNB7rTXxwG" width="960" height="480"></iframe>
+              </div>
+
+
+              </p>
+
+							<div class="single-pro-main-content">
+								<div class="row">
+								<div class="col-md-12">
+                  <h2 class="text-center">Dettagli</h2>
+                  <br>
+									<ul class="single-left-content">
+
+                    <li>
+                      <h4>A.S.D. POL.EUROPA MESSINA</h4>
+											<p>Via Cumia, 9
+                        Messina, 98145, ME,
+                        Tel: 090686072,
+                        Email: ME402@fidal.it</p>
+										</li>
+										<li>
+                      <h4>AVIS GIOIOSA MAREA</h4>
+											<p>Via Umberto I, 88, Gioiosa Marea, 98063, ME, Email: avisgioiosa@gmail.com </p>
+										</li>
+										<li>
+											<h4>FIDAL MESSINA</h4>
+											<p>Via Santa Maria dell’Arco,16, c/o CONI Point, Messina, Email: info@fidalmessina.it</p>
+										</li>
+										<li>
+											<h4>COMUNE DI GIOIOSA MAREA</h4>
+											<p>Via G.Natoli Gatto, 115, Gioiosa Marea, 98063, ME, Tel: 0941363301, Email: ufficiourp@comunegioiosamarea.it, www.comunegioiosamarea.gov.it</p>
+										</li>
+                    <li>
+                      <h4>CESV MESSINA</h4>
+                      <p>Salita Cappuccini, 31, Messina, 98121, ME, Tel: 090 6409598, Email: info@cesvmessina.it, www.cesvmessina.org</p>
+                    </li>
+                     <li>
+                      <h4>AVIS SANT’ANGELO DI BROLO</h4>
+                      <p>Via Pozzo Danile, Sant’Angelo di Brolo, 98060, ME, Tel: 0941 534211, Email: avis.santangelo@live.it</p>
+                    </li>
+
+                    <li>
+                     <h4>AVIS PATTI</h4>
+                     <p>C.da Case Nuove Russo, Patti, 98066, ME, Tel: 331/3208723, Email: avispatti@libero.it</p>
+                   </li>
+
+                   <li>
+                    <h4>FONDAZIONE FEDERICO AMATO</h4>
+                    <p>C.da Passoforno, Piraino, 98060, ME, Tel: 339 860 7567, Email: fondazione-f.amato@tiscali.it</p>
+                  </li>
+
+                  <li>
+                   <h4>Via Vittorio Emanuele</h4>
+                   <p>Percorri la via Vittorio Emanuele e continua sulla via Luigi Prandello</p>
+                 </li>
+
+									</ul>
+								</div><!-- .col-md-12 -->
+
+
+              </div><!-- .col-row -->
+							</div>
+
+						</div><!-- .single-proj-main-content -->
+					</div><!-- .col-md-12 -->
+
+					</div><!-- .row -->
+				</div><!-- .single-project -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</section>
+
+
+	<!-- End Recent Project Section -->
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: '<%= request.url%>',
+    }, function(response){});
+}
+</script>

@@ -10,7 +10,12 @@ class MemorialController < ApplicationController
   end
 
   def poi
+  end
 
+  def promoters
+  end
+
+  def sponsors
   end
 
 end
