@@ -40,7 +40,7 @@
 									<li class="<%= "active" if current_page?("/chi-siamo")%>">
 										<%= link_to "Chi Siamo", chi_siamo_path %>
 									</li>
-									
+
 
                   <li class="<%= "active" if controller.controller_name == "posts"%>">
 										<%= link_to "Smart Blog", posts_path%>
@@ -49,6 +49,10 @@
 									<li class="<#%= "active" if controller.controller_name == "events"%>">
 										<#%= link_to "Eventi", events_path%>
 									</li>-->
+
+									<li class="<%= "active" if controller.controller_name == 'memorial'%>">
+										<%= link_to "Memorial Federico Amato", memorial_federico_amato_path%>
+									</li>
 
 									<li class="<%= "active" if controller.controller_name == 'smartphotos'%>">
 										<%= link_to "PhotoContest", smartphotos_path%>
@@ -69,22 +73,22 @@
 										<%= link_to "Contatti", contatti_path%>
 									</li>
 									<% if user_signed_in? %>
-                        
+
 									  <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Smart Area<span class="caret"></span></a>
                       <ul class="dropdown-menu sub-menu">
                         <li>
 										      <%= link_to('Smart Contest', area_privata_user_path(current_user)) %>
                         </li>
-                        
+
                         <li>
                           <%= link_to('Modifica Profilo', edit_user_registration_path)%>
                         </li>
-                      
+
 									      <li>
 										      <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %>
 									      </li>
-                      </ul>  
+                      </ul>
                     </li><!-- .dropdown -->
 
 									<% else %>
