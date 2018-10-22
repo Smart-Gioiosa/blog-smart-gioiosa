@@ -17,6 +17,13 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+#Ignore master key for decrypting credentials and more.
+/config/master.key
+
 # Ignore Byebug command history file.
 .byebug_history
 database.yml

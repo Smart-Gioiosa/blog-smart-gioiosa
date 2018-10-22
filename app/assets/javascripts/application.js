@@ -10,8 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+//= require rails-ujs
+//= require activestorage
 // require turbolinks
 // require_tree .
 //= require js/jquery-2.2.3.min
@@ -28,4 +28,3 @@
 //= require js/isotope.pkgd.min
 //= require js/custom.isotope
 //= require js/custom
-

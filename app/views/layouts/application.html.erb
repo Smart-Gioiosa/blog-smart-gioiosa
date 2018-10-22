@@ -5,14 +5,15 @@
     <%= meta_descriptions yield(:description)%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-   
+
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/manifest.json">
     <meta name="theme-color" content="#ffffff">
-    
+
 
 
     <%if Rails.env.production?%>
@@ -38,10 +39,10 @@
       </script>
 
      <%end%>
-  
-  
+
+
     <meta property="fb:app_id" content="172181319990844" />
-     
+
       <!-- Open Graph Facebook -->
       <meta property="og:url"                content="<%= request.original_url%>" />
       <meta property="og:type"               content="article" />
@@ -57,10 +58,10 @@
       <%end%>
       <%if content_for?(:image)%>
       <meta property="og:image"              content="<%= asset_url yield(:image)%>" />
-      <%else%>   
-      <meta property="og:image"              content="http://www.smartgioiosa.it/assets/smart.jpg" /> 
+      <%else%>
+      <meta property="og:image"              content="http://www.smartgioiosa.it/assets/smart.jpg" />
       <%end%>
-      
+
       <%if Rails.env.production?%>
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <script>
@@ -74,8 +75,8 @@
 
       </head>
         <body>
-  
-  
+
+
   <script>
   window.fbAsyncInit = function() {
     FB.init({

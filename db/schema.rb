@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801224410) do
+ActiveRecord::Schema.define(version: 2017_08_01_224410) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -19,8 +22,8 @@ ActiveRecord::Schema.define(version: 20170801224410) do
   end
 
   create_table "categories_posts", id: false, force: :cascade do |t|
-    t.integer "post_id", null: false
-    t.integer "category_id", null: false
+    t.bigint "post_id", null: false
+    t.bigint "category_id", null: false
     t.index ["category_id", "post_id"], name: "index_categories_posts_on_category_id_and_post_id"
     t.index ["post_id", "category_id"], name: "index_categories_posts_on_post_id_and_category_id"
   end
@@ -114,8 +117,8 @@ ActiveRecord::Schema.define(version: 20170801224410) do
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|
-    t.integer "post_id", null: false
-    t.integer "tag_id", null: false
+    t.bigint "post_id", null: false
+    t.bigint "tag_id", null: false
     t.index ["post_id", "tag_id"], name: "index_posts_tags_on_post_id_and_tag_id"
     t.index ["tag_id", "post_id"], name: "index_posts_tags_on_tag_id_and_post_id"
   end
@@ -131,7 +134,7 @@ ActiveRecord::Schema.define(version: 20170801224410) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "provider"
     t.string "uid"
     t.string "access_token"
@@ -157,7 +160,7 @@ ActiveRecord::Schema.define(version: 20170801224410) do
     t.string "place"
     t.boolean "privacy"
     t.string "image"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
@@ -198,4 +201,6 @@ ActiveRecord::Schema.define(version: 20170801224410) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "services", "users"
+  add_foreign_key "smartphotos", "users"
 end
